@@ -1,0 +1,45 @@
+# Sofia VS v1.2 Chemprop D-MPNN  -  sofia-vs-v1.2-chemprop
+# Same raw DAVIS freeze + split CSVs as sofia-vs-v1-2026-10; do not regenerate splits.
+seed: 42
+freeze_id: sofia-vs-v1.2-chemprop
+data_freeze_id: sofia-vs-v1-2026-10
+
+binder:
+  pkd_threshold: 7.0  # binder if pKd >= 7 (Kd <= 100 nM)
+
+# Protein extras for Chemprop x_d concat (best cheap mode from v1.1)
+protein_features:
+  type: aac_dpc  # 420-dim AAC+DPC; chosen over ESM2 for cheap concat extras
+
+chemprop:
+  # Modest CPU budget: DAVIS ~30k pairs; finish in hours not days
+  max_epochs: 15
+  batch_size: 64
+  hidden_dim: 300
+  depth: 3  # message-passing depth (BondMessagePassing default)
+  dropout: 0.0
+  warmup_epochs: 2
+  init_lr: 0.0001
+  max_lr: 0.001
+  final_lr: 0.0001
+  early_stopping_patience: 5
+  num_workers: 0
+  accelerator: cpu
+  # Nondeterminism: Chemprop/Lightning on CPU is not bit-stable across runs;
+  # reproduce_v1.2.sh uses fixed seed + documented looser tol if needed.
+  deterministic_seed: 42
+
+eval:
+  ef_fractions: [0.01, 0.05]
+  metric_float_tol: 1.0e-4
+  # If GPU/CPU Chemprop is not bit-stable, reproduce may raise this (documented in DECISIONS)
+  reproduce_tol_nondeterministic: 5.0e-2
+
+paths:
+  raw_dir: data/raw
+  splits_dir: data/splits
+  models_dir: artifacts/models_v1.2
+  metrics_md: artifacts/metrics_v1.2.md
+  metrics_json: artifacts/metrics_v1.2.json
+  # v1.1 baselines cited, not retrained
+  v1_1_metrics_json: artifacts/metrics_v1.1.json

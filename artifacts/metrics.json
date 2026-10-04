@@ -1,0 +1,70 @@
+{
+  "config": {
+    "binder_pkd_threshold": 7.0,
+    "fingerprint": {
+      "n_bits": 2048,
+      "radius": 2
+    },
+    "model": "HistGradientBoostingRegressor",
+    "seed": 42
+  },
+  "freeze_id": "sofia-vs-v1-2026-10",
+  "generated_at_america_toronto": "2026-10-02T14:52:41-04:00",
+  "models": {
+    "cold_protein_full": "artifacts/models/hgb_cold_protein_full.joblib",
+    "cold_protein_ligand_only": "artifacts/models/hgb_cold_protein_ligand_only.joblib",
+    "scaffold_full": "artifacts/models/hgb_scaffold_full.joblib",
+    "scaffold_ligand_only": "artifacts/models/hgb_scaffold_ligand_only.joblib",
+    "screen": "artifacts/models/hgb_screen.joblib"
+  },
+  "splits": {
+    "cold_protein": {
+      "full": {
+        "auroc": 0.8352413406375362,
+        "binder_rate": 0.07507739938080496,
+        "ef_at_1pct": 8.708961141950834,
+        "ef_at_5pct": 6.171237511443697,
+        "n": 5168.0,
+        "n_binders": 388.0,
+        "n_test": 5168.0,
+        "n_train": 18020.0,
+        "spearman_rho": 0.4983989543490435
+      },
+      "ligand_only": {
+        "auroc": 0.8280313160505544,
+        "binder_rate": 0.07507739938080496,
+        "ef_at_1pct": 8.452815226011102,
+        "ef_at_5pct": 6.531226366277912,
+        "n": 5168.0,
+        "n_binders": 388.0,
+        "n_test": 5168.0,
+        "n_train": 18020.0,
+        "spearman_rho": 0.5001575530870505
+      }
+    },
+    "scaffold": {
+      "full": {
+        "auroc": 0.627587334106225,
+        "binder_rate": 0.056916698077647945,
+        "ef_at_1pct": 6.507235712533725,
+        "ef_at_5pct": 3.3025444405716278,
+        "n": 5306.0,
+        "n_binders": 302.0,
+        "n_test": 5306.0,
+        "n_train": 17813.0,
+        "spearman_rho": 0.21236652430966807
+      },
+      "ligand_only": {
+        "auroc": 0.4413144980704179,
+        "binder_rate": 0.056916698077647945,
+        "ef_at_1pct": 0.0,
+        "ef_at_5pct": 0.19815266643429766,
+        "n": 5306.0,
+        "n_binders": 302.0,
+        "n_test": 5306.0,
+        "n_train": 17813.0,
+        "spearman_rho": -0.010665435581998263
+      }
+    }
+  }
+}

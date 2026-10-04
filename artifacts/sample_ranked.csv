@@ -1,0 +1,401 @@
+rank,mol_id,smiles,score_pkd,valid_smiles
+1,davis_44259,CNC1CC2OC(C)(C1OC)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)C(=O)NC4,7.072279046821538,True
+2,davis_126565,CC12OC(CC1(O)CO)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)CNC4=O,6.930522420023109,True
+3,davis_11984591,COc1cc(Nc2ncc(F)c(Nc3ccc4c(n3)NC(=O)C(C)(C)O4)n2)cc(OC)c1OC.O=S(=O)(O)c1ccccc1,6.751992055553992,True
+4,davis_11427553,O=C(c1ccc(C=Cc2n[nH]c3ccccc23)cc1)N1CCNCC1,5.736778344852164,True
+5,davis_447077,CSc1cccc(Nc2ncc3cc(-c4c(Cl)cccc4Cl)c(=O)n(C)c3n2)c1,5.655629414598754,True
+6,davis_51004351,COC1C(N(C)C(=O)c2ccccc2)CC2OC1(C)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)C(=O)NC4,5.628007603192985,True
+7,davis_3062316,Cc1nc(Nc2ncc(C(=O)Nc3c(C)cccc3Cl)s2)cc(N2CCN(CCO)CC2)n1,5.6125135842256615,True
+8,davis_16722836,Cc1cnc(Nc2ccc(OCCN3CCCC3)cc2)nc1Nc1cccc(S(=O)(=O)NC(C)(C)C)c1,5.55869938419264,True
+9,davis_5329102,CCN(CC)CCNC(=O)c1c(C)[nH]c(C=C2C(=O)Nc3ccc(F)cc32)c1C,5.531971010933654,True
+10,davis_25243800,CC(C)N1NC(=C2C=c3cc(O)ccc3=N2)c2c(N)ncnc21,5.493529375657411,True
+11,esol_Chlorbufam,CC(OC(=O)Nc1cccc(Cl)c1)C#C,5.489415812804183,True
+12,davis_10461815,Cc1[nH]c(C=C2C(=O)Nc3ccc(S(=O)(=O)Cc4c(Cl)cccc4Cl)cc32)c(C)c1C(=O)N1CCCC1CN1CCCC1,5.44886393401419,True
+13,esol_N-Ethylaniline,CCNc1ccccc1,5.445257619313037,True
+14,davis_42642645,COc1cc2c(Oc3ccc(NC(=O)C4(C(=O)Nc5ccc(F)cc5)CC4)cc3F)ccnc2cc1OCCCN1CCOCC1,5.444704924958565,True
+15,esol_N-Methylaniline ,CNc1ccccc1,5.441185657821632,True
+16,davis_176870,C#Cc1cccc(Nc2ncnc3cc(OCCOC)c(OCCOC)cc23)c1,5.435114541582421,True
+17,esol_Carbetamide,c1c(NC(=O)OC(C)C(=O)NCC)cccc1,5.4333673416354555,True
+18,esol_RTI 6,CCN2c1nc(N(C)(CCO))ccc1NC(=O)c3cccnc23 ,5.426013718711692,True
+19,esol_osthole,c1cc2ccc(OC)c(CC=C(C)(C))c2oc1=O ,5.389248341518856,True
+20,davis_16007391,CCN(CCO)CCCOc1ccc2c(Nc3cc(CC(=O)Nc4cccc(F)c4)[nH]n3)ncnc2c1,5.388153191296129,True
+21,davis_10138260,Cc1[nH]c(C=C2C(=O)Nc3ccc(F)cc32)c(C)c1C(=O)NCC(O)CN1CCOCC1,5.387990033211522,True
+22,davis_3038522,COc1cc2c(N3CCN(C(=O)Nc4ccc(OC(C)C)cc4)CC3)ncnc2cc1OCCCN1CCCCC1,5.3777080785598015,True
+23,esol_RTI 24,CCN2c1cc(Cl)ccc1NC(=O)c3cccnc23 ,5.37541820093656,True
+24,esol_Clomazone,CC1(C)CON(Cc2ccccc2Cl)C1=O,5.36481457585737,True
+25,esol_Barban,ClCC#CCOC(=O)Nc1cccc(Cl)c1,5.360233257568654,True
+26,esol_karbutilate,CN(C)C(=O)Nc1cccc(OC(=O)NC(C)(C)C)c1 ,5.350644191522823,True
+27,davis_11626560,CC(Oc1cc(-c2cnn(C3CCNCC3)c2)cnc1N)c1c(Cl)ccc(F)c1Cl,5.34997504832543,True
+28,davis_4908365,CN1CCN(C(=O)c2cc3cc(Cl)ccc3[nH]2)CC1,5.346966576363592,True
+29,esol_Phenmedipham,COC(=O)Nc1cccc(OC(=O)Nc2cccc(C)c2)c1,5.343599212073246,True
+30,davis_9809715,COC(=O)c1ccc2c(c1)NC(=O)C2=C(Nc1ccc(N(C)C(=O)CN2CCN(C)CC2)cc1)c1ccccc1,5.339496742329421,True
+31,davis_11409972,CCN1CCN(Cc2ccc(NC(=O)Nc3ccc(Oc4cc(NC)ncn4)cc3)cc2C(F)(F)F)CC1,5.333286407216974,True
+32,davis_16038120,COc1cc(N2CCC(N3CCN(C)CC3)CC2)ccc1Nc1ncc(Cl)c(Nc2ccccc2S(=O)(=O)C(C)C)n1,5.322932033941192,True
+33,esol_Isopropalin,CCCN(CCC)c1c(cc(cc1N(=O)=O)C(C)C)N(=O)=O,5.322847797704239,True
+34,esol_cycloheximide,CC1CC(C)C(=O)C(C1)C(O)CC2CC(=O)NC(=O)C2 ,5.320455046678094,True
+35,esol_Rovral,CC(C)NC(=O)N1CC(=O)N(C1=O)c2cc(Cl)cc(Cl)c2,5.303411695910551,True
+36,davis_24889392,CC(C)(C)c1cc(NC(=O)Nc2ccc(-c3cn4c(n3)sc3cc(OCCN5CCOCC5)ccc34)cc2)no1,5.288934847172493,True
+37,esol_triamcinolone acetonide,CC5(C)OC4CC3C2CCC1=CC(=O)C=CC1(C)C2(F)C(O)CC3(C)C4(O5)C(=O)CO ,5.28453114770973,True
+38,davis_44150621,CC(O)C(=O)O.CN1CCN(c2ccc3c(c2)NC(=C2C(=O)N=c4cccc(F)c4=C2N)N3)CC1.O,5.263611592721239,True
+39,esol_chloropropylate,c1ccc(Cl)cc1C(c2ccc(Cl)cc2)(O)C(=O)OC(C)C,5.252221891015936,True
+40,davis_3081361,COc1cc2c(Nc3ccc(Br)cc3F)ncnc2cc1OCC1CCN(C)CC1,5.247852068222859,True
+41,esol_RTI 3,O2c1cc(C)ccc1N(C)C(=O)c3cc(N)cnc23 ,5.245283459756585,True
+42,esol_5-Allyl-5-isopropylbarbital,O=C1NC(=O)NC(=O)C1(C(C)C)CC=C,5.242244781557736,True
+43,esol_Butylate,CCSC(=O)N(CC(C)C)CC(C)C,5.228605832032847,True
+44,esol_Methocarbamol,COc1ccccc1OCC(O)COC(N)=O,5.223879251609422,True
+45,esol_Benfuracarb,CCOC(=O)CCN(SN(C)C(=O)Oc1cccc2CC(C)(C)Oc21)C(C)C,5.219043443260916,True
+46,esol_hydrobenzoin,c1ccccc1C(O)C(O)c2ccccc2,5.2164763218345085,True
+47,esol_Atrazine,CCNc1nc(Cl)nc(NC(C)C)n1,5.216253037344636,True
+48,esol_2-Isopropyltoluene,CC(C)c1ccccc1C,5.213226423289344,True
+49,esol_Prometon,COc1nc(NC(C)C)nc(NC(C)C)n1,5.213090177487032,True
+50,esol_Menadione,CC2=CC(=O)c1ccccc1C2=O ,5.211951110753173,True
+51,davis_6450551,CNC(=O)c1ccccc1Sc1ccc2c(C=Cc3ccccn3)n[nH]c2c1,5.2112890465160335,True
+52,davis_5328940,COc1cc(Nc2c(C#N)cnc3cc(OCCCN4CCN(C)CC4)c(OC)cc23)c(Cl)cc1Cl,5.211265841994039,True
+53,esol_2-Ethylbutanal,CCC(CC)C=O,5.2099304018134305,True
+54,esol_1-Methylcyclohexene ,CC1=CCCCC1,5.209510330716231,True
+55,esol_Atratone,CCNc1nc(NC(C)C)nc(OC)n1,5.206663971298805,True
+56,esol_Phenacetin,CCOc1ccc(NC(=O)C)cc1,5.198355098315582,True
+57,esol_1-Methylfluorene,Cc1cccc2c1Cc3ccccc32,5.1980003836030155,True
+58,esol_Glafenine,OCC(O)COC(=O)c1ccccc1Nc2ccnc3cc(Cl)ccc23,5.196425338260001,True
+59,esol_Apazone,CCCC1C(=O)N3N(C1=O)c2cc(C)ccc2N=C3N(C)C ,5.19341482156876,True
+60,esol_Fenuron,CN(C)C(=O)Nc1ccccc1,5.191346559175631,True
+61,esol_Dulcin,CCOc1ccc(NC(N)=O)cc1,5.1874839525720775,True
+62,davis_123631,COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1,5.187129669005168,True
+63,esol_Siduron,CC1CCCCC1NC(=O)Nc2ccccc2,5.185489912346888,True
+64,esol_Isopropyl acetate,CC(C)OC(=O)C,5.182705611509665,True
+65,esol_2-Nitropropane,CC(C)N(=O)=O,5.18227278695569,True
+66,esol_2-Methylpropane,CC(C)C,5.18227278695569,True
+67,"esol_2,2,3-Trimethylbutane",CC(C)C(C)(C)C,5.18227278695569,True
+68,esol_Cyhalothrin,CC1(C)C(C=C(Cl)C(F)(F)F)C1C(=O)OC(C#N)c2cccc(Oc3ccccc3)c2,5.178043897209853,True
+69,esol_benodanil,c1c(NC(=O)c2ccccc2(I))cccc1,5.177231538577342,True
+70,esol_Cyfluthrin,CC1(C)C(C=C(Cl)Cl)C1C(=O)OC(C#N)c2ccc(F)c(Oc3ccccc3)c2,5.176716597570161,True
+71,esol_Pentachloroethane,ClC(Cl)C(Cl)(Cl)Cl,5.176186600348955,True
+72,esol_2-Methylbutane,CCC(C)C,5.1758465807674625,True
+73,esol_3-Methylpentane,CCC(C)CC,5.1758465807674625,True
+74,esol_Triadimefon,CC(C)(C)C(=O)C(Oc1ccc(Cl)cc1)n2cncn2,5.175679656147068,True
+75,esol_Carbanilide,O=C(Nc1ccccc1)Nc2ccccc2,5.175010735083538,True
+76,"esol_1,2-Dichloropropane",CC(Cl)CCl,5.17460105891798,True
+77,esol_Carvacrol,c1(O)c(C)ccc(C(C)C)c1,5.172917439396395,True
+78,esol_Fluorene ,C1c2ccccc2c3ccccc13,5.171823480500663,True
+79,esol_Isopentyl acetate,CC(C)CCOC(=O)C,5.171602649923906,True
+80,esol_Quinonamid,ClC(Cl)CC(=O)NC2=C(Cl)C(=O)c1ccccc1C2=O,5.169849102965589,True
+81,esol_Bromacil,CCC(C)n1c(=O)[nH]c(C)c(Br)c1=O ,5.168516701205425,True
+82,davis_9915743,CCOc1cc2ncc(C#N)c(Nc3ccc(OCc4ccccn4)c(Cl)c3)c2cc1NC(=O)C=CCN(C)C,5.166719733663958,True
+83,davis_9933475,COc1cc2c(Oc3ccc4[nH]c(C)cc4c3F)ncnc2cc1OCCCN1CCCC1,5.163006357636187,True
+84,esol_Fluvalinate,CC(C)C(Nc1ccc(cc1Cl)C(F)(F)F)C(=O)OC(C#N)c2cccc(Oc3ccccc3)c2,5.1618110570679026,True
+85,esol_2-Ethyl-1-butanol,CCC(CC)CO,5.160171328114896,True
+86,esol_3-Methylbutan-1-ol,CC(C)CCO,5.159733101527128,True
+87,"esol_1,1,2-Trichloroethane",ClCC(Cl)Cl,5.1589258062654135,True
+88,esol_Anilofos,COP(=S)(OC)SCC(=O)N(C(C)C)c1ccc(Cl)cc1,5.15602229974218,True
+89,esol_Flucythrinate,CC(C)C(C(=O)OC(C#N)c1cccc(Oc2ccccc2)c1)c3ccc(OC(F)F)cc3,5.155277139951109,True
+90,esol_Isobutylbenzene,CC(C)Cc1ccccc1,5.154766463406395,True
+91,esol_4-Heptanol,CCCC(O)CCC,5.154686474505065,True
+92,esol_Metolachlor,CCc1cccc(C)c1N(C(C)COC)C(=O)CCl ,5.154473805532087,True
+93,davis_11314340,Cc1[nH]nc2ccc(-c3cncc(OCC(N)Cc4ccccc4)c3)cc12,5.154235061407789,True
+94,esol_5-Allyl-5-phenylbarbital,O=C1NC(=O)NC(=O)C1(CC=C)c1ccccc1,5.153119991816433,True
+95,esol_propachlor,CC(C)N(C(=O)CCl)c1ccccc1 ,5.152795984451514,True
+96,esol_Lovastatin,CCC(C)C(=O)OC2CC(C)C=C3C=CC(C)C(CCC1CC(O)CC(=O)O1)C23 ,5.151482083455835,True
+97,esol_2-Methyl-3-pentanol,CCC(O)C(C)C,5.1510165275183875,True
+98,esol_Hexestrol,CCC(C(CC)c1ccc(O)cc1)c2ccc(O)cc2,5.150815980555601,True
+99,esol_Chlorthalidone,NS(=O)(=O)c1cc(ccc1Cl)C2(O)NC(=O)c3ccccc23,5.150439060788131,True
+100,esol_Glyceryl triacetate,CC(=O)OCC(COC(=O)C)OC(=O)C,5.149769564773557,True
+101,esol_menthol,CC(C)C1CCC(C)CC1O ,5.146537316031921,True
+102,esol_Glycerol,OCC(O)CO,5.143851886609752,True
+103,esol_Dinitramine,CCN(CC)c1c(cc(c(N)c1N(=O)=O)C(F)(F)F)N(=O)=O,5.142944369831997,True
+104,"esol_7,12-Dimethylbenz(a)anthracene",Cc1c2ccccc2c(C)c3ccc4ccccc4c13,5.137455088268594,True
+105,esol_indazole,c2ccc1[nH]ncc1c2 ,5.13541521691257,True
+106,esol_1-Heptene,CCCCCC=C,5.127971248525957,True
+107,esol_1-Octene ,CCCCCCC=C,5.127971248525957,True
+108,esol_RTI 9,O2c1ccccc1N(CC)C(=O)c3ccccc23 ,5.127178584851877,True
+109,esol_Sorbitol,OCC(O)C(O)C(O)C(O)CO,5.124506686970507,True
+110,davis_156414,C=CC(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1OCCCN1CCOCC1,5.123837155438574,True
+111,"esol_2,3,4,5,6-PCB",Clc2c(Cl)c(Cl)c(c1ccccc1)c(Cl)c2Cl ,5.118987776801338,True
+112,esol_1-Ethylnaphthalene ,CCc1cccc2ccccc12,5.112025192987186,True
+113,esol_Chlordane,ClC1CC2C(C1Cl)C3(Cl)C(=C(Cl)C2(Cl)C3(Cl)Cl)Cl,5.11153798985588,True
+114,esol_2-Methylanthracene,Cc1ccc2cc3ccccc3cc2c1,5.111190769147758,True
+115,esol_2-Methylnapthalene,Cc1ccc2ccccc2c1,5.111190769147758,True
+116,davis_11712649,O=C(O)c1ccc(Nc2ncc3c(n2)-c2ccc(Cl)cc2C(c2c(F)cccc2F)=NC3)cc1,5.10746358757155,True
+117,esol_Buturon,CC(C#C)N(C)C(=O)Nc1ccc(Cl)cc1,5.106423141374444,True
+118,davis_10113978,Cc1ccc(Nc2nccc(N(C)c3ccc4c(C)n(C)nc4c3)n2)cc1S(N)(=O)=O,5.10516865405754,True
+119,davis_644241,Cc1cn(-c2cc(NC(=O)c3ccc(C)c(Nc4nccc(-c5cccnc5)n4)c3)cc(C(F)(F)F)c2)cn1,5.104871377652735,True
+120,esol_5-Methylchrysene,c1cccc2c3c(C)cc4ccccc4c3ccc12,5.102298944087059,True
+121,esol_Fenothiocarb,CN(C)C(=O)SCCCCOc1ccccc1,5.099559898076629,True
+122,davis_9884685,Oc1cccc(-c2nc(N3CCOCC3)c3oc4ncccc4c3n2)c1,5.099504936151812,True
+123,esol_Ethyl vinyl ether,CCOC=C,5.099153502347988,True
+124,esol_Clonazepam,Clc1ccccc1C2=NCC(=O)Nc3ccc(cc23)N(=O)=O,5.097779217202075,True
+125,esol_o-Chlorobromobenzene,Clc1ccccc1Br,5.096647292542177,True
+126,esol_o-Chloroiodobenzene,Clc1ccccc1I,5.096647292542177,True
+127,"esol_1,2-Dichlorobenzene",Clc1ccccc1Cl,5.096647292542177,True
+128,"esol_2,2'-PCB",Clc1ccccc1c2ccccc2Cl ,5.096647292542177,True
+129,esol_9-Methylanthracene,Cc1c2ccccc2cc3ccccc13,5.095183517522661,True
+130,esol_1-Iodonapthalene,Ic1cccc2ccccc12,5.095183517522661,True
+131,esol_Phenanthrene,c1ccc2c(c1)ccc3ccccc32,5.095183517522661,True
+132,"esol_1,2-Diethylbenzene",CCc1ccccc1CC,5.092728878595371,True
+133,esol_Tricresyl phosphate,Cc1ccc(OP(=O)(Oc2cccc(C)c2)Oc3ccccc3C)cc1,5.092718941349318,True
+134,"esol_2,3-Dimethylnaphthalene",Cc1cc2ccccc2cc1C,5.092657804142361,True
+135,esol_2-Bromonapthalene,Brc1ccc2ccccc2c1,5.092657804142361,True
+136,davis_5494449,Cc1cc(Nc2cc(N3CCN(C)CC3)nc(Sc3ccc(NC(=O)C4CC4)cc3)n2)n[nH]1,5.087984479760435,True
+137,esol_2-Chlorotoluene,Cc1ccccc1Cl,5.087912540387181,True
+138,esol_indoline,c2ccc1NCCc1c2 ,5.087496479426793,True
+139,davis_25127112,N#CCC(C1CCCC1)n1cc(-c2ncnc3[nH]ccc23)cn1.O=P(O)(O)O,5.087211607335788,True
+140,esol_1-Methylnaphthalene,Cc1cccc2ccccc12,5.086448765367665,True
+141,davis_156422,Cc1ccc(-n2nc(C(C)(C)C)cc2NC(=O)Nc2ccc(OCCN3CCOCC3)c3ccccc23)cc1,5.085860756343802,True
+142,esol_o-Chloroaniline,Nc1ccccc1Cl,5.085776146798673,True
+143,esol_2-Ethyltoluene,CCc1ccccc1C,5.083994126440375,True
+144,"esol_1,2,3,4-Tetrahydronapthalene",C1CCc2ccccc2C1,5.08312278152642,True
+145,esol_Flutriafol,OC(Cn1cncn1)(c2ccc(F)cc2)c3ccccc3F,5.082360656817918,True
+146,esol_2-Ethylnaphthalene,CCc1ccc2ccccc2c1,5.082340490247533,True
+147,esol_RTI 22,CCN2c1cc(N(C)C)cc(C)c1NC(=O)c3cccnc23 ,5.079434304739422,True
+148,"esol_9,10-Dimethylanthracene",Cc1c2ccccc2c(C)c3ccccc13,5.078412916511145,True
+149,"esol_1,4-Dimethylnaphthalene ",Cc1ccc(C)c2ccccc12,5.078412916511145,True
+150,esol_Riboflavin,Cc3cc2nc1c(=O)[nH]c(=O)nc1n(CC(O)C(O)C(O)CO)c2cc3C,5.077780195815317,True
+151,esol_p-Fluoroacetanilide,CC(=O)Nc1ccc(F)cc1,5.07762900082761,True
+152,davis_5287969,CN1CCC(c2c(O)cc(O)c3c(=O)cc(-c4ccccc4Cl)oc23)C(O)C1,5.076256229631891,True
+153,esol_Biphenyl,c1ccc(cc1)c2ccccc2,5.075887203130845,True
+154,"esol_N,N-Dimethylaniline",CN(C)c1ccccc1,5.075887203130845,True
+155,"esol_1,2-Dinitrobenzene",O=N(=O)c1ccccc1N(=O)=O,5.075887203130845,True
+156,esol_thioanisole,c1ccccc1SC,5.075887203130845,True
+157,esol_Bromobenzene,Brc1ccccc1,5.075887203130845,True
+158,esol_styrene oxide,C1OC1c2ccccc2 ,5.075887203130845,True
+159,esol_t-Butylbenzene ,CC(C)(C)c1ccccc1,5.075887203130845,True
+160,esol_Propylene,CC=C,5.075180735641945,True
+161,"esol_1,3-Butadiene",C=CC=C,5.075180735641945,True
+162,davis_17755052,CS(=O)(=O)N1CCN(Cc2cc3nc(-c4cccc5[nH]ncc45)nc(N4CCOCC4)c3s2)CC1,5.074164261493035,True
+163,esol_Glutethimide,CCC1(CCC(=O)NC1=O)c2ccccc2 ,5.074007150092336,True
+164,esol_phenylbutazone,CCCCC1C(=O)N(N(C1=O)c2ccccc2)c3ccccc3 ,5.072326444760167,True
+165,davis_151194,Clc1ccc(Nc2nnc(Cc3ccncc3)c3ccccc23)cc1,5.0704804100246665,True
+166,esol_p-Chloroacetanilide,CC(=O)Nc1ccc(Cl)cc1,5.0698475495262665,True
+167,esol_Monuron,CN(C)C(=O)Nc1ccc(Cl)cc1,5.0698475495262665,True
+168,esol_Diazepam,CN2C(=O)CN=C(c1ccccc1)c3cc(Cl)ccc23,5.0672476054473545,True
+169,esol_Propylbenzene ,CCCc1ccccc1,5.065569889236017,True
+170,esol_Pentylbenzene,CCCCCc1ccccc1,5.065569889236017,True
+171,esol_Iodobenzene,Ic1ccccc1,5.065102577542285,True
+172,davis_10427712,Nc1nc(N)c2nc(-c3cccc(O)c3)c(-c3cccc(O)c3)nc2n1,5.065098062355941,True
+173,esol_Niridazole,O=C1NCCN1c2ncc(s2)N(=O)=O,5.065056265111101,True
+174,esol_alloxantin,C1(=O)NC(=O)NC(=O)C1(O)C2(O)C(=O)NC(=O)NC2(=O),5.0639738267847925,True
+175,esol_Phenetole,CCOc1ccccc1,5.0635393574999625,True
+176,esol_Phenol,c1ccccc1O,5.063005698644962,True
+177,esol_Phenytoin,O=C1NC(=O)C(N1)(c2ccccc2)c3ccccc3,5.062596661351387,True
+178,esol_5-Allyl-5-methylbarbital,O=C1NC(=O)NC(=O)C1(C)CC=C,5.061890193862487,True
+179,esol_Diphenyl ether ,O(c1ccccc1)c2ccccc2,5.0617889047974005,True
+180,esol_Nimetazepam,CN2C(=O)CN=C(c1ccccc1)c3cc(ccc23)N(=O)=O,5.060632330535246,True
+181,esol_Iodofenphos,COP(=S)(OC)Oc1cc(Cl)c(I)cc1Cl,5.059015818672819,True
+182,esol_Oxazepam,OC3N=C(c1ccccc1)c2cc(Cl)ccc2NC3=O ,5.059001397340465,True
+183,esol_RTI 19,CCN2c1ccccc1N(C)C(=O)c3ccccc23 ,5.058310442801066,True
+184,esol_2-methoxypteridine,COc2ncc1nccnc1n2,5.058198829085316,True
+185,esol_2-Methylphenol,Cc1ccccc1O,5.057797103416554,True
+186,esol_o-Toluidine,Cc1ccccc1N,5.056281305232345,True
+187,esol_Fluridone,Cn2cc(c1ccccc1)c(=O)c(c2)c3cccc(c3)C(F)(F)F,5.055484769295641,True
+188,esol_Monolinuron,CON(C)C(=O)Nc1ccc(Cl)cc1,5.054244566713925,True
+189,esol_Butyraldehyde,CCCC=O,5.051258154339959,True
+190,esol_Caproaldehyde,CCCCCC=O,5.051258154339959,True
+191,esol_p-Hydroxyacetanilide,CC(=O)Nc1ccc(O)cc1,5.05090313592114,True
+192,esol_dibutylphthalate,CCCCOC(=O)c1ccccc1C(=O)OCCCC ,5.050331901148895,True
+193,esol_Griseofulvin,COC1=CC(=O)CC(C)C13Oc2c(Cl)c(OC)cc(OC)c2C3=O,5.049128751313926,True
+194,esol_2-hydroxypteridine,Oc2ncc1nccnc1n2,5.048843481526021,True
+195,esol_Lorazepam,OC3N=C(c1ccccc1Cl)c2cc(Cl)ccc2NC3=O,5.045141886125876,True
+196,davis_24180719,CCCS(=O)(=O)Nc1ccc(F)c(C(=O)c2c[nH]c3ncc(Cl)cc23)c1F,5.044266408564243,True
+197,esol_6-methoxypteridine,COc2cnc1ncncc1n2,5.04284072892268,True
+198,esol_ethofumesate,CCOC2Oc1ccc(OS(C)(=O)=O)cc1C2(C)C,5.042445278567585,True
+199,esol_Dioxacarb,CNC(=O)Oc1ccccc1C2OCCO2,5.042213380014151,True
+200,esol_phthalimide,O=C1NC(=O)c2ccccc12 ,5.040033317185405,True
+201,esol_Monotropitoside,COC(=O)c1ccccc1OC2OC(COC3OCC(O)C(O)C3O)C(O)C(O)C2O,5.037349219284477,True
+202,esol_Pirimicarb,CN(C)C(=O)Oc1nc(nc(C)c1C)N(C)C,5.0346670096367,True
+203,"esol_2,2,4,6,6'-PCB",Clc1cc(Cl)c(c(Cl)c1)c2c(Cl)cccc2Cl,5.034221694723532,True
+204,esol_3-Hexanoyloxymethylphenyltoin,O=C1N(COC(=O)CCCCC)C(=O)C(N1)(c2ccccc2)c3ccccc3,5.0334800307509004,True
+205,esol_3-Propanoyloxymethylphenytoin,O=C1N(COC(=O)CC)C(=O)C(N1)(c2ccccc2)c3ccccc3,5.0334800307509004,True
+206,esol_Hypoxanthine,O=c1[nH]cnc2nc[nH]c12 ,5.032210505042854,True
+207,davis_16725726,CCn1c(-c2nonc2N)nc2c(C#CC(C)(C)O)ncc(OCC3CCCNC3)c21,5.031390216520584,True
+208,"esol_2,2',3,5,5',6-PCB",Clc1ccc(Cl)c(c1)c2c(Cl)c(Cl)cc(Cl)c2Cl ,5.029983332853939,True
+209,"esol_1,2,3,5-Tetrachlorobenzene",Clc1cc(Cl)c(Cl)c(Cl)c1,5.029983332853939,True
+210,"esol_2,2',3,4,6-PCB",Clc1ccc(c(Cl)c1)c2c(Cl)ccc(Cl)c2Cl ,5.029983332853939,True
+211,esol_Dinoseb,CCC(C)c1cc(cc(N(=O)=O)c1O)N(=O)=O ,5.0293685433976645,True
+212,esol_7-methylpteridine,Cc2cnc1cncnc1n2,5.029263716582645,True
+213,esol_Bromoethane,CCBr,5.029157698296131,True
+214,davis_11485656,Cc1ccc(F)c(NC(=O)Nc2ccc(-c3cccc4[nH]nc(N)c34)cc2)c1,5.027792893527535,True
+215,esol_Ethoxyzolamide,CCOc2ccc1nc(sc1c2)S(N)(=O)=O ,5.027066912973066,True
+216,esol_cycloate,CCSC(=O)N(CC)C1CCCCC1 ,5.024438788533444,True
+217,esol_Fenoxycarb,CCOC(=O)NCCOc2ccc(Oc1ccccc1)cc2,5.02414240304815,True
+218,esol_borneol,CC1(C)C2CCC1(C)C(O)C2,5.02328133901607,True
+219,esol_Trietazine,CCNc1nc(Cl)nc(n1)N(CC)CC,5.022881568535969,True
+220,esol_hematein,c1cc(O)c(O)c2OCC3(O)CC4=CC(=O)C(O)=CC4=C3c21,5.022172680820556,True
+221,davis_176155,CS(=O)c1ccc(-c2nc(-c3ccc(F)cc3)c(-c3ccncc3)[nH]2)cc1,5.020640138641632,True
+222,"esol_2,3,5-Trichlorophenol",Oc1cc(Cl)cc(Cl)c1Cl,5.020627985294643,True
+223,esol_triamcinolone diacetate,CC(=O)OCC(=O)C3(O)C(CC4C2CCC1=CC(=O)C=CC1(C)C2(F)C(O)CC34C)OC(C)=O ,5.020511527873869,True
+224,"esol_2,6-Dimethylnaphthalene ",Cc1ccc2cc(C)ccc2c1,5.019960971193812,True
+225,"esol_1,3-Dinitrobenzene",O=N(=O)c1cccc(c1)N(=O)=O,5.0195690604342476,True
+226,esol_1-Nonyne ,CCCCCCCC#C,5.0163923322678245,True
+227,esol_RTI 12,CCN2c1nc(Cl)ccc1N(C)C(=O)c3cccnc23 ,5.015180056511504,True
+228,esol_Equilenin,CC34CCc1c(ccc2cc(O)ccc12)C3CCC4=O,5.0150378727436244,True
+229,davis_11234052,Cc1cc2c(F)c(Oc3ncnn4cc(OCC(C)O)c(C)c34)ccc2[nH]1,5.0134061425277485,True
+230,esol_acetyl sulfisoxazole,CC(=O)N(S(=O)c1ccc(N)cc1)c2onc(C)c2C ,5.012347872299141,True
+231,esol_Trichloronate,CCOP(=S)(CC)Oc1cc(Cl)c(Cl)cc1Cl,5.011903474396383,True
+232,esol_1-Chlorobutane,CCCCCl,5.011088146687256,True
+233,esol_2-Chloro-2-methylbutane,CCC(C)(C)Cl,5.011088146687256,True
+234,"esol_2,2',3,3'-PCB",Clc1cccc(c1Cl)c2cccc(Cl)c2Cl,5.008391285721954,True
+235,"esol_2,2',3,4,5-PCB",Clc1cc(Cl)c(cc1Cl)c2cccc(Cl)c2Cl ,5.008391285721954,True
+236,"esol_2',3,4-PCB",Clc1ccc(cc1)c2cccc(Cl)c2Cl ,5.008391285721954,True
+237,esol_Ethyl butyrate,CCCCCOC(=O)CC,5.008089737693182,True
+238,esol_Pentyl acetate,CCCCCOC(=O)C,5.008089737693182,True
+239,esol_Methyl butyl ether ,CCCCOC,5.007656913139208,True
+240,esol_2-pyrrolidone,O=C1CCCN1,5.00752177972053,True
+241,esol_o-Hydroxybenzamide,NC(=O)c1ccccc1O,5.007105899883787,True
+242,esol_Etofenprox,CCOc1ccc(cc1)C(C)(C)COCc3cccc(Oc2ccccc2)c3,5.006999324524023,True
+243,esol_Simetryn,CSc1nc(nc(n1)N(C)C)N(C)C,5.00657556742802,True
+244,"esol_2,6-Dimethylpyridine",Cc1cccc(C)n1,5.00657556742802,True
+245,esol_benzylurea,NC(=O)NCc1ccccc1 ,5.006400579411837,True
+246,esol_Propyl propanoate,CCCCC(=O)OC,5.004915205925218,True
+247,esol_Methyl propionate,CCC(=O)OC,5.004915205925218,True
+248,esol_methyl laurate,CCCCCCCCCCCC(=O)OC,5.004915205925218,True
+249,davis_11364421,CCC1C(=O)N(C)c2cnc(Nc3ccc(C(=O)NC4CCN(C)CC4)cc3OC)nc2N1C1CCCC1,5.004720137643968,True
+250,esol_stadacaine,CCCCOc1ccc(C(=O)OCC)c(c1)N(CC)CC ,5.003757669216371,True
+251,esol_RTI 23,CCN2c1cc(OC)cc(C)c1NC(=O)c3cccnc23 ,5.002721210553425,True
+252,esol_Ethion,CCOP(=S)(OCC)SCSP(=S)(OCC)OCC,5.002513961370343,True
+253,"esol_1,4-Difluorobenzene",Fc1ccc(F)cc1,5.002027922524074,True
+254,esol_2-Butanone,CCC(=O)C,5.001931905195399,True
+255,davis_153999,CN(C)CC1CCn2cc(c3ccccc32)C2=C(C(=O)NC2=O)c2cn(c3ccccc23)CCO1,5.001684978217535,True
+256,esol_2-Methyl-1-Pentene,CCCC(=C)C,5.001499080641425,True
+257,"esol_2,2-Dimethylbutane",CCC(C)(C)C,5.001499080641425,True
+258,esol_DEF,CCCCSP(=O)(SCCCC)SCCCC,5.001499080641425,True
+259,esol_3-Hexyne,CCC#CCC,5.001499080641425,True
+260,esol_1-Nitropropane,CCCN(=O)=O,5.001499080641425,True
+261,esol_2-Methyl-1-Butene,CCC(=C)C,5.001499080641425,True
+262,esol_1-Bromoheptane,CCCCCCCBr,5.001499080641425,True
+263,esol_Iodoethane,CCI,5.001499080641425,True
+264,esol_Propane,CCC,5.001499080641425,True
+265,esol_3-Ethyl-3-pentanol,CCC(O)(CC)CC,5.001499080641425,True
+266,esol_Perylene,c1cc2cccc3c4cccc5cccc(c(c1)c23)c54,5.001428006188415,True
+267,esol_Benzo[ghi]perylene,c1cc2ccc3ccc4ccc5cccc6c(c1)c2c3c4c56,5.001428006188415,True
+268,davis_9926791,CC1CCN(C(=O)CC#N)CC1N(C)c1ncnc2[nH]ccc12,5.001297428946398,True
+269,davis_3038525,O=c1ncn2nc(Sc3ccc(F)cc3F)ccc2c1-c1c(Cl)cccc1Cl,5.000278590428034,True
+270,esol_Procymidone,CC12CC2(C)C(=O)N(C1=O)c3cc(Cl)cc(Cl)c3,5.000217303715676,True
+271,esol_1-Hexanol,CCCCCCO,4.996220189296404,True
+272,esol_1-Pentanol,CCCCCO,4.996220189296404,True
+273,esol_1-Tetradecanol,CCCCCCCCCCCCCCO,4.996220189296404,True
+274,esol_1-Decanol,CCCCCCCCCCO,4.996220189296404,True
+275,esol_1-Octadecanol,CCCCCCCCCCCCCCCCCCO,4.996220189296404,True
+276,esol_1-Butanol,CCCCO,4.996220189296404,True
+277,esol_1-Nonanol,CCCCCCCCCO,4.996220189296404,True
+278,"esol_P,P'-DDE",ClC(Cl)=C(c1ccc(Cl)cc1)c2ccc(Cl)cc2,4.994246471222731,True
+279,esol_Bromochloromethane,ClCBr,4.994246471222731,True
+280,esol_p-Chloronitrobenzene,Clc1ccc(cc1)N(=O)=O,4.994246471222731,True
+281,esol_m-Chlorobromobenzene,Clc1cccc(Br)c1,4.994246471222731,True
+282,"esol_1,3-Dichlorobenzene",Clc1cccc(Cl)c1,4.994246471222731,True
+283,esol_Hexachloroethane,ClC(Cl)(Cl)C(Cl)(Cl)Cl,4.994246471222731,True
+284,esol_Chloropicrin,ClC(Cl)(Cl)N(=O)=O,4.994246471222731,True
+285,esol_Quintozene,Clc1c(Cl)c(Cl)c(N(=O)=O)c(Cl)c1Cl,4.994246471222731,True
+286,esol_Tetrachloroethylene,ClC(=C(Cl)Cl)Cl,4.994246471222731,True
+287,esol_2-butenal,CC=CC=O,4.994010560528542,True
+288,esol_Furfural,O=Cc1ccco1,4.994010560528542,True
+289,davis_11667893,CC1(C)CNc2cc(NC(=O)c3cccnc3NCc3ccncc3)ccc21,4.993867298318085,True
+290,esol_Cortisone,CC12CC(=O)C3C(CCC4=CC(=O)CCC34C)C2CCC1(O)C(=O)CO,4.993597647619839,True
+291,esol_Fludrocortisone,CC34CC(O)C1(F)C(CCC2=CC(=O)CCC12C)C3CCC4(O)C(=O)CO ,4.993597647619839,True
+292,"esol_2,2',3,3',4,4',5,5'-PCB",Clc1cc(c(Cl)c(Cl)c1Cl)c2cc(Cl)c(Cl)c(Cl)c2Cl,4.993498034095555,True
+293,"esol_3,4-Dichloronitrobenzene",O=N(=O)c1cc(Cl)c(Cl)cc1,4.993498034095555,True
+294,"esol_2,2',3,3',4,4'-PCB",Clc1ccc(c(Cl)c1Cl)c2ccc(Cl)c(Cl)c2Cl ,4.993498034095555,True
+295,"esol_2,2',4,4',5,5'-PCB",Clc1cc(Cl)c(cc1Cl)c2cc(Cl)c(Cl)cc2Cl ,4.993498034095555,True
+296,"esol_2,3',4',5-PCB",Clc1ccc(Cl)c(c1)c2ccc(Cl)c(Cl)c2,4.993498034095555,True
+297,"esol_2,4',5-PCB",Clc1ccc(cc1)c2cc(Cl)ccc2Cl ,4.993498034095555,True
+298,esol_4-Ethyltoluene,CCc1ccc(C)cc1,4.992873056287468,True
+299,esol_Reposal,CCC1(C(=O)NC(=O)NC1=O)C2=CCC3CCC2C3,4.992405801390641,True
+300,esol_4-hydroxypyridine,Oc1ccncc1,4.991961623861767,True
+301,esol_Ethylene,C=C,4.991021293288587,True
+302,"esol_2,3-Dimethyl-1,3-Butadiene",CC(=C)C(=C)C,4.991021293288587,True
+303,esol_Cycloheptane,C1CCCCCC1,4.990573332727303,True
+304,esol_Cyclopentane ,C1CCCC1,4.990573332727303,True
+305,esol_Cyclopentene ,C1CC=CC1,4.990573332727303,True
+306,esol_Cycloheptene,C1CCC=CCC1,4.990573332727303,True
+307,esol_Tetrahydropyran ,C1CCOCC1,4.990573332727303,True
+308,davis_216239,CNC(=O)c1cc(Oc2ccc(NC(=O)Nc3ccc(Cl)c(C(F)(F)F)c3)cc2)ccn1,4.99014734773082,True
+309,esol_Pyrimidine,c1cncnc1,4.9898049664165045,True
+310,esol_guanine,Nc2nc1[nH]cnc1c(=O)[nH]2 ,4.989469999383387,True
+311,esol_TEFLUBENZURON,Fc1cccc(F)c1C(=O)NC(=O)Nc2cc(Cl)c(F)c(Cl)c2F ,4.988553334371584,True
+312,"esol_2,6-Dichlorophenol",Oc1c(Cl)cccc1Cl,4.988381048405852,True
+313,esol_3-chloropropionitrile,ClCCC#N ,4.986971669152418,True
+314,esol_Nitrofen,Clc2ccc(Oc1ccc(cc1)N(=O)=O)c(Cl)c2,4.986433261130181,True
+315,esol_Aldrin,ClC1=C(Cl)C2(Cl)C3C4CC(C=C4)C3C1(Cl)C2(Cl)Cl,4.985675532779639,True
+316,esol_Lenacil,O=c2[nH]c1CCCc1c(=O)n2C3CCCCC3,4.985598665418089,True
+317,"esol_N,N-Dimethylacetamide",CN(C)C(=O)C,4.985090229730874,True
+318,esol_Dichlorophen,Oc1ccc(Cl)cc1Cc2cc(Cl)ccc2O,4.984891123663435,True
+319,esol_Ethane,CC,4.9846574051768995,True
+320,esol_Bromomethane,CBr,4.9846574051768995,True
+321,esol_Furane,c1ccoc1,4.9846574051768995,True
+322,"esol_2,2-Dimethylpropanol",CC(C)(C)CO,4.9846574051768995,True
+323,esol_Tetrabromomethane,BrC(Br)(Br)Br,4.9846574051768995,True
+324,esol_Dimethyl sulfide,CSC,4.9846574051768995,True
+325,esol_Methyl t-butyl ether ,COC(C)(C)C,4.9846574051768995,True
+326,"esol_1,2,4-tribromobenzene",c1(Br)c(Br)cc(Br)cc1,4.9846574051768995,True
+327,"esol_1,4-Dibromobenzene",Brc1ccc(Br)cc1,4.9846574051768995,True
+328,esol_L-arabinose,C1OC(O)C(O)C(O)C1O,4.9846574051768995,True
+329,"esol_1,3-Dibromobenzene",Brc1cccc(Br)c1,4.9846574051768995,True
+330,esol_Methane,C,4.9846574051768995,True
+331,esol_Ethyne,C#C,4.9846574051768995,True
+332,"esol_3,4-Dichlorophenol",Oc1ccc(Cl)c(Cl)c1,4.984142686536259,True
+333,esol_chloroacetamide,NC(=O)CCl ,4.983808150033201,True
+334,esol_Mefenacet,CN(C(=O)COc1nc2ccccc2s1)c3ccccc3,4.983788702864152,True
+335,esol_m-Chloroiodobenzene,Clc1cccc(I)c1,4.98346184563417,True
+336,esol_bromoxynil,Oc1c(Br)cc(C#N)cc1Br ,4.983166760897219,True
+337,esol_Dimethoxymethane,COCOC,4.981806090075824,True
+338,esol_Sucrose,OCC2OC(OC1(CO)OC(CO)C(O)C1O)C(O)C(O)C2O ,4.980584586428388,True
+339,"esol_3,3-Dimethyl-1-butanol",CC(C)(C)CCO,4.979378513831879,True
+340,esol_aminothiazole,Nc1nccs1 ,4.978933820673,True
+341,esol_Metranidazole,Cc1ncc(N(=O)=O)n1CCO ,4.978871569629992,True
+342,"esol_cis-1,2-Dimethylcyclohexane",C/C1CCCCC1\C,4.978800758348156,True
+343,esol_Risocaine,CCCOC(=O)c1ccc(N)cc1,4.977873392310434,True
+344,esol_Butamben,CCCCOC(=O)c1ccc(N)cc1,4.977873392310434,True
+345,esol_Cyclooctyl-5-spirobarbituric acid,O=C2NC(=O)C1(CCCCCCC1)C(=O)N2,4.977282790947845,True
+346,esol_Cyclobutyl-5-spirobarbituric acid,O=C2NC(=O)C1(CCC1)C(=O)N2,4.977282790947845,True
+347,esol_Methyl hydrazine,CNN,4.976769560163214,True
+348,esol_Diosgenin,C1C(O)CCC2(C)CC3CCC4(C)C5(C)CC6OCC(C)CC6OC5CC4C3C=C21,4.975679908821511,True
+349,esol_4-Bromophenol,Oc1ccc(Br)cc1,4.975302057617604,True
+350,esol_p-Nitrophenol,Oc1ccc(cc1)N(=O)=O,4.975302057617604,True
+351,davis_11617559,COc1ccc(COc2ccc(Cc3cnc(N)nc3N)cc2OC)cc1,4.974306106219829,True
+352,esol_Pentachlorophenol,Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl,4.974236233906629,True
+353,davis_5291,Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1,4.9738367335285405,True
+354,esol_Mecarbam,CCOC(=O)N(C)C(=O)CSP(=S)(OCC)OCC,4.973114159017431,True
+355,esol_Triethyl phosphate,CCOP(=O)(OCC)OCC,4.972681334463457,True
+356,esol_fensulfothion,CCOP(=S)(OCC)Oc1ccc(cc1)S(C)=O ,4.972681334463457,True
+357,esol_eucalyptol,CC12CCC(CC1)C(C)(C)O2 ,4.972507733159325,True
+358,esol_3-Methyl-3-heptanol,CCCCC(C)(O)CC,4.9719557532090315,True
+359,esol_3-Methyl-3-pentanol,CCC(C)(O)CC,4.9719557532090315,True
+360,esol_3-Methyl-3-hexanol,CCCC(C)(O)CC,4.9719557532090315,True
+361,esol_Abate,COP(=S)(OC)Oc1ccc(Sc2ccc(OP(=S)(OC)OC)cc2)cc1,4.970467081173797,True
+362,esol_Aminocarb,CNC(=O)Oc1ccc(N(C)C)c(C)c1,4.968232674489245,True
+363,esol_methyl gallate,COC(=O)c1cc(O)c(O)c(O)c1 ,4.96806329314459,True
+364,davis_10074640,Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nc(-c2cccnc2)cs1,4.9672680930276325,True
+365,davis_3025986,CC(C)(C)c1cnc(CSc2cnc(NC(=O)C3CCNCC3)s2)o1,4.966803392869203,True
+366,davis_11656518,Cn1c(Nc2ccc(C(F)(F)F)cc2)nc2cc(Oc3ccnc(-c4ncc(C(F)(F)F)[nH]4)c3)ccc21,4.966793097757405,True
+367,esol_2-cyanoguanidine,NC(N)=NC#N ,4.966511457363083,True
+368,esol_Formothion,COP(=S)(OC)SCC(=O)N(C)C=O,4.965625638904548,True
+369,esol_p-Chloroaniline,Nc1ccc(Cl)cc1,4.964030125839982,True
+370,esol_allantoin,NC(=O)NC1NC(=O)NC1=O ,4.96391184293773,True
+371,esol_Neburon,CCCCN(C)C(=O)Nc1ccc(Cl)c(Cl)c1,4.963740631512973,True
+372,davis_9926054,Cc1ccc2nc(NCCN)c3ncc(C)n3c2c1.Cl,4.962907289528526,True
+373,esol_uracil,O=c1cc[nH]c(=O)[nH]1 ,4.959836699333612,True
+374,davis_11717001,OCCn1cc(-c2ccc3c(c2)CCC3=NO)c(-c2ccncc2)n1,4.959214070857444,True
+375,esol_Caffeine,Cn1cnc2n(C)c(=O)n(C)c(=O)c12,4.958896988676335,True
+376,esol_Nerol,CC(C)=CCC/C(C)=C\CO,4.958275089604773,True
+377,esol_Norea,CN(C)C(=O)NC1CC2CC1C3CCCC23,4.958253987087327,True
+378,davis_11338033,O=C(NC1CCNCC1)c1[nH]ncc1NC(=O)c1c(Cl)cccc1Cl,4.9581843111901085,True
+379,esol_Cyclooctanol,OC1CCCCCCC1,4.954837861803534,True
+380,davis_10184653,CN(C)CC=CC(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1OC1CCOC1,4.954755225392698,True
+381,esol_m-Nitroaniline,Nc1cccc(c1)N(=O)=O,4.954441059794151,True
+382,esol_p-benzidine,Nc1ccc(cc1)c2ccc(N)cc2,4.954441059794151,True
+383,esol_butachlor,CCCCOCN(C(=O)CCl)c1c(CC)cccc1CC ,4.953125586637276,True
+384,esol_5-fluorouracil,Fc1c[nH]c(=O)[nH]c1=O ,4.9514758743258485,True
+385,davis_9929127,COc1c(Cl)cc2c([nH]c3cnccc32)c1NC(=O)c1cccnc1C,4.950312973903828,True
+386,esol_Ancymidol,COc1ccc(cc1)C(O)(C2CC2)c3cncnc3 ,4.949481382089181,True
+387,"esol_trans-1,4-Dimethylcyclohexane",C/C1CCC(\C)CC1,4.94892193425313,True
+388,esol_chlordimeform,CN(C)C=Nc1ccc(Cl)cc1C,4.948516124497825,True
+389,esol_Phosalone,CCOP(=S)(OCC)SCn1c(=O)oc2cc(Cl)ccc12,4.9475978549073165,True
+390,esol_Linuron,CON(C)C(=O)Nc1ccc(Cl)c(Cl)c1,4.9468989560484475,True
+391,esol_Prasterone,CC34CCC1C(CC=C2CC(O)CCC12C)C3CCC4=O,4.946871788122422,True
+392,esol_Metribuzin,CSc1nnc(c(=O)n1N)C(C)(C)C,4.940869990726907,True
+393,davis_176167,Cn1cc(C2=C(c3cn(C4CCN(Cc5ccccn5)CC4)c4ccccc34)C(=O)NC2=O)c2ccccc21,4.932550632974758,True
+394,esol_Stanolone,CC34CCC1C(CCC2CC(=O)CCC12C)C3CCC4O ,4.930101187110907,True
+395,esol_Estrone,CC12CCC3C(CCc4cc(O)ccc34)C2CCC1=O,4.929585231539683,True
+396,davis_208908,CS(=O)(=O)CCNCc1ccc(-c2ccc3ncnc(Nc4ccc(OCc5cccc(F)c5)c(Cl)c4)c3c2)o1,4.924571871402709,True
+397,davis_6918454,O=C(NOCC1CC1)c1ccc(F)c(F)c1Nc1ccc(I)cc1Cl,4.919318936903065,True
+398,esol_testosterone propionate,CCC(=O)OC3CCC4C2CCC1=CC(=O)CCC1(C)C2CCC34C ,4.916707596997546,True
+399,davis_24779724,Cn1cc(-c2ccc3nnc(Sc4ccc5ncccc5c4)n3n2)cn1,4.902360954949754,True
+400,davis_10127622,Cn1cnc2c(F)c(Nc3ccc(Br)cc3Cl)c(C(=O)NOCCO)cc21,4.8829773588948715,True

@@ -1,0 +1,37 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+artifacts/.metrics_reference.json
+data/raw/*.tab
+data/raw/davis_pairs.csv
+data/raw/delaney_esol.csv
+# keep MANIFEST + splits + demo library tracked when publishing
+data/cache/
+artifacts/.metrics_v1.1_reference.json
+
+# machine-specific handoff; names a private host user
+CODEX_MINI_HANDOFF.md
+# KIBA split tables exceed or sit on GitHub's 100MB file limit
+data/splits_kiba/*.csv
+
+# KIBA pair table is over GitHub's 100 MB file limit (101,906,920 bytes)
+data/raw/kiba_pairs.csv
+
+# run logs embed an absolute machine path
+artifacts/*.log
+artifacts/models_v1.2/*.log
+
+# emails, Drive links, and an unrelated writing sample
+artifacts/WRITING_BRIEF.md
+
+# lab notebook names the box path and is marked not published
+LAB_NOTEBOOK.md
+
+# Model directories on disk are about 2 MB to 18 MB, under the file limit.
+# Do not ignore model directories under the file limit.
+# artifacts/models_v1.2/: the saved npz scores live there.

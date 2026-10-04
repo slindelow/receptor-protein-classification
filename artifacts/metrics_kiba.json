@@ -1,0 +1,73 @@
+{
+  "binder_threshold_kiba_score": 12.1,
+  "data_freeze_id": "sofia-vs-kiba-v1.3",
+  "freeze_id": "sofia-vs-kiba-v1.3",
+  "generated_at_america_toronto": "2026-10-02T17:26:49-04:00",
+  "label_note": "pkd column holds KIBA score (not true pKd)",
+  "manifest_sha256": {
+    "kiba_binding_affinity_v2.txt": "0b062d3f51e80b63acda95bcc6364cacafa744d1dcd2d97293ccc878540b5732",
+    "kiba_pairs.csv": "9c4e3322d192a9a160cfa12968ceb4c3fe6acd49103611b82037302df75268af",
+    "ligands_can.txt": "a95797abaf31b17bd2471dbf3e3476f588d5a79797903cc156528f66e55c963b",
+    "proteins.txt": "2ba9dbc2959d88b0740aaf28828c4c611c2dbd1c2019547eb2ec1c3daa192604"
+  },
+  "models": {
+    "cold_protein_aac_dpc": "artifacts/models_kiba/hgb_kiba_cold_protein_aac_dpc.joblib",
+    "cold_protein_ligand_only": "artifacts/models_kiba/hgb_kiba_cold_protein_ligand_only.joblib",
+    "scaffold_aac_dpc": "artifacts/models_kiba/hgb_kiba_scaffold_aac_dpc.joblib",
+    "scaffold_ligand_only": "artifacts/models_kiba/hgb_kiba_scaffold_ligand_only.joblib"
+  },
+  "splits": {
+    "cold_protein": {
+      "aac_dpc": {
+        "auroc": 0.7687845072680382,
+        "binder_rate": 0.24349258649093905,
+        "ef_at_1pct": 3.8871904531203882,
+        "ef_at_5pct": 3.497970230040595,
+        "n": 24280.0,
+        "n_binders": 5912.0,
+        "n_test": 24280.0,
+        "n_train": 81962.0,
+        "protein_type": "aac_dpc",
+        "spearman_rho": 0.5414763237185265
+      },
+      "ligand_only": {
+        "auroc": 0.7484940504062487,
+        "binder_rate": 0.24349258649093905,
+        "ef_at_1pct": 3.9040912811774335,
+        "ef_at_5pct": 3.308525033829499,
+        "n": 24280.0,
+        "n_binders": 5912.0,
+        "n_test": 24280.0,
+        "n_train": 81962.0,
+        "protein_type": "none",
+        "spearman_rho": 0.48061050950948836
+      }
+    },
+    "scaffold": {
+      "aac_dpc": {
+        "auroc": 0.7703826169957573,
+        "binder_rate": 0.1913958500612771,
+        "ef_at_1pct": 4.960228177902742,
+        "ef_at_5pct": 3.817085501542611,
+        "n": 23663.0,
+        "n_binders": 4529.0,
+        "n_test": 23663.0,
+        "n_train": 82227.0,
+        "protein_type": "aac_dpc",
+        "spearman_rho": 0.5584127343893986
+      },
+      "ligand_only": {
+        "auroc": 0.6670688516449617,
+        "binder_rate": 0.1913958500612771,
+        "ef_at_1pct": 1.6313639340657908,
+        "ef_at_5pct": 2.21964625118605,
+        "n": 23663.0,
+        "n_binders": 4529.0,
+        "n_test": 23663.0,
+        "n_train": 82227.0,
+        "protein_type": "none",
+        "spearman_rho": 0.33935479645027045
+      }
+    }
+  }
+}

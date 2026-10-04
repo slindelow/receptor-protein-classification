@@ -1,0 +1,205 @@
+{
+  "config": {
+    "binder_pkd_threshold": 7.0,
+    "fingerprint": {
+      "n_bits": 2048,
+      "radius": 2
+    },
+    "histgbm": {
+      "early_stopping": true,
+      "l2_regularization": 0.1,
+      "learning_rate": 0.08,
+      "max_depth": 8,
+      "max_iter": 200,
+      "min_samples_leaf": 20,
+      "n_iter_no_change": 15,
+      "random_state": 42,
+      "validation_fraction": 0.1
+    },
+    "model": "HistGradientBoostingRegressor",
+    "seed": 42
+  },
+  "cuts": [],
+  "data_freeze_id": "sofia-vs-v1-2026-10",
+  "esm2_status": "ran (esm2_t6_8M_UR50D, dim=320, cache=data/cache/esm2_t6)",
+  "freeze_id": "sofia-vs-v1.1-protein",
+  "generated_at_america_toronto": "2026-10-02T16:35:33-04:00",
+  "manifest_sha256": {
+    "davis_pairs.csv": "6b6281de1815c6a4131299091e64d91284b9fb151022a00c0f4bb9e2e687098e",
+    "davis_tdc.tab": "6d4c6809dcb7c5da2b91a32d594d6935b75484940bde4d18055eb5e1059262f4"
+  },
+  "models": {
+    "cold_protein_full_aac": "artifacts/models_v1.1/hgb_cold_protein_full_aac.joblib",
+    "cold_protein_full_aac_dpc": "artifacts/models_v1.1/hgb_cold_protein_full_aac_dpc.joblib",
+    "cold_protein_full_dpc": "artifacts/models_v1.1/hgb_cold_protein_full_dpc.joblib",
+    "cold_protein_full_esm2": "artifacts/models_v1.1/hgb_cold_protein_full_esm2.joblib",
+    "cold_protein_ligand_only": "artifacts/models_v1.1/hgb_cold_protein_ligand_only.joblib",
+    "scaffold_full_aac": "artifacts/models_v1.1/hgb_scaffold_full_aac.joblib",
+    "scaffold_full_aac_dpc": "artifacts/models_v1.1/hgb_scaffold_full_aac_dpc.joblib",
+    "scaffold_full_dpc": "artifacts/models_v1.1/hgb_scaffold_full_dpc.joblib",
+    "scaffold_full_esm2": "artifacts/models_v1.1/hgb_scaffold_full_esm2.joblib",
+    "scaffold_ligand_only": "artifacts/models_v1.1/hgb_scaffold_ligand_only.joblib"
+  },
+  "protein_modes_ran": [
+    "aac",
+    "dpc",
+    "aac_dpc",
+    "esm2"
+  ],
+  "protein_modes_requested": [
+    "aac",
+    "dpc",
+    "aac_dpc",
+    "esm2"
+  ],
+  "splits": {
+    "cold_protein": {
+      "ligand_only": {
+        "auroc": 0.8280313160505544,
+        "binder_rate": 0.07507739938080496,
+        "ef_at_1pct": 8.452815226011102,
+        "ef_at_5pct": 6.531226366277912,
+        "feat_dim": 2048.0,
+        "n": 5168.0,
+        "n_binders": 388.0,
+        "n_test": 5168.0,
+        "n_train": 18020.0,
+        "protein_dim": 0.0,
+        "protein_type": "none",
+        "spearman_rho": 0.5001575530870505
+      },
+      "protein": {
+        "aac": {
+          "auroc": 0.8352413406375362,
+          "binder_rate": 0.07507739938080496,
+          "ef_at_1pct": 8.708961141950834,
+          "ef_at_5pct": 6.171237511443697,
+          "feat_dim": 2068.0,
+          "n": 5168.0,
+          "n_binders": 388.0,
+          "n_test": 5168.0,
+          "n_train": 18020.0,
+          "protein_dim": 20.0,
+          "protein_type": "aac",
+          "spearman_rho": 0.4983989543490435
+        },
+        "aac_dpc": {
+          "auroc": 0.8689384462752879,
+          "binder_rate": 0.07507739938080496,
+          "ef_at_1pct": 10.245836637589216,
+          "ef_at_5pct": 6.994069179636189,
+          "feat_dim": 2468.0,
+          "n": 5168.0,
+          "n_binders": 388.0,
+          "n_test": 5168.0,
+          "n_train": 18020.0,
+          "protein_dim": 420.0,
+          "protein_type": "aac_dpc",
+          "spearman_rho": 0.5501253139581715
+        },
+        "dpc": {
+          "auroc": 0.865162511322952,
+          "binder_rate": 0.07507739938080496,
+          "ef_at_1pct": 9.989690721649485,
+          "ef_at_5pct": 7.148350117422281,
+          "feat_dim": 2448.0,
+          "n": 5168.0,
+          "n_binders": 388.0,
+          "n_test": 5168.0,
+          "n_train": 18020.0,
+          "protein_dim": 400.0,
+          "protein_type": "dpc",
+          "spearman_rho": 0.5408998681156207
+        },
+        "esm2": {
+          "auroc": 0.878318703360221,
+          "binder_rate": 0.07507739938080496,
+          "ef_at_1pct": 10.245836637589216,
+          "ef_at_5pct": 7.405485013732436,
+          "feat_dim": 2368.0,
+          "n": 5168.0,
+          "n_binders": 388.0,
+          "n_test": 5168.0,
+          "n_train": 18020.0,
+          "protein_dim": 320.0,
+          "protein_type": "esm2",
+          "spearman_rho": 0.5476280799863112
+        }
+      }
+    },
+    "scaffold": {
+      "ligand_only": {
+        "auroc": 0.4413144980704179,
+        "binder_rate": 0.056916698077647945,
+        "ef_at_1pct": 0.0,
+        "ef_at_5pct": 0.19815266643429766,
+        "feat_dim": 2048.0,
+        "n": 5306.0,
+        "n_binders": 302.0,
+        "n_test": 5306.0,
+        "n_train": 17813.0,
+        "protein_dim": 0.0,
+        "protein_type": "none",
+        "spearman_rho": -0.010665435581998263
+      },
+      "protein": {
+        "aac": {
+          "auroc": 0.627587334106225,
+          "binder_rate": 0.056916698077647945,
+          "ef_at_1pct": 6.507235712533725,
+          "ef_at_5pct": 3.3025444405716278,
+          "feat_dim": 2068.0,
+          "n": 5306.0,
+          "n_binders": 302.0,
+          "n_test": 5306.0,
+          "n_train": 17813.0,
+          "protein_dim": 20.0,
+          "protein_type": "aac",
+          "spearman_rho": 0.21236652430966807
+        },
+        "aac_dpc": {
+          "auroc": 0.6436804199024887,
+          "binder_rate": 0.056916698077647945,
+          "ef_at_1pct": 5.20578857002698,
+          "ef_at_5pct": 3.6327988846287904,
+          "feat_dim": 2468.0,
+          "n": 5306.0,
+          "n_binders": 302.0,
+          "n_test": 5306.0,
+          "n_train": 17813.0,
+          "protein_dim": 420.0,
+          "protein_type": "aac_dpc",
+          "spearman_rho": 0.23971275455790156
+        },
+        "dpc": {
+          "auroc": 0.6341231650441237,
+          "binder_rate": 0.056916698077647945,
+          "ef_at_1pct": 4.880426784400294,
+          "ef_at_5pct": 3.500697107005925,
+          "feat_dim": 2448.0,
+          "n": 5306.0,
+          "n_binders": 302.0,
+          "n_test": 5306.0,
+          "n_train": 17813.0,
+          "protein_dim": 400.0,
+          "protein_type": "dpc",
+          "spearman_rho": 0.2218666629709898
+        },
+        "esm2": {
+          "auroc": 0.6701546047929868,
+          "binder_rate": 0.056916698077647945,
+          "ef_at_1pct": 5.856512141280353,
+          "ef_at_5pct": 4.095155106308819,
+          "feat_dim": 2368.0,
+          "n": 5306.0,
+          "n_binders": 302.0,
+          "n_test": 5306.0,
+          "n_train": 17813.0,
+          "protein_dim": 320.0,
+          "protein_type": "esm2",
+          "spearman_rho": 0.2566352521699749
+        }
+      }
+    }
+  }
+}

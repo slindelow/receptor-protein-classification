@@ -1,0 +1,21 @@
+{
+  "freeze_id": "sofia-vs-v1.5-screen",
+  "generated_at_america_toronto": "2026-10-03T08:17:53-04:00",
+  "library": {
+    "hiv_raw_bytes": 2193844,
+    "hiv_raw_path": "data/raw/moleculenet_hiv.csv",
+    "hiv_raw_sha256": "9ffa7fe57dc86c342627ee1d5255e937e2ab812393c73c4d16c697022f6e1d22",
+    "library_bytes": 592243,
+    "library_path": "data/screen_library/library_v1.5.csv",
+    "library_sha256": "5721c043c87b744e4f288d31319e7743bf72e7a064de658708b0a16c61df0604",
+    "n": 8068,
+    "n_davis_spike_in": 68,
+    "n_from_hiv": 8000,
+    "n_unique_scaffolds": 7582,
+    "requested_n": 8000,
+    "seed": 42,
+    "source_name": "MoleculeNet HIV (DeepChem S3 mirror)",
+    "source_note": "Public SMILES for screening only; HIV activity labels unused. DAVIS ligands spiked in for binder recovery analysis.",
+    "source_url": "https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/HIV.csv"
+  }
+}

@@ -1,0 +1,401 @@
+mol_id,smiles,source
+esol_Riboflavin,Cc3cc2nc1c(=O)[nH]c(=O)nc1n(CC(O)C(O)C(O)CO)c2cc3C,ESOL_Delaney
+esol_Cortisone,CC12CC(=O)C3C(CCC4=CC(=O)CCC34C)C2CCC1(O)C(=O)CO,ESOL_Delaney
+davis_9929127,COc1c(Cl)cc2c([nH]c3cnccc32)c1NC(=O)c1cccnc1C,DAVIS
+"esol_1,4-Difluorobenzene",Fc1ccc(F)cc1,ESOL_Delaney
+esol_2-Methylbutane,CCC(C)C,ESOL_Delaney
+esol_triamcinolone acetonide,CC5(C)OC4CC3C2CCC1=CC(=O)C=CC1(C)C2(F)C(O)CC3(C)C4(O5)C(=O)CO ,ESOL_Delaney
+esol_Cyclopentene ,C1CC=CC1,ESOL_Delaney
+esol_hematein,c1cc(O)c(O)c2OCC3(O)CC4=CC(=O)C(O)=CC4=C3c21,ESOL_Delaney
+esol_Ethane,CC,ESOL_Delaney
+esol_Diosgenin,C1C(O)CCC2(C)CC3CCC4(C)C5(C)CC6OCC(C)CC6OC5CC4C3C=C21,ESOL_Delaney
+davis_16007391,CCN(CCO)CCCOc1ccc2c(Nc3cc(CC(=O)Nc4cccc(F)c4)[nH]n3)ncnc2c1,DAVIS
+esol_1-Heptene,CCCCCC=C,ESOL_Delaney
+davis_44259,CNC1CC2OC(C)(C1OC)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)C(=O)NC4,DAVIS
+"esol_1,2-Dichloropropane",CC(Cl)CCl,ESOL_Delaney
+esol_Fluvalinate,CC(C)C(Nc1ccc(cc1Cl)C(F)(F)F)C(=O)OC(C#N)c2cccc(Oc3ccccc3)c2,ESOL_Delaney
+davis_9884685,Oc1cccc(-c2nc(N3CCOCC3)c3oc4ncccc4c3n2)c1,DAVIS
+esol_Cyclooctyl-5-spirobarbituric acid,O=C2NC(=O)C1(CCCCCCC1)C(=O)N2,ESOL_Delaney
+esol_2-Isopropyltoluene,CC(C)c1ccccc1C,ESOL_Delaney
+"esol_trans-1,4-Dimethylcyclohexane",C/C1CCC(\C)CC1,ESOL_Delaney
+esol_Cyclobutyl-5-spirobarbituric acid,O=C2NC(=O)C1(CCC1)C(=O)N2,ESOL_Delaney
+esol_o-Chloroiodobenzene,Clc1ccccc1I,ESOL_Delaney
+davis_9933475,COc1cc2c(Oc3ccc4[nH]c(C)cc4c3F)ncnc2cc1OCCCN1CCCC1,DAVIS
+"esol_N,N-Dimethylaniline",CN(C)c1ccccc1,ESOL_Delaney
+esol_Perylene,c1cc2cccc3c4cccc5cccc(c(c1)c23)c54,ESOL_Delaney
+davis_11314340,Cc1[nH]nc2ccc(-c3cncc(OCC(N)Cc4ccccc4)c3)cc12,DAVIS
+esol_Griseofulvin,COC1=CC(=O)CC(C)C13Oc2c(Cl)c(OC)cc(OC)c2C3=O,ESOL_Delaney
+esol_Pentyl acetate,CCCCCOC(=O)C,ESOL_Delaney
+esol_4-Bromophenol,Oc1ccc(Br)cc1,ESOL_Delaney
+esol_2-Butanone,CCC(=O)C,ESOL_Delaney
+"esol_2,6-Dimethylnaphthalene ",Cc1ccc2cc(C)ccc2c1,ESOL_Delaney
+esol_alloxantin,C1(=O)NC(=O)NC(=O)C1(O)C2(O)C(=O)NC(=O)NC2(=O),ESOL_Delaney
+esol_Hypoxanthine,O=c1[nH]cnc2nc[nH]c12 ,ESOL_Delaney
+esol_1-Octene ,CCCCCCC=C,ESOL_Delaney
+davis_5329102,CCN(CC)CCNC(=O)c1c(C)[nH]c(C=C2C(=O)Nc3ccc(F)cc32)c1C,DAVIS
+esol_Fenoxycarb,CCOC(=O)NCCOc2ccc(Oc1ccccc1)cc2,ESOL_Delaney
+"esol_P,P'-DDE",ClC(Cl)=C(c1ccc(Cl)cc1)c2ccc(Cl)cc2,ESOL_Delaney
+esol_allantoin,NC(=O)NC1NC(=O)NC1=O ,ESOL_Delaney
+esol_benodanil,c1c(NC(=O)c2ccccc2(I))cccc1,ESOL_Delaney
+esol_phenylbutazone,CCCCC1C(=O)N(N(C1=O)c2ccccc2)c3ccccc3 ,ESOL_Delaney
+esol_acetyl sulfisoxazole,CC(=O)N(S(=O)c1ccc(N)cc1)c2onc(C)c2C ,ESOL_Delaney
+esol_Metribuzin,CSc1nnc(c(=O)n1N)C(C)(C)C,ESOL_Delaney
+davis_216239,CNC(=O)c1cc(Oc2ccc(NC(=O)Nc3ccc(Cl)c(C(F)(F)F)c3)cc2)ccn1,DAVIS
+esol_1-Butanol,CCCCO,ESOL_Delaney
+davis_11617559,COc1ccc(COc2ccc(Cc3cnc(N)nc3N)cc2OC)cc1,DAVIS
+esol_Biphenyl,c1ccc(cc1)c2ccccc2,ESOL_Delaney
+esol_Nerol,CC(C)=CCC/C(C)=C\CO,ESOL_Delaney
+esol_aminothiazole,Nc1nccs1 ,ESOL_Delaney
+esol_m-Chlorobromobenzene,Clc1cccc(Br)c1,ESOL_Delaney
+davis_42642645,COc1cc2c(Oc3ccc(NC(=O)C4(C(=O)Nc5ccc(F)cc5)CC4)cc3F)ccnc2cc1OCCCN1CCOCC1,DAVIS
+esol_Chlorthalidone,NS(=O)(=O)c1cc(ccc1Cl)C2(O)NC(=O)c3ccccc23,ESOL_Delaney
+davis_17755052,CS(=O)(=O)N1CCN(Cc2cc3nc(-c4cccc5[nH]ncc45)nc(N4CCOCC4)c3s2)CC1,DAVIS
+"esol_1,4-Dimethylnaphthalene ",Cc1ccc(C)c2ccccc12,ESOL_Delaney
+esol_Aminocarb,CNC(=O)Oc1ccc(N(C)C)c(C)c1,ESOL_Delaney
+esol_Formothion,COP(=S)(OC)SCC(=O)N(C)C=O,ESOL_Delaney
+esol_Sucrose,OCC2OC(OC1(CO)OC(CO)C(O)C1O)C(O)C(O)C2O ,ESOL_Delaney
+davis_644241,Cc1cn(-c2cc(NC(=O)c3ccc(C)c(Nc4nccc(-c5cccnc5)n4)c3)cc(C(F)(F)F)c2)cn1,DAVIS
+esol_p-Chloroacetanilide,CC(=O)Nc1ccc(Cl)cc1,ESOL_Delaney
+esol_7-methylpteridine,Cc2cnc1cncnc1n2,ESOL_Delaney
+davis_208908,CS(=O)(=O)CCNCc1ccc(-c2ccc3ncnc(Nc4ccc(OCc5cccc(F)c5)c(Cl)c4)c3c2)o1,DAVIS
+esol_RTI 24,CCN2c1cc(Cl)ccc1NC(=O)c3cccnc23 ,ESOL_Delaney
+esol_3-chloropropionitrile,ClCCC#N ,ESOL_Delaney
+esol_TEFLUBENZURON,Fc1cccc(F)c1C(=O)NC(=O)Nc2cc(Cl)c(F)c(Cl)c2F ,ESOL_Delaney
+esol_borneol,CC1(C)C2CCC1(C)C(O)C2,ESOL_Delaney
+esol_5-Allyl-5-phenylbarbital,O=C1NC(=O)NC(=O)C1(CC=C)c1ccccc1,ESOL_Delaney
+esol_2-cyanoguanidine,NC(N)=NC#N ,ESOL_Delaney
+davis_126565,CC12OC(CC1(O)CO)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)CNC4=O,DAVIS
+esol_karbutilate,CN(C)C(=O)Nc1cccc(OC(=O)NC(C)(C)C)c1 ,ESOL_Delaney
+esol_2-Bromonapthalene,Brc1ccc2ccccc2c1,ESOL_Delaney
+"esol_2,2,4,6,6'-PCB",Clc1cc(Cl)c(c(Cl)c1)c2c(Cl)cccc2Cl,ESOL_Delaney
+esol_RTI 19,CCN2c1ccccc1N(C)C(=O)c3ccccc23 ,ESOL_Delaney
+"esol_1,3-Dichlorobenzene",Clc1cccc(Cl)c1,ESOL_Delaney
+esol_o-Hydroxybenzamide,NC(=O)c1ccccc1O,ESOL_Delaney
+davis_5287969,CN1CCC(c2c(O)cc(O)c3c(=O)cc(-c4ccccc4Cl)oc23)C(O)C1,DAVIS
+davis_10113978,Cc1ccc(Nc2nccc(N(C)c3ccc4c(C)n(C)nc4c3)n2)cc1S(N)(=O)=O,DAVIS
+esol_1-Tetradecanol,CCCCCCCCCCCCCCO,ESOL_Delaney
+esol_Ethyl butyrate,CCCCCOC(=O)CC,ESOL_Delaney
+"esol_2,2',3,3',4,4',5,5'-PCB",Clc1cc(c(Cl)c(Cl)c1Cl)c2cc(Cl)c(Cl)c(Cl)c2Cl,ESOL_Delaney
+esol_Ancymidol,COc1ccc(cc1)C(O)(C2CC2)c3cncnc3 ,ESOL_Delaney
+"esol_1,2,4-tribromobenzene",c1(Br)c(Br)cc(Br)cc1,ESOL_Delaney
+esol_p-Chloronitrobenzene,Clc1ccc(cc1)N(=O)=O,ESOL_Delaney
+davis_11338033,O=C(NC1CCNCC1)c1[nH]ncc1NC(=O)c1c(Cl)cccc1Cl,DAVIS
+davis_156422,Cc1ccc(-n2nc(C(C)(C)C)cc2NC(=O)Nc2ccc(OCCN3CCOCC3)c3ccccc23)cc1,DAVIS
+esol_Triadimefon,CC(C)(C)C(=O)C(Oc1ccc(Cl)cc1)n2cncn2,ESOL_Delaney
+"esol_2,3-Dimethylnaphthalene",Cc1cc2ccccc2cc1C,ESOL_Delaney
+esol_2-methoxypteridine,COc2ncc1nccnc1n2,ESOL_Delaney
+davis_5494449,Cc1cc(Nc2cc(N3CCN(C)CC3)nc(Sc3ccc(NC(=O)C4CC4)cc3)n2)n[nH]1,DAVIS
+esol_Methane,C,ESOL_Delaney
+esol_Methyl propionate,CCC(=O)OC,ESOL_Delaney
+esol_RTI 3,O2c1cc(C)ccc1N(C)C(=O)c3cc(N)cnc23 ,ESOL_Delaney
+esol_Carbetamide,c1c(NC(=O)OC(C)C(=O)NCC)cccc1,ESOL_Delaney
+"esol_1,1,2-Trichloroethane",ClCC(Cl)Cl,ESOL_Delaney
+esol_o-Toluidine,Cc1ccccc1N,ESOL_Delaney
+esol_Fluorene ,C1c2ccccc2c3ccccc13,ESOL_Delaney
+esol_Chloropicrin,ClC(Cl)(Cl)N(=O)=O,ESOL_Delaney
+esol_Mecarbam,CCOC(=O)N(C)C(=O)CSP(=S)(OCC)OCC,ESOL_Delaney
+esol_Iodobenzene,Ic1ccccc1,ESOL_Delaney
+esol_Dinoseb,CCC(C)c1cc(cc(N(=O)=O)c1O)N(=O)=O ,ESOL_Delaney
+esol_Bromomethane,CBr,ESOL_Delaney
+esol_Cyclopentane ,C1CCCC1,ESOL_Delaney
+esol_Tricresyl phosphate,Cc1ccc(OP(=O)(Oc2cccc(C)c2)Oc3ccccc3C)cc1,ESOL_Delaney
+esol_3-Methylpentane,CCC(C)CC,ESOL_Delaney
+esol_3-Methyl-3-hexanol,CCCC(C)(O)CC,ESOL_Delaney
+davis_11626560,CC(Oc1cc(-c2cnn(C3CCNCC3)c2)cnc1N)c1c(Cl)ccc(F)c1Cl,DAVIS
+davis_9809715,COC(=O)c1ccc2c(c1)NC(=O)C2=C(Nc1ccc(N(C)C(=O)CN2CCN(C)CC2)cc1)c1ccccc1,DAVIS
+esol_RTI 23,CCN2c1cc(OC)cc(C)c1NC(=O)c3cccnc23 ,ESOL_Delaney
+davis_11364421,CCC1C(=O)N(C)c2cnc(Nc3ccc(C(=O)NC4CCN(C)CC4)cc3OC)nc2N1C1CCCC1,DAVIS
+davis_44150621,CC(O)C(=O)O.CN1CCN(c2ccc3c(c2)NC(=C2C(=O)N=c4cccc(F)c4=C2N)N3)CC1.O,DAVIS
+esol_Menadione,CC2=CC(=O)c1ccccc1C2=O ,ESOL_Delaney
+esol_Triethyl phosphate,CCOP(=O)(OCC)OCC,ESOL_Delaney
+esol_Neburon,CCCCN(C)C(=O)Nc1ccc(Cl)c(Cl)c1,ESOL_Delaney
+esol_Quinonamid,ClC(Cl)CC(=O)NC2=C(Cl)C(=O)c1ccccc1C2=O,ESOL_Delaney
+esol_Dioxacarb,CNC(=O)Oc1ccccc1C2OCCO2,ESOL_Delaney
+esol_Lorazepam,OC3N=C(c1ccccc1Cl)c2cc(Cl)ccc2NC3=O,ESOL_Delaney
+esol_Prometon,COc1nc(NC(C)C)nc(NC(C)C)n1,ESOL_Delaney
+esol_Dinitramine,CCN(CC)c1c(cc(c(N)c1N(=O)=O)C(F)(F)F)N(=O)=O,ESOL_Delaney
+davis_16722836,Cc1cnc(Nc2ccc(OCCN3CCCC3)cc2)nc1Nc1cccc(S(=O)(=O)NC(C)(C)C)c1,DAVIS
+esol_2-Chlorotoluene,Cc1ccccc1Cl,ESOL_Delaney
+esol_Trietazine,CCNc1nc(Cl)nc(n1)N(CC)CC,ESOL_Delaney
+"esol_2,2,3-Trimethylbutane",CC(C)C(C)(C)C,ESOL_Delaney
+esol_3-Methyl-3-pentanol,CCC(C)(O)CC,ESOL_Delaney
+esol_Nitrofen,Clc2ccc(Oc1ccc(cc1)N(=O)=O)c(Cl)c2,ESOL_Delaney
+esol_1-Iodonapthalene,Ic1cccc2ccccc12,ESOL_Delaney
+davis_3062316,Cc1nc(Nc2ncc(C(=O)Nc3c(C)cccc3Cl)s2)cc(N2CCN(CCO)CC2)n1,DAVIS
+esol_Caproaldehyde,CCCCCC=O,ESOL_Delaney
+davis_16725726,CCn1c(-c2nonc2N)nc2c(C#CC(C)(C)O)ncc(OCC3CCCNC3)c21,DAVIS
+"esol_2,3,4,5,6-PCB",Clc2c(Cl)c(Cl)c(c1ccccc1)c(Cl)c2Cl ,ESOL_Delaney
+esol_Butylate,CCSC(=O)N(CC(C)C)CC(C)C,ESOL_Delaney
+"esol_2,6-Dimethylpyridine",Cc1cccc(C)n1,ESOL_Delaney
+esol_Glycerol,OCC(O)CO,ESOL_Delaney
+esol_2-Ethylnaphthalene,CCc1ccc2ccccc2c1,ESOL_Delaney
+esol_Monolinuron,CON(C)C(=O)Nc1ccc(Cl)cc1,ESOL_Delaney
+esol_bromoxynil,Oc1c(Br)cc(C#N)cc1Br ,ESOL_Delaney
+esol_5-Methylchrysene,c1cccc2c3c(C)cc4ccccc4c3ccc12,ESOL_Delaney
+esol_2-butenal,CC=CC=O,ESOL_Delaney
+esol_m-Chloroiodobenzene,Clc1cccc(I)c1,ESOL_Delaney
+esol_Propylene,CC=C,ESOL_Delaney
+esol_ethofumesate,CCOC2Oc1ccc(OS(C)(=O)=O)cc1C2(C)C,ESOL_Delaney
+esol_3-Hexanoyloxymethylphenyltoin,O=C1N(COC(=O)CCCCC)C(=O)C(N1)(c2ccccc2)c3ccccc3,ESOL_Delaney
+esol_1-Methylnaphthalene,Cc1cccc2ccccc12,ESOL_Delaney
+esol_Diazepam,CN2C(=O)CN=C(c1ccccc1)c3cc(Cl)ccc23,ESOL_Delaney
+davis_51004351,COC1C(N(C)C(=O)c2ccccc2)CC2OC1(C)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)C(=O)NC4,DAVIS
+esol_1-Ethylnaphthalene ,CCc1cccc2ccccc12,ESOL_Delaney
+"esol_2,3',4',5-PCB",Clc1ccc(Cl)c(c1)c2ccc(Cl)c(Cl)c2,ESOL_Delaney
+esol_Chlordane,ClC1CC2C(C1Cl)C3(Cl)C(=C(Cl)C2(Cl)C3(Cl)Cl)Cl,ESOL_Delaney
+esol_hydrobenzoin,c1ccccc1C(O)C(O)c2ccccc2,ESOL_Delaney
+"esol_1,2-Dinitrobenzene",O=N(=O)c1ccccc1N(=O)=O,ESOL_Delaney
+davis_10427712,Nc1nc(N)c2nc(-c3cccc(O)c3)c(-c3cccc(O)c3)nc2n1,DAVIS
+esol_Glutethimide,CCC1(CCC(=O)NC1=O)c2ccccc2 ,ESOL_Delaney
+"esol_1,2-Diethylbenzene",CCc1ccccc1CC,ESOL_Delaney
+"esol_2,2'-PCB",Clc1ccccc1c2ccccc2Cl ,ESOL_Delaney
+davis_6450551,CNC(=O)c1ccccc1Sc1ccc2c(C=Cc3ccccn3)n[nH]c2c1,DAVIS
+esol_Pirimicarb,CN(C)C(=O)Oc1nc(nc(C)c1C)N(C)C,ESOL_Delaney
+"esol_1,4-Dibromobenzene",Brc1ccc(Br)cc1,ESOL_Delaney
+esol_Equilenin,CC34CCc1c(ccc2cc(O)ccc12)C3CCC4=O,ESOL_Delaney
+davis_5328940,COc1cc(Nc2c(C#N)cnc3cc(OCCCN4CCN(C)CC4)c(OC)cc23)c(Cl)cc1Cl,DAVIS
+esol_Furfural,O=Cc1ccco1,ESOL_Delaney
+esol_RTI 9,O2c1ccccc1N(CC)C(=O)c3ccccc23 ,ESOL_Delaney
+esol_Ethoxyzolamide,CCOc2ccc1nc(sc1c2)S(N)(=O)=O ,ESOL_Delaney
+esol_Carbanilide,O=C(Nc1ccccc1)Nc2ccccc2,ESOL_Delaney
+esol_Pentylbenzene,CCCCCc1ccccc1,ESOL_Delaney
+esol_butachlor,CCCCOCN(C(=O)CCl)c1c(CC)cccc1CC ,ESOL_Delaney
+esol_Monuron,CN(C)C(=O)Nc1ccc(Cl)cc1,ESOL_Delaney
+esol_Risocaine,CCCOC(=O)c1ccc(N)cc1,ESOL_Delaney
+esol_2-Methylanthracene,Cc1ccc2cc3ccccc3cc2c1,ESOL_Delaney
+esol_Barban,ClCC#CCOC(=O)Nc1cccc(Cl)c1,ESOL_Delaney
+esol_Dimethyl sulfide,CSC,ESOL_Delaney
+esol_Mefenacet,CN(C(=O)COc1nc2ccccc2s1)c3ccccc3,ESOL_Delaney
+esol_cycloheximide,CC1CC(C)C(=O)C(C1)C(O)CC2CC(=O)NC(=O)C2 ,ESOL_Delaney
+esol_Anilofos,COP(=S)(OC)SCC(=O)N(C(C)C)c1ccc(Cl)cc1,ESOL_Delaney
+esol_Metolachlor,CCc1cccc(C)c1N(C(C)COC)C(=O)CCl ,ESOL_Delaney
+esol_p-Fluoroacetanilide,CC(=O)Nc1ccc(F)cc1,ESOL_Delaney
+esol_Butamben,CCCCOC(=O)c1ccc(N)cc1,ESOL_Delaney
+esol_2-Nitropropane,CC(C)N(=O)=O,ESOL_Delaney
+"esol_2',3,4-PCB",Clc1ccc(cc1)c2cccc(Cl)c2Cl ,ESOL_Delaney
+esol_Rovral,CC(C)NC(=O)N1CC(=O)N(C1=O)c2cc(Cl)cc(Cl)c2,ESOL_Delaney
+esol_1-Chlorobutane,CCCCCl,ESOL_Delaney
+esol_Procymidone,CC12CC2(C)C(=O)N(C1=O)c3cc(Cl)cc(Cl)c3,ESOL_Delaney
+esol_Flutriafol,OC(Cn1cncn1)(c2ccc(F)cc2)c3ccccc3F,ESOL_Delaney
+esol_N-Methylaniline ,CNc1ccccc1,ESOL_Delaney
+davis_11717001,OCCn1cc(-c2ccc3c(c2)CCC3=NO)c(-c2ccncc2)n1,DAVIS
+davis_11667893,CC1(C)CNc2cc(NC(=O)c3cccnc3NCc3ccncc3)ccc21,DAVIS
+esol_Ethyne,C#C,ESOL_Delaney
+"esol_2,2',3,4,5-PCB",Clc1cc(Cl)c(cc1Cl)c2cccc(Cl)c2Cl ,ESOL_Delaney
+esol_Nimetazepam,CN2C(=O)CN=C(c1ccccc1)c3cc(ccc23)N(=O)=O,ESOL_Delaney
+davis_151194,Clc1ccc(Nc2nnc(Cc3ccncc3)c3ccccc23)cc1,DAVIS
+"esol_3,3-Dimethyl-1-butanol",CC(C)(C)CCO,ESOL_Delaney
+esol_Bromobenzene,Brc1ccccc1,ESOL_Delaney
+esol_Furane,c1ccoc1,ESOL_Delaney
+esol_Reposal,CCC1(C(=O)NC(=O)NC1=O)C2=CCC3CCC2C3,ESOL_Delaney
+esol_1-Nonyne ,CCCCCCCC#C,ESOL_Delaney
+esol_1-Hexanol,CCCCCCO,ESOL_Delaney
+esol_Phenol,c1ccccc1O,ESOL_Delaney
+esol_2-Methylpropane,CC(C)C,ESOL_Delaney
+esol_Methyl hydrazine,CNN,ESOL_Delaney
+esol_Chlorbufam,CC(OC(=O)Nc1cccc(Cl)c1)C#C,ESOL_Delaney
+esol_o-Chloroaniline,Nc1ccccc1Cl,ESOL_Delaney
+esol_RTI 12,CCN2c1nc(Cl)ccc1N(C)C(=O)c3cccnc23 ,ESOL_Delaney
+esol_Apazone,CCCC1C(=O)N3N(C1=O)c2cc(C)ccc2N=C3N(C)C ,ESOL_Delaney
+"esol_3,4-Dichloronitrobenzene",O=N(=O)c1cc(Cl)c(Cl)cc1,ESOL_Delaney
+esol_styrene oxide,C1OC1c2ccccc2 ,ESOL_Delaney
+esol_chloroacetamide,NC(=O)CCl ,ESOL_Delaney
+esol_Quintozene,Clc1c(Cl)c(Cl)c(N(=O)=O)c(Cl)c1Cl,ESOL_Delaney
+esol_Ethyl vinyl ether,CCOC=C,ESOL_Delaney
+esol_cycloate,CCSC(=O)N(CC)C1CCCCC1 ,ESOL_Delaney
+esol_3-Hexyne,CCC#CCC,ESOL_Delaney
+esol_indazole,c2ccc1[nH]ncc1c2 ,ESOL_Delaney
+davis_9915743,CCOc1cc2ncc(C#N)c(Nc3ccc(OCc4ccccn4)c(Cl)c3)c2cc1NC(=O)C=CCN(C)C,DAVIS
+davis_11234052,Cc1cc2c(F)c(Oc3ncnn4cc(OCC(C)O)c(C)c34)ccc2[nH]1,DAVIS
+esol_Norea,CN(C)C(=O)NC1CC2CC1C3CCCC23,ESOL_Delaney
+"esol_1,2,3,4-Tetrahydronapthalene",C1CCc2ccccc2C1,ESOL_Delaney
+esol_Isopropyl acetate,CC(C)OC(=O)C,ESOL_Delaney
+esol_6-methoxypteridine,COc2cnc1ncncc1n2,ESOL_Delaney
+esol_fensulfothion,CCOP(=S)(OCC)Oc1ccc(cc1)S(C)=O ,ESOL_Delaney
+esol_RTI 6,CCN2c1nc(N(C)(CCO))ccc1NC(=O)c3cccnc23 ,ESOL_Delaney
+esol_Fluridone,Cn2cc(c1ccccc1)c(=O)c(c2)c3cccc(c3)C(F)(F)F,ESOL_Delaney
+esol_Isobutylbenzene,CC(C)Cc1ccccc1,ESOL_Delaney
+esol_Clomazone,CC1(C)CON(Cc2ccccc2Cl)C1=O,ESOL_Delaney
+esol_Siduron,CC1CCCCC1NC(=O)Nc2ccccc2,ESOL_Delaney
+esol_stadacaine,CCCCOc1ccc(C(=O)OCC)c(c1)N(CC)CC ,ESOL_Delaney
+esol_thioanisole,c1ccccc1SC,ESOL_Delaney
+esol_3-Propanoyloxymethylphenytoin,O=C1N(COC(=O)CC)C(=O)C(N1)(c2ccccc2)c3ccccc3,ESOL_Delaney
+esol_2-Methyl-1-Butene,CCC(=C)C,ESOL_Delaney
+esol_chlordimeform,CN(C)C=Nc1ccc(Cl)cc1C,ESOL_Delaney
+esol_L-arabinose,C1OC(O)C(O)C(O)C1O,ESOL_Delaney
+esol_2-pyrrolidone,O=C1CCCN1,ESOL_Delaney
+"esol_7,12-Dimethylbenz(a)anthracene",Cc1c2ccccc2c(C)c3ccc4ccccc4c13,ESOL_Delaney
+esol_Aldrin,ClC1=C(Cl)C2(Cl)C3C4CC(C=C4)C3C1(Cl)C2(Cl)Cl,ESOL_Delaney
+"esol_2,2-Dimethylpropanol",CC(C)(C)CO,ESOL_Delaney
+davis_11409972,CCN1CCN(Cc2ccc(NC(=O)Nc3ccc(Oc4cc(NC)ncn4)cc3)cc2C(F)(F)F)CC1,DAVIS
+esol_Dichlorophen,Oc1ccc(Cl)cc1Cc2cc(Cl)ccc2O,ESOL_Delaney
+esol_1-Octadecanol,CCCCCCCCCCCCCCCCCCO,ESOL_Delaney
+esol_Methyl t-butyl ether ,COC(C)(C)C,ESOL_Delaney
+esol_methyl gallate,COC(=O)c1cc(O)c(O)c(O)c1 ,ESOL_Delaney
+davis_123631,COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1,DAVIS
+esol_eucalyptol,CC12CCC(CC1)C(C)(C)O2 ,ESOL_Delaney
+esol_2-Ethyl-1-butanol,CCC(CC)CO,ESOL_Delaney
+esol_5-Allyl-5-methylbarbital,O=C1NC(=O)NC(=O)C1(C)CC=C,ESOL_Delaney
+"esol_9,10-Dimethylanthracene",Cc1c2ccccc2c(C)c3ccccc13,ESOL_Delaney
+esol_2-Ethyltoluene,CCc1ccccc1C,ESOL_Delaney
+esol_Iodofenphos,COP(=S)(OC)Oc1cc(Cl)c(I)cc1Cl,ESOL_Delaney
+"esol_N,N-Dimethylacetamide",CN(C)C(=O)C,ESOL_Delaney
+esol_Cyclooctanol,OC1CCCCCCC1,ESOL_Delaney
+esol_dibutylphthalate,CCCCOC(=O)c1ccccc1C(=O)OCCCC ,ESOL_Delaney
+esol_2-Methylnapthalene,Cc1ccc2ccccc2c1,ESOL_Delaney
+davis_11427553,O=C(c1ccc(C=Cc2n[nH]c3ccccc23)cc1)N1CCNCC1,DAVIS
+esol_Propane,CCC,ESOL_Delaney
+esol_Pyrimidine,c1cncnc1,ESOL_Delaney
+esol_Phenytoin,O=C1NC(=O)C(N1)(c2ccccc2)c3ccccc3,ESOL_Delaney
+esol_methyl laurate,CCCCCCCCCCCC(=O)OC,ESOL_Delaney
+esol_Glafenine,OCC(O)COC(=O)c1ccccc1Nc2ccnc3cc(Cl)ccc23,ESOL_Delaney
+esol_Atratone,CCNc1nc(NC(C)C)nc(OC)n1,ESOL_Delaney
+esol_osthole,c1cc2ccc(OC)c(CC=C(C)(C))c2oc1=O ,ESOL_Delaney
+esol_Niridazole,O=C1NCCN1c2ncc(s2)N(=O)=O,ESOL_Delaney
+esol_4-Heptanol,CCCC(O)CCC,ESOL_Delaney
+davis_25243800,CC(C)N1NC(=C2C=c3cc(O)ccc3=N2)c2c(N)ncnc21,DAVIS
+esol_Phenetole,CCOc1ccccc1,ESOL_Delaney
+davis_3081361,COc1cc2c(Nc3ccc(Br)cc3F)ncnc2cc1OCC1CCN(C)CC1,DAVIS
+esol_Cycloheptane,C1CCCCCC1,ESOL_Delaney
+esol_p-Chloroaniline,Nc1ccc(Cl)cc1,ESOL_Delaney
+esol_guanine,Nc2nc1[nH]cnc1c(=O)[nH]2 ,ESOL_Delaney
+esol_Benfuracarb,CCOC(=O)CCN(SN(C)C(=O)Oc1cccc2CC(C)(C)Oc21)C(C)C,ESOL_Delaney
+davis_11656518,Cn1c(Nc2ccc(C(F)(F)F)cc2)nc2cc(Oc3ccnc(-c4ncc(C(F)(F)F)[nH]4)c3)ccc21,DAVIS
+davis_10074640,Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nc(-c2cccnc2)cs1,DAVIS
+davis_4908365,CN1CCN(C(=O)c2cc3cc(Cl)ccc3[nH]2)CC1,DAVIS
+esol_menthol,CC(C)C1CCC(C)CC1O ,ESOL_Delaney
+esol_1-Nitropropane,CCCN(=O)=O,ESOL_Delaney
+esol_1-Pentanol,CCCCCO,ESOL_Delaney
+esol_Isopropalin,CCCN(CCC)c1c(cc(cc1N(=O)=O)C(C)C)N(=O)=O,ESOL_Delaney
+esol_Abate,COP(=S)(OC)Oc1ccc(Sc2ccc(OP(=S)(OC)OC)cc2)cc1,ESOL_Delaney
+esol_Hexestrol,CCC(C(CC)c1ccc(O)cc1)c2ccc(O)cc2,ESOL_Delaney
+davis_24779724,Cn1cc(-c2ccc3nnc(Sc4ccc5ncccc5c4)n3n2)cn1,DAVIS
+esol_Tetrahydropyran ,C1CCOCC1,ESOL_Delaney
+esol_Pentachloroethane,ClC(Cl)C(Cl)(Cl)Cl,ESOL_Delaney
+esol_Prasterone,CC34CCC1C(CC=C2CC(O)CCC12C)C3CCC4=O,ESOL_Delaney
+esol_Flucythrinate,CC(C)C(C(=O)OC(C#N)c1cccc(Oc2ccccc2)c1)c3ccc(OC(F)F)cc3,ESOL_Delaney
+davis_10461815,Cc1[nH]c(C=C2C(=O)Nc3ccc(S(=O)(=O)Cc4c(Cl)cccc4Cl)cc32)c(C)c1C(=O)N1CCCC1CN1CCCC1,DAVIS
+esol_Metranidazole,Cc1ncc(N(=O)=O)n1CCO ,ESOL_Delaney
+esol_Methocarbamol,COc1ccccc1OCC(O)COC(N)=O,ESOL_Delaney
+esol_chloropropylate,c1ccc(Cl)cc1C(c2ccc(Cl)cc2)(O)C(=O)OC(C)C,ESOL_Delaney
+esol_Cycloheptene,C1CCC=CCC1,ESOL_Delaney
+davis_10184653,CN(C)CC=CC(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1OC1CCOC1,DAVIS
+esol_1-Methylcyclohexene ,CC1=CCCCC1,ESOL_Delaney
+esol_Carvacrol,c1(O)c(C)ccc(C(C)C)c1,ESOL_Delaney
+esol_Oxazepam,OC3N=C(c1ccccc1)c2cc(Cl)ccc2NC3=O ,ESOL_Delaney
+esol_Diphenyl ether ,O(c1ccccc1)c2ccccc2,ESOL_Delaney
+"esol_3,4-Dichlorophenol",Oc1ccc(Cl)c(Cl)c1,ESOL_Delaney
+esol_3-Methyl-3-heptanol,CCCCC(C)(O)CC,ESOL_Delaney
+esol_Fenothiocarb,CN(C)C(=O)SCCCCOc1ccccc1,ESOL_Delaney
+esol_Tetrachloroethylene,ClC(=C(Cl)Cl)Cl,ESOL_Delaney
+esol_3-Methylbutan-1-ol,CC(C)CCO,ESOL_Delaney
+davis_3038522,COc1cc2c(N3CCN(C(=O)Nc4ccc(OC(C)C)cc4)CC3)ncnc2cc1OCCCN1CCCCC1,DAVIS
+davis_11984591,COc1cc(Nc2ncc(F)c(Nc3ccc4c(n3)NC(=O)C(C)(C)O4)n2)cc(OC)c1OC.O=S(=O)(O)c1ccccc1,DAVIS
+davis_11485656,Cc1ccc(F)c(NC(=O)Nc2ccc(-c3cccc4[nH]nc(N)c34)cc2)c1,DAVIS
+esol_Propylbenzene ,CCCc1ccccc1,ESOL_Delaney
+esol_5-fluorouracil,Fc1c[nH]c(=O)[nH]c1=O ,ESOL_Delaney
+"esol_1,3-Butadiene",C=CC=C,ESOL_Delaney
+davis_5291,Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1,DAVIS
+"esol_1,3-Dibromobenzene",Brc1cccc(Br)c1,ESOL_Delaney
+esol_Benzo[ghi]perylene,c1cc2ccc3ccc4ccc5cccc6c(c1)c2c3c4c56,ESOL_Delaney
+esol_Dulcin,CCOc1ccc(NC(N)=O)cc1,ESOL_Delaney
+"esol_1,2-Dichlorobenzene",Clc1ccccc1Cl,ESOL_Delaney
+esol_Buturon,CC(C#C)N(C)C(=O)Nc1ccc(Cl)cc1,ESOL_Delaney
+"esol_2,3,5-Trichlorophenol",Oc1cc(Cl)cc(Cl)c1Cl,ESOL_Delaney
+"esol_2,2-Dimethylbutane",CCC(C)(C)C,ESOL_Delaney
+davis_9926791,CC1CCN(C(=O)CC#N)CC1N(C)c1ncnc2[nH]ccc12,DAVIS
+"esol_2,3-Dimethyl-1,3-Butadiene",CC(=C)C(=C)C,ESOL_Delaney
+"esol_2,2',3,4,6-PCB",Clc1ccc(c(Cl)c1)c2c(Cl)ccc(Cl)c2Cl ,ESOL_Delaney
+davis_9926054,Cc1ccc2nc(NCCN)c3ncc(C)n3c2c1.Cl,DAVIS
+davis_3038525,O=c1ncn2nc(Sc3ccc(F)cc3F)ccc2c1-c1c(Cl)cccc1Cl,DAVIS
+esol_2-Methyl-3-pentanol,CCC(O)C(C)C,ESOL_Delaney
+davis_156414,C=CC(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1OCCCN1CCOCC1,DAVIS
+"esol_1,2,3,5-Tetrachlorobenzene",Clc1cc(Cl)c(Cl)c(Cl)c1,ESOL_Delaney
+davis_447077,CSc1cccc(Nc2ncc3cc(-c4c(Cl)cccc4Cl)c(=O)n(C)c3n2)c1,DAVIS
+esol_Propyl propanoate,CCCCC(=O)OC,ESOL_Delaney
+esol_5-Allyl-5-isopropylbarbital,O=C1NC(=O)NC(=O)C1(C(C)C)CC=C,ESOL_Delaney
+esol_Bromoethane,CCBr,ESOL_Delaney
+esol_t-Butylbenzene ,CC(C)(C)c1ccccc1,ESOL_Delaney
+esol_Phenacetin,CCOc1ccc(NC(=O)C)cc1,ESOL_Delaney
+esol_benzylurea,NC(=O)NCc1ccccc1 ,ESOL_Delaney
+esol_propachlor,CC(C)N(C(=O)CCl)c1ccccc1 ,ESOL_Delaney
+esol_Hexachloroethane,ClC(Cl)(Cl)C(Cl)(Cl)Cl,ESOL_Delaney
+esol_Trichloronate,CCOP(=S)(CC)Oc1cc(Cl)c(Cl)cc1Cl,ESOL_Delaney
+esol_Cyhalothrin,CC1(C)C(C=C(Cl)C(F)(F)F)C1C(=O)OC(C#N)c2cccc(Oc3ccccc3)c2,ESOL_Delaney
+esol_1-Decanol,CCCCCCCCCCO,ESOL_Delaney
+esol_Lovastatin,CCC(C)C(=O)OC2CC(C)C=C3C=CC(C)C(CCC1CC(O)CC(=O)O1)C23 ,ESOL_Delaney
+esol_indoline,c2ccc1NCCc1c2 ,ESOL_Delaney
+esol_Simetryn,CSc1nc(nc(n1)N(C)C)N(C)C,ESOL_Delaney
+esol_Estrone,CC12CCC3C(CCc4cc(O)ccc34)C2CCC1=O,ESOL_Delaney
+"esol_2,2',3,5,5',6-PCB",Clc1ccc(Cl)c(c1)c2c(Cl)c(Cl)cc(Cl)c2Cl ,ESOL_Delaney
+esol_testosterone propionate,CCC(=O)OC3CCC4C2CCC1=CC(=O)CCC1(C)C2CCC34C ,ESOL_Delaney
+davis_24180719,CCCS(=O)(=O)Nc1ccc(F)c(C(=O)c2c[nH]c3ncc(Cl)cc23)c1F,DAVIS
+esol_Caffeine,Cn1cnc2n(C)c(=O)n(C)c(=O)c12,ESOL_Delaney
+esol_p-benzidine,Nc1ccc(cc1)c2ccc(N)cc2,ESOL_Delaney
+esol_2-Chloro-2-methylbutane,CCC(C)(C)Cl,ESOL_Delaney
+esol_Monotropitoside,COC(=O)c1ccccc1OC2OC(COC3OCC(O)C(O)C3O)C(O)C(O)C2O,ESOL_Delaney
+esol_Phenanthrene,c1ccc2c(c1)ccc3ccccc32,ESOL_Delaney
+davis_10138260,Cc1[nH]c(C=C2C(=O)Nc3ccc(F)cc32)c(C)c1C(=O)NCC(O)CN1CCOCC1,DAVIS
+davis_24889392,CC(C)(C)c1cc(NC(=O)Nc2ccc(-c3cn4c(n3)sc3cc(OCCN5CCOCC5)ccc34)cc2)no1,DAVIS
+davis_25127112,N#CCC(C1CCCC1)n1cc(-c2ncnc3[nH]ccc23)cn1.O=P(O)(O)O,DAVIS
+esol_2-Methylphenol,Cc1ccccc1O,ESOL_Delaney
+esol_Phosalone,CCOP(=S)(OCC)SCn1c(=O)oc2cc(Cl)ccc12,ESOL_Delaney
+davis_11712649,O=C(O)c1ccc(Nc2ncc3c(n2)-c2ccc(Cl)cc2C(c2c(F)cccc2F)=NC3)cc1,DAVIS
+esol_Bromacil,CCC(C)n1c(=O)[nH]c(C)c(Br)c1=O ,ESOL_Delaney
+"esol_2,2',3,3'-PCB",Clc1cccc(c1Cl)c2cccc(Cl)c2Cl,ESOL_Delaney
+esol_Glyceryl triacetate,CC(=O)OCC(COC(=O)C)OC(=O)C,ESOL_Delaney
+davis_3025986,CC(C)(C)c1cnc(CSc2cnc(NC(=O)C3CCNCC3)s2)o1,DAVIS
+esol_Methyl butyl ether ,CCCCOC,ESOL_Delaney
+esol_Cyfluthrin,CC1(C)C(C=C(Cl)Cl)C1C(=O)OC(C#N)c2ccc(F)c(Oc3ccccc3)c2,ESOL_Delaney
+esol_Butyraldehyde,CCCC=O,ESOL_Delaney
+davis_6918454,O=C(NOCC1CC1)c1ccc(F)c(F)c1Nc1ccc(I)cc1Cl,DAVIS
+esol_2-hydroxypteridine,Oc2ncc1nccnc1n2,ESOL_Delaney
+esol_1-Bromoheptane,CCCCCCCBr,ESOL_Delaney
+esol_Ethion,CCOP(=S)(OCC)SCSP(=S)(OCC)OCC,ESOL_Delaney
+esol_1-Nonanol,CCCCCCCCCO,ESOL_Delaney
+esol_o-Chlorobromobenzene,Clc1ccccc1Br,ESOL_Delaney
+esol_2-Ethylbutanal,CCC(CC)C=O,ESOL_Delaney
+esol_9-Methylanthracene,Cc1c2ccccc2cc3ccccc13,ESOL_Delaney
+"esol_cis-1,2-Dimethylcyclohexane",C/C1CCCCC1\C,ESOL_Delaney
+esol_Fludrocortisone,CC34CC(O)C1(F)C(CCC2=CC(=O)CCC12C)C3CCC4(O)C(=O)CO ,ESOL_Delaney
+esol_Ethylene,C=C,ESOL_Delaney
+esol_Clonazepam,Clc1ccccc1C2=NCC(=O)Nc3ccc(cc23)N(=O)=O,ESOL_Delaney
+davis_10127622,Cn1cnc2c(F)c(Nc3ccc(Br)cc3Cl)c(C(=O)NOCCO)cc21,DAVIS
+davis_176155,CS(=O)c1ccc(-c2nc(-c3ccc(F)cc3)c(-c3ccncc3)[nH]2)cc1,DAVIS
+esol_4-Ethyltoluene,CCc1ccc(C)cc1,ESOL_Delaney
+esol_DEF,CCCCSP(=O)(SCCCC)SCCCC,ESOL_Delaney
+esol_triamcinolone diacetate,CC(=O)OCC(=O)C3(O)C(CC4C2CCC1=CC(=O)C=CC1(C)C2(F)C(O)CC34C)OC(C)=O ,ESOL_Delaney
+esol_Etofenprox,CCOc1ccc(cc1)C(C)(C)COCc3cccc(Oc2ccccc2)c3,ESOL_Delaney
+esol_m-Nitroaniline,Nc1cccc(c1)N(=O)=O,ESOL_Delaney
+davis_16038120,COc1cc(N2CCC(N3CCN(C)CC3)CC2)ccc1Nc1ncc(Cl)c(Nc2ccccc2S(=O)(=O)C(C)C)n1,DAVIS
+davis_153999,CN(C)CC1CCn2cc(c3ccccc32)C2=C(C(=O)NC2=O)c2cn(c3ccccc23)CCO1,DAVIS
+esol_Iodoethane,CCI,ESOL_Delaney
+esol_3-Ethyl-3-pentanol,CCC(O)(CC)CC,ESOL_Delaney
+esol_Linuron,CON(C)C(=O)Nc1ccc(Cl)c(Cl)c1,ESOL_Delaney
+davis_176870,C#Cc1cccc(Nc2ncnc3cc(OCCOC)c(OCCOC)cc23)c1,DAVIS
+esol_Pentachlorophenol,Oc1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl,ESOL_Delaney
+esol_2-Methyl-1-Pentene,CCCC(=C)C,ESOL_Delaney
+esol_1-Methylfluorene,Cc1cccc2c1Cc3ccccc32,ESOL_Delaney
+esol_Sorbitol,OCC(O)C(O)C(O)C(O)CO,ESOL_Delaney
+esol_Dimethoxymethane,COCOC,ESOL_Delaney
+"esol_2,2',4,4',5,5'-PCB",Clc1cc(Cl)c(cc1Cl)c2cc(Cl)c(Cl)cc2Cl ,ESOL_Delaney
+esol_Bromochloromethane,ClCBr,ESOL_Delaney
+esol_Stanolone,CC34CCC1C(CCC2CC(=O)CCC12C)C3CCC4O ,ESOL_Delaney
+esol_Tetrabromomethane,BrC(Br)(Br)Br,ESOL_Delaney
+esol_Lenacil,O=c2[nH]c1CCCc1c(=O)n2C3CCCCC3,ESOL_Delaney
+"esol_2,2',3,3',4,4'-PCB",Clc1ccc(c(Cl)c1Cl)c2ccc(Cl)c(Cl)c2Cl ,ESOL_Delaney
+esol_p-Hydroxyacetanilide,CC(=O)Nc1ccc(O)cc1,ESOL_Delaney
+esol_p-Nitrophenol,Oc1ccc(cc1)N(=O)=O,ESOL_Delaney
+"esol_2,6-Dichlorophenol",Oc1c(Cl)cccc1Cl,ESOL_Delaney
+esol_Atrazine,CCNc1nc(Cl)nc(NC(C)C)n1,ESOL_Delaney
+esol_Fenuron,CN(C)C(=O)Nc1ccccc1,ESOL_Delaney
+esol_Isopentyl acetate,CC(C)CCOC(=O)C,ESOL_Delaney
+esol_N-Ethylaniline,CCNc1ccccc1,ESOL_Delaney
+esol_RTI 22,CCN2c1cc(N(C)C)cc(C)c1NC(=O)c3cccnc23 ,ESOL_Delaney
+davis_176167,Cn1cc(C2=C(c3cn(C4CCN(Cc5ccccn5)CC4)c4ccccc34)C(=O)NC2=O)c2ccccc21,DAVIS
+esol_uracil,O=c1cc[nH]c(=O)[nH]1 ,ESOL_Delaney
+esol_phthalimide,O=C1NC(=O)c2ccccc12 ,ESOL_Delaney
+esol_Phenmedipham,COC(=O)Nc1cccc(OC(=O)Nc2cccc(C)c2)c1,ESOL_Delaney
+esol_4-hydroxypyridine,Oc1ccncc1,ESOL_Delaney
+"esol_2,4',5-PCB",Clc1ccc(cc1)c2cc(Cl)ccc2Cl ,ESOL_Delaney
+"esol_1,3-Dinitrobenzene",O=N(=O)c1cccc(c1)N(=O)=O,ESOL_Delaney

@@ -1,0 +1,404 @@
+{
+  "seed": 42,
+  "n_bootstrap": 1000,
+  "models_refit": false,
+  "alignment": {
+    "cold_protein_test_rows": 5168,
+    "y_true_matches_split_order_pkd": true,
+    "max_abs_y_true_minus_pkd": 0.0,
+    "n_proteins": 76,
+    "n_drugs": 68,
+    "ligand_only_score_range_within_drug_max": 0.0,
+    "protein_score_range_within_drug_max": 4.022292613983154,
+    "note": "Predictions have no identifiers. Alignment is the cold-protein test frame in split-file order, which is the order run_chemprop_v1.2.py writes when dropped_smiles_test is 0. HistGBM per-pair scores are not in artifacts."
+  },
+  "recommended_test": {
+    "name": "DAVIS cold-protein pooled delta Spearman, graph model plus joint composition versus graph ligand-only",
+    "status": "computed",
+    "unit": "protein",
+    "not_computed_for": [
+      "DAVIS HistGBM amino-acid plus dipeptide versus ligand-only: per-pair scores are not saved.",
+      "KIBA HistGBM: per-pair scores are not saved.",
+      "DAVIS scaffold graph comparison: predictions exist, but this review computes only the cold-protein test."
+    ],
+    "estimand": "Pooled Spearman rho of the protein-aware score minus pooled Spearman rho of the ligand-only score, on the cold-protein test rows.",
+    "resample": "Draw the 76 test proteins with replacement. Keep every test row of each drawn protein (a protein drawn twice contributes its rows twice). Recompute both pooled Spearman correlations on the concatenated rows. The same draw enters both scores.",
+    "why_this_unit": "The cold-protein split holds out whole proteins. Every test ligand is also in train, so the split does not sample new scaffolds. A pair draw treats 5168 rows as independent. A scaffold draw would resample ligands, which is not the factor this split randomized.",
+    "point": {
+      "spearman_protein": 0.4894841755532574,
+      "spearman_ligand_only": 0.49969189386632684,
+      "delta_spearman_protein_minus_ligand": -0.010207718313069436
+    },
+    "ci95": {
+      "low": -0.05587151571946045,
+      "high": 0.029906738288611606,
+      "n_finite": 1000,
+      "includes_0": true
+    },
+    "spearman_protein_ci95": {
+      "low": 0.4421725530252395,
+      "high": 0.5315686525223041,
+      "n_finite": 1000,
+      "includes_0": false
+    },
+    "spearman_ligand_only_ci95": {
+      "low": 0.46214849288092896,
+      "high": 0.5377593389394115,
+      "n_finite": 1000,
+      "includes_0": false
+    },
+    "test": {
+      "p_value": 0.6493506493506493,
+      "n_finite": 1000,
+      "n_as_extreme": 649,
+      "sidedness": "two-sided",
+      "null": "delta = 0",
+      "procedure": "Protein-cluster bootstrap. Recenter each replicate by subtracting the observed delta, then (1 + count of absolute recentered replicates at least as large as the absolute observed delta) / (n_finite + 1)."
+    },
+    "descriptive_within_protein_not_a_test": {
+      "note": "Unweighted mean of within-protein delta Spearman. Not the published pooled estimand and not given a p-value in this review.",
+      "n_proteins_finite": 76,
+      "mean_delta": -0.008243764567952411,
+      "median_delta": 0.016065620445407686,
+      "std_delta": 0.15354054761770086,
+      "n_positive_delta": 44,
+      "n_negative_delta": 32,
+      "n_zero_delta": 0
+    }
+  },
+  "cited_point_estimates": {
+    "histgbm_cold_aac_dpc_spearman": 0.5501253139581715,
+    "histgbm_cold_ligand_only_spearman": 0.5001575530870505,
+    "histgbm_cold_delta_spearman": 0.04996776087112109,
+    "histgbm_cold_aac_dpc_ef1": 10.245836637589216,
+    "histgbm_cold_ligand_only_ef1": 8.452815226011102,
+    "histgbm_cold_aac_dpc_ef5": 6.994069179636189,
+    "histgbm_cold_ligand_only_ef5": 6.531226366277912,
+    "kiba_label_note": "pkd column holds KIBA score (not true pKd)",
+    "kiba_binder_threshold": 12.1,
+    "kiba_cold_delta_spearman": 0.06086581420903814,
+    "kiba_cold_n": 24280.0,
+    "kiba_cold_n_binders": 5912.0,
+    "slk_selection": {
+      "chosen": "SLK",
+      "chosen_n_binders": 17,
+      "excluded": "LCK",
+      "lck_n_binders": 17,
+      "min_binders": 10,
+      "n_eligible": 30,
+      "rule": "Exclude LCK. Drop target_ids containing '('. Require n_binders >= 10 at pKd >= 7.0. Pick binder count closest to LCK (17). Tie break: more binders, then target_id.",
+      "runners_up": [
+        {
+          "n_binders": 16,
+          "target_id": "GAK"
+        },
+        {
+          "n_binders": 19,
+          "target_id": "LOK"
+        },
+        {
+          "n_binders": 15,
+          "target_id": "DDR2"
+        },
+        {
+          "n_binders": 15,
+          "target_id": "VEGFR2"
+        },
+        {
+          "n_binders": 20,
+          "target_id": "FLT1"
+        }
+      ]
+    },
+    "slk_n_known_binders": 17,
+    "slk_n_library": 8068,
+    "chemprop_calibration_n_cal_formula": {
+      "cold_protein_n_cal": 1550,
+      "cold_protein_n_eval_exported": 3618,
+      "scaffold_n_cal": 1591,
+      "scaffold_n_eval_exported": 3715
+    }
+  },
+  "dependence": {
+    "davis_n_rows": 25772,
+    "davis_n_proteins": 379,
+    "davis_n_drugs": 68,
+    "davis_complete_grid": true,
+    "cold_protein": {
+      "path": "data/splits/cold_protein_split.csv",
+      "n_rows": 25772,
+      "by_split": {
+        "test": {
+          "n_rows": 5168,
+          "n_proteins": 76,
+          "n_drugs": 68,
+          "rows_per_protein_min": 68,
+          "rows_per_protein_median": 68.0,
+          "rows_per_protein_max": 68,
+          "proteins_per_drug_min": 76,
+          "proteins_per_drug_median": 76.0,
+          "proteins_per_drug_max": 76,
+          "fraction_drugs_on_more_than_one_protein": 1.0
+        },
+        "train": {
+          "n_rows": 18020,
+          "n_proteins": 265,
+          "n_drugs": 68,
+          "rows_per_protein_min": 68,
+          "rows_per_protein_median": 68.0,
+          "rows_per_protein_max": 68,
+          "proteins_per_drug_min": 265,
+          "proteins_per_drug_median": 265.0,
+          "proteins_per_drug_max": 265,
+          "fraction_drugs_on_more_than_one_protein": 1.0
+        },
+        "val": {
+          "n_rows": 2584,
+          "n_proteins": 38,
+          "n_drugs": 68,
+          "rows_per_protein_min": 68,
+          "rows_per_protein_median": 68.0,
+          "rows_per_protein_max": 68,
+          "proteins_per_drug_min": 38,
+          "proteins_per_drug_median": 38.0,
+          "proteins_per_drug_max": 38,
+          "fraction_drugs_on_more_than_one_protein": 1.0
+        }
+      }
+    },
+    "scaffold": {
+      "path": "data/splits/scaffold_split.csv",
+      "n_rows": 25772,
+      "by_split": {
+        "test": {
+          "n_rows": 5306,
+          "n_proteins": 379,
+          "n_drugs": 14,
+          "rows_per_protein_min": 14,
+          "rows_per_protein_median": 14.0,
+          "rows_per_protein_max": 14,
+          "proteins_per_drug_min": 379,
+          "proteins_per_drug_median": 379.0,
+          "proteins_per_drug_max": 379,
+          "fraction_drugs_on_more_than_one_protein": 1.0,
+          "n_scaffolds": 14,
+          "rows_per_scaffold_min": 379,
+          "rows_per_scaffold_median": 379.0,
+          "rows_per_scaffold_max": 379
+        },
+        "train": {
+          "n_rows": 17813,
+          "n_proteins": 379,
+          "n_drugs": 47,
+          "rows_per_protein_min": 47,
+          "rows_per_protein_median": 47.0,
+          "rows_per_protein_max": 47,
+          "proteins_per_drug_min": 379,
+          "proteins_per_drug_median": 379.0,
+          "proteins_per_drug_max": 379,
+          "fraction_drugs_on_more_than_one_protein": 1.0,
+          "n_scaffolds": 47,
+          "rows_per_scaffold_min": 379,
+          "rows_per_scaffold_median": 379.0,
+          "rows_per_scaffold_max": 379
+        },
+        "val": {
+          "n_rows": 2653,
+          "n_proteins": 379,
+          "n_drugs": 7,
+          "rows_per_protein_min": 7,
+          "rows_per_protein_median": 7.0,
+          "rows_per_protein_max": 7,
+          "proteins_per_drug_min": 379,
+          "proteins_per_drug_median": 379.0,
+          "proteins_per_drug_max": 379,
+          "fraction_drugs_on_more_than_one_protein": 1.0,
+          "n_scaffolds": 7,
+          "rows_per_scaffold_min": 379,
+          "rows_per_scaffold_median": 379.0,
+          "rows_per_scaffold_max": 379
+        }
+      }
+    },
+    "cold_protein_overlap": {
+      "train_vs_test": {
+        "n_shared_proteins": 0,
+        "n_shared_drugs": 68
+      },
+      "train_vs_val": {
+        "n_shared_proteins": 0,
+        "n_shared_drugs": 68
+      },
+      "val_vs_test": {
+        "n_shared_proteins": 0,
+        "n_shared_drugs": 68
+      }
+    },
+    "scaffold_overlap_train_test": {
+      "train_vs_test": {
+        "n_shared_proteins": 379,
+        "n_shared_drugs": 0,
+        "n_shared_scaffolds": 0
+      }
+    },
+    "kiba_cold": {
+      "path": "data/splits_kiba/cold_protein_split.csv",
+      "n_rows": 118254,
+      "by_split": {
+        "test": {
+          "n_rows": 24280,
+          "n_proteins": 47,
+          "n_drugs": 2111,
+          "rows_per_protein_min": 13,
+          "rows_per_protein_median": 501.0,
+          "rows_per_protein_max": 1223,
+          "proteins_per_drug_min": 1,
+          "proteins_per_drug_median": 8.0,
+          "proteins_per_drug_max": 34,
+          "fraction_drugs_on_more_than_one_protein": 0.9952629085741355
+        },
+        "train": {
+          "n_rows": 81962,
+          "n_proteins": 159,
+          "n_drugs": 2111,
+          "rows_per_protein_min": 11,
+          "rows_per_protein_median": 567.0,
+          "rows_per_protein_max": 1452,
+          "proteins_per_drug_min": 4,
+          "proteins_per_drug_median": 20.0,
+          "proteins_per_drug_max": 115,
+          "fraction_drugs_on_more_than_one_protein": 1.0
+        },
+        "val": {
+          "n_rows": 12012,
+          "n_proteins": 23,
+          "n_drugs": 1986,
+          "rows_per_protein_min": 16,
+          "rows_per_protein_median": 573.0,
+          "rows_per_protein_max": 1134,
+          "proteins_per_drug_min": 1,
+          "proteins_per_drug_median": 4.0,
+          "proteins_per_drug_max": 18,
+          "fraction_drugs_on_more_than_one_protein": 0.7205438066465257
+        }
+      }
+    },
+    "kiba_scaffold": {
+      "path": "data/splits_kiba/scaffold_split.csv",
+      "n_rows": 118254,
+      "by_split": {
+        "test": {
+          "n_rows": 23663,
+          "n_proteins": 226,
+          "n_drugs": 493,
+          "rows_per_protein_min": 2,
+          "rows_per_protein_median": 114.0,
+          "rows_per_protein_max": 310,
+          "proteins_per_drug_min": 1,
+          "proteins_per_drug_median": 19.0,
+          "proteins_per_drug_max": 146,
+          "fraction_drugs_on_more_than_one_protein": 0.9959432048681541,
+          "n_scaffolds": 269,
+          "rows_per_scaffold_min": 1,
+          "rows_per_scaffold_median": 34.0,
+          "rows_per_scaffold_max": 2165
+        },
+        "train": {
+          "n_rows": 82227,
+          "n_proteins": 229,
+          "n_drugs": 1415,
+          "rows_per_protein_min": 7,
+          "rows_per_protein_median": 400.0,
+          "rows_per_protein_max": 1013,
+          "proteins_per_drug_min": 2,
+          "proteins_per_drug_median": 33.0,
+          "proteins_per_drug_max": 166,
+          "fraction_drugs_on_more_than_one_protein": 1.0,
+          "n_scaffolds": 914,
+          "rows_per_scaffold_min": 1,
+          "rows_per_scaffold_median": 35.0,
+          "rows_per_scaffold_max": 2485
+        },
+        "val": {
+          "n_rows": 12364,
+          "n_proteins": 224,
+          "n_drugs": 221,
+          "rows_per_protein_min": 1,
+          "rows_per_protein_median": 56.0,
+          "rows_per_protein_max": 147,
+          "proteins_per_drug_min": 1,
+          "proteins_per_drug_median": 32.0,
+          "proteins_per_drug_max": 159,
+          "fraction_drugs_on_more_than_one_protein": 0.9819004524886877,
+          "n_scaffolds": 122,
+          "rows_per_scaffold_min": 1,
+          "rows_per_scaffold_median": 62.5,
+          "rows_per_scaffold_max": 1080
+        }
+      }
+    },
+    "davis_scaffolds_equal_drugs": true
+  },
+  "existing_pair_bootstrap": {
+    "source": "artifacts/metrics_uncertainty.json",
+    "note": "Row bootstrap already exported. Not the recommended test. Not rerun.",
+    "seed": 42,
+    "n_bootstrap": 1000,
+    "comparisons": [
+      {
+        "name": "DAVIS cold-protein, HistGBM amino-acid plus dipeptide versus ligand-only",
+        "status": "skipped",
+        "kind": null,
+        "n_rows": null,
+        "delta_point": null,
+        "delta_p": null,
+        "delta_includes_0": null
+      },
+      {
+        "name": "DAVIS scaffold, HistGBM amino-acid plus dipeptide versus ligand-only",
+        "status": "skipped",
+        "kind": null,
+        "n_rows": null,
+        "delta_point": null,
+        "delta_p": null,
+        "delta_includes_0": null
+      },
+      {
+        "name": "KIBA cold-protein, HistGBM joint composition versus ligand-only",
+        "status": "skipped",
+        "kind": null,
+        "n_rows": null,
+        "delta_point": null,
+        "delta_p": null,
+        "delta_includes_0": null
+      },
+      {
+        "name": "DAVIS cold-protein, graph model plus joint composition versus graph ligand-only",
+        "status": "computed",
+        "kind": "spearman",
+        "n_rows": 5168,
+        "delta_point": -0.010207718313069436,
+        "delta_p": 0.35864135864135865,
+        "delta_includes_0": true
+      },
+      {
+        "name": "DAVIS scaffold, graph model plus joint composition versus graph ligand-only",
+        "status": "computed",
+        "kind": "spearman",
+        "n_rows": 5306,
+        "delta_point": 0.05555159236441043,
+        "delta_p": 0.001998001998001998,
+        "delta_includes_0": false
+      },
+      {
+        "name": "SLK library recovery, HistGBM joint composition versus ligand-only",
+        "status": "computed",
+        "kind": "recovery",
+        "n_rows": 8068,
+        "delta_point": null,
+        "delta_p": null,
+        "delta_includes_0": null
+      }
+    ]
+  }
+}

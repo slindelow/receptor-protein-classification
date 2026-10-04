@@ -1,0 +1,40 @@
+[project]
+name = "virtual-screening"
+version = "0.1.2"
+description = "Sofia VS: ECFP+HistGBM + Chemprop D-MPNN; v1.1 protein ablation, v1.2 Chemprop"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "pandas==2.2.3",
+  "numpy==1.26.4",
+  "scikit-learn==1.5.2",
+  "rdkit==2024.3.5",
+  "pyyaml==6.0.2",
+  "scipy==1.13.1",
+  "joblib==1.4.2",
+  "tqdm==4.66.5",
+  "requests==2.32.3",
+  "setuptools==78.1.0",
+  "torch==2.14.1",
+  "fair-esm==2.0.0",
+  "chemprop==2.2.1",
+]
+
+[project.optional-dependencies]
+# Install torch from the CPU index: uv pip install torch --index-url https://download.pytorch.org/whl/cpu
+esm = ["torch==2.14.1", "fair-esm==2.0.0"]
+
+[project.scripts]
+vs-screen = "vs.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vs"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src/vs" = "vs"
+
+[tool.uv]
+package = true

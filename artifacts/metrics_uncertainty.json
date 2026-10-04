@@ -1,0 +1,387 @@
+{
+  "seed": 42,
+  "n_bootstrap": 1000,
+  "ci": "percentile 2.5 to 97.5",
+  "models_refit": false,
+  "test_sentence": "Graph comparisons in this file remain a pairs bootstrap: the same resample enters both scores, the statistic is Spearman rho of the protein score minus Spearman rho of the ligand-only score, and the two-sided p-value for a difference of zero recenters each replicate by the observed difference. The HistGBM cold-protein comparison uses the same recentering, but the resample unit is the held-out kinase.",
+  "inventory_notes": [
+    "NPZ prediction files found: `artifacts/models_v1.2/preds_cold_protein_ligand_only.npz`, `artifacts/models_v1.2/preds_cold_protein_protein.npz`, `artifacts/models_v1.2/preds_scaffold_ligand_only.npz`, `artifacts/models_v1.2/preds_scaffold_protein.npz`.",
+    "Per-pair HistGBM AAC+DPC and ligand-only scores for the DAVIS cold-protein test are in `artifacts/scores_histgbm_cold_protein.csv`. Models were loaded from artifacts/models_v1.1, not refit. Scaffold HistGBM scores and KIBA per-pair scores are still absent. The warm LCK screen was not bootstrapped.",
+    "No per-pair KIBA scores were stored. metrics_kiba.json stores aggregate metrics only. KIBA cold-protein delta Spearman was not resampled.",
+    "artifacts/models_v1.2/preds_*.npz are the Chemprop runs named in metrics_v1.2.json (graph model, joint composition versus ligand-only), not the histogram model."
+  ],
+  "prediction_files": [
+    "artifacts/.metrics_reference.json",
+    "artifacts/.metrics_v1.1_reference.json",
+    "artifacts/.metrics_v1.2_reference.json",
+    "artifacts/.metrics_v1.4_reference.json",
+    "artifacts/metrics.json",
+    "artifacts/metrics_calibration.json",
+    "artifacts/metrics_kiba.json",
+    "artifacts/metrics_screen.json",
+    "artifacts/metrics_screen_cold.json",
+    "artifacts/metrics_selectivity.json",
+    "artifacts/metrics_stat_review.json",
+    "artifacts/metrics_uncertainty.json",
+    "artifacts/metrics_v1.1.json",
+    "artifacts/metrics_v1.2.json",
+    "artifacts/models_v1.2/preds_cold_protein_ligand_only.npz",
+    "artifacts/models_v1.2/preds_cold_protein_protein.npz",
+    "artifacts/models_v1.2/preds_scaffold_ligand_only.npz",
+    "artifacts/models_v1.2/preds_scaffold_protein.npz",
+    "artifacts/sample_ranked.csv",
+    "artifacts/scores_histgbm_cold_protein.csv",
+    "artifacts/scores_histgbm_cold_protein_check.json",
+    "artifacts/screen_ranked.csv",
+    "artifacts/screen_ranked_cold.csv"
+  ],
+  "comparisons": [
+    {
+      "name": "DAVIS cold-protein, HistGBM amino-acid plus dipeptide versus ligand-only",
+      "status": "computed",
+      "reason": null,
+      "kind": "kinase_spearman",
+      "sources": "artifacts/scores_histgbm_cold_protein.csv",
+      "result": {
+        "n_rows": 5168,
+        "n_kinases": 76,
+        "rows_per_kinase_min": 68,
+        "rows_per_kinase_max": 68,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "resample_unit": "held-out kinase",
+        "resample": "Draw the held-out kinases with replacement. Keep every test pair of each drawn kinase (a kinase drawn twice contributes its pairs twice). Recompute pooled Spearman and EF@1% on the concatenated pairs. The same draw enters both scores.",
+        "binder_threshold": 7.0,
+        "ef_fraction": 0.01,
+        "spearman_protein": {
+          "point": 0.5501253139581714,
+          "ci95": {
+            "low": 0.511785252919354,
+            "high": 0.5847903866192465,
+            "n_finite": 1000,
+            "includes_0": false
+          }
+        },
+        "spearman_ligand_only": {
+          "point": 0.5001575530870505,
+          "ci95": {
+            "low": 0.46127738666517487,
+            "high": 0.5386222614275902,
+            "n_finite": 1000,
+            "includes_0": false
+          }
+        },
+        "delta_spearman_protein_minus_ligand": {
+          "point": 0.04996776087112098,
+          "ci95": {
+            "low": 0.02712625028941049,
+            "high": 0.071976586483323,
+            "n_finite": 1000,
+            "includes_0": false
+          },
+          "test": {
+            "p_value": 0.000999000999000999,
+            "n_finite": 1000,
+            "n_as_extreme": 0,
+            "sidedness": "two-sided",
+            "null": "delta = 0",
+            "procedure": "Recenter each bootstrap replicate by subtracting the observed delta, then (1 + count of absolute recentered replicates at least as large as the absolute observed delta) / (n_finite + 1)."
+          }
+        },
+        "ef_at_1pct_protein": {
+          "point": 10.245836637589216,
+          "ci95": {
+            "low": 8.37896453223762,
+            "high": 12.654797948047376,
+            "n_finite": 1000,
+            "includes_0": false
+          }
+        },
+        "ef_at_1pct_ligand_only": {
+          "point": 8.452815226011102,
+          "ci95": {
+            "low": 7.266685701983978,
+            "high": 11.181997501086483,
+            "n_finite": 1000,
+            "includes_0": false
+          }
+        },
+        "delta_ef_at_1pct_protein_minus_ligand": {
+          "point": 1.7930214115781133,
+          "ci95": {
+            "low": -0.2624061982450547,
+            "high": 3.2467613621320517,
+            "n_finite": 1000,
+            "includes_0": true
+          },
+          "test": {
+            "p_value": 0.09090909090909091,
+            "n_finite": 1000,
+            "n_as_extreme": 90,
+            "sidedness": "two-sided",
+            "null": "delta = 0",
+            "procedure": "Recenter each bootstrap replicate by subtracting the observed delta, then (1 + count of absolute recentered replicates at least as large as the absolute observed delta) / (n_finite + 1)."
+          }
+        },
+        "models_source": "loaded from artifacts/models_v1.1 joblibs, not refit",
+        "point_estimates_matched": true,
+        "match_tolerance": 0.0001,
+        "match_detail": {
+          "ligand_only_spearman": {
+            "recomputed": 0.5001575530870505,
+            "published": 0.5001575530870505,
+            "abs_diff": 0.0,
+            "match": true
+          },
+          "aac_dpc_spearman": {
+            "recomputed": 0.5501253139581714,
+            "published": 0.5501253139581715,
+            "abs_diff": 1.1102230246251565e-16,
+            "match": true
+          },
+          "ligand_only_ef_at_1pct": {
+            "recomputed": 8.452815226011102,
+            "published": 8.452815226011102,
+            "abs_diff": 0.0,
+            "match": true
+          },
+          "aac_dpc_ef_at_1pct": {
+            "recomputed": 10.245836637589216,
+            "published": 10.245836637589216,
+            "abs_diff": 0.0,
+            "match": true
+          }
+        },
+        "published_mode_spearman": {
+          "ligand_only": 0.5001575530870505,
+          "aac": 0.4983989543490435,
+          "dpc": 0.5408998681156207,
+          "aac_dpc": 0.5501253139581715,
+          "esm2": 0.5476280799863112
+        },
+        "pre_specified_contrast": "AAC+DPC versus ligand-only",
+        "selection_note": "AAC+DPC was the best cold-protein Spearman among four modes scored on this same split (ligand-only 0.500158, AAC 0.498399, DPC 0.540900, AAC+DPC 0.550125). ESM was a fifth comparison and was essentially tied with AAC+DPC (ESM Spearman 0.547628). The contrast tested here is the pre-specified AAC+DPC versus ligand-only contrast. The interval is not adjusted for the other modes.",
+        "interval_note": "The delta Spearman interval excludes zero. That exclusion is not multiplicity-adjusted: AAC+DPC was chosen as the best of four modes on this split, with ESM a fifth comparison essentially tied with it. The delta EF@1% interval includes zero. This file does not call either contrast significant."
+      }
+    },
+    {
+      "name": "DAVIS scaffold, HistGBM amino-acid plus dipeptide versus ligand-only",
+      "status": "skipped",
+      "reason": "Skipped. Per-pair scores for this comparison are not in artifacts/.",
+      "kind": null,
+      "sources": null,
+      "result": null
+    },
+    {
+      "name": "KIBA cold-protein, HistGBM joint composition versus ligand-only",
+      "status": "skipped",
+      "reason": "Skipped. Per-pair KIBA scores are not in artifacts/. The recovery-style or delta-Spearman interval was not imputed from aggregate metrics.",
+      "kind": null,
+      "sources": null,
+      "result": null
+    },
+    {
+      "name": "DAVIS cold-protein, graph model plus joint composition versus graph ligand-only",
+      "status": "computed",
+      "reason": null,
+      "kind": "spearman",
+      "sources": "artifacts/models_v1.2/preds_cold_protein_protein.npz and artifacts/models_v1.2/preds_cold_protein_ligand_only.npz",
+      "result": {
+        "n_rows": 5168,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "resample": "pairs with replacement, shared row indices for both scores",
+        "spearman_protein": {
+          "point": 0.4894841755532574,
+          "ci95": {
+            "low": 0.46832666022476965,
+            "high": 0.5113289194612042,
+            "n_finite": 1000,
+            "includes_0": false
+          }
+        },
+        "spearman_ligand_only": {
+          "point": 0.49969189386632684,
+          "ci95": {
+            "low": 0.47941295568677733,
+            "high": 0.5196350526687089,
+            "n_finite": 1000,
+            "includes_0": false
+          }
+        },
+        "delta_spearman_protein_minus_ligand": {
+          "point": -0.010207718313069436,
+          "ci95": {
+            "low": -0.030432501847962343,
+            "high": 0.010371207045756075,
+            "n_finite": 1000,
+            "includes_0": true
+          },
+          "test": {
+            "p_value": 0.35864135864135865,
+            "n_finite": 1000,
+            "n_as_extreme": 358,
+            "sidedness": "two-sided",
+            "null": "delta = 0",
+            "procedure": "Recenter each bootstrap replicate by subtracting the observed delta, then (1 + count of absolute recentered replicates at least as large as the absolute observed delta) / (n_finite + 1)."
+          }
+        }
+      }
+    },
+    {
+      "name": "DAVIS scaffold, graph model plus joint composition versus graph ligand-only",
+      "status": "computed",
+      "reason": null,
+      "kind": "spearman",
+      "sources": "artifacts/models_v1.2/preds_scaffold_protein.npz and artifacts/models_v1.2/preds_scaffold_ligand_only.npz",
+      "result": {
+        "n_rows": 5306,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "resample": "pairs with replacement, shared row indices for both scores",
+        "spearman_protein": {
+          "point": 0.31763866918342226,
+          "ci95": {
+            "low": 0.2901998952081463,
+            "high": 0.3411889405540615,
+            "n_finite": 1000,
+            "includes_0": false
+          }
+        },
+        "spearman_ligand_only": {
+          "point": 0.26208707681901183,
+          "ci95": {
+            "low": 0.23697478131733996,
+            "high": 0.2860477296210617,
+            "n_finite": 1000,
+            "includes_0": false
+          }
+        },
+        "delta_spearman_protein_minus_ligand": {
+          "point": 0.05555159236441043,
+          "ci95": {
+            "low": 0.023985094810481875,
+            "high": 0.08641754435953602,
+            "n_finite": 1000,
+            "includes_0": false
+          },
+          "test": {
+            "p_value": 0.001998001998001998,
+            "n_finite": 1000,
+            "n_as_extreme": 1,
+            "sidedness": "two-sided",
+            "null": "delta = 0",
+            "procedure": "Recenter each bootstrap replicate by subtracting the observed delta, then (1 + count of absolute recentered replicates at least as large as the absolute observed delta) / (n_finite + 1)."
+          }
+        }
+      }
+    },
+    {
+      "name": "SLK library recovery, HistGBM joint composition versus ligand-only",
+      "status": "computed",
+      "reason": null,
+      "kind": "recovery",
+      "sources": "artifacts/screen_ranked_cold.csv",
+      "result": {
+        "status": "computed",
+        "path": "artifacts/screen_ranked_cold.csv",
+        "comparison": "SLK library recovery, HistGBM joint composition minus ligand-only",
+        "n_library": 8068,
+        "n_known_binders": 17,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "n_replicates_with_no_known_binder": 0,
+        "resample": "library rows with replacement; ranks recomputed inside each replicate; top 1% cutoff is ceil(0.01 * n) and the top-500 cutoff stays 500",
+        "point_recovery_protein": {
+          "n_known": 17,
+          "fraction_top_1pct": 0.47058823529411764,
+          "fraction_top_500": 0.5882352941176471,
+          "mean_rank": 1311.235294117647,
+          "top1_k": 81
+        },
+        "point_recovery_ligand_only": {
+          "n_known": 17,
+          "fraction_top_1pct": 0.4117647058823529,
+          "fraction_top_500": 0.7058823529411765,
+          "mean_rank": 469.1764705882353,
+          "top1_k": 81
+        },
+        "deltas": {
+          "fraction_top_1pct": {
+            "point": 0.05882352941176472,
+            "ci95": {
+              "low": -0.23076923076923073,
+              "high": 0.3157894736842105,
+              "n_finite": 1000,
+              "includes_0": true
+            },
+            "test": {
+              "p_value": 0.7792207792207793,
+              "n_finite": 1000,
+              "n_as_extreme": 779,
+              "sidedness": "two-sided",
+              "null": "delta = 0",
+              "procedure": "Recenter each bootstrap replicate by subtracting the observed delta, then (1 + count of absolute recentered replicates at least as large as the absolute observed delta) / (n_finite + 1)."
+            },
+            "direction": "protein minus ligand-only; positive favors the protein score"
+          },
+          "fraction_top_500": {
+            "point": -0.11764705882352944,
+            "ci95": {
+              "low": -0.375,
+              "high": 0.13340909090909092,
+              "n_finite": 1000,
+              "includes_0": true
+            },
+            "test": {
+              "p_value": 0.4305694305694306,
+              "n_finite": 1000,
+              "n_as_extreme": 430,
+              "sidedness": "two-sided",
+              "null": "delta = 0",
+              "procedure": "Recenter each bootstrap replicate by subtracting the observed delta, then (1 + count of absolute recentered replicates at least as large as the absolute observed delta) / (n_finite + 1)."
+            },
+            "direction": "protein minus ligand-only; positive favors the protein score"
+          },
+          "mean_rank_protein_minus_ligand": {
+            "point": 842.0588235294117,
+            "ci95": {
+              "low": 150.33455882352942,
+              "high": 1718.5427083333332,
+              "n_finite": 1000,
+              "includes_0": false
+            },
+            "test": {
+              "p_value": 0.03696303696303696,
+              "n_finite": 1000,
+              "n_as_extreme": 36,
+              "sidedness": "two-sided",
+              "null": "delta = 0",
+              "procedure": "Recenter each bootstrap replicate by subtracting the observed delta, then (1 + count of absolute recentered replicates at least as large as the absolute observed delta) / (n_finite + 1)."
+            },
+            "direction": "protein mean rank minus ligand-only mean rank; negative favors the protein score"
+          },
+          "mean_rank_improvement_ligand_minus_protein": {
+            "point": -842.0588235294117,
+            "ci95": {
+              "low": -1718.5427083333334,
+              "high": -150.33455882352956,
+              "n_finite": 1000,
+              "includes_0": false
+            },
+            "test": {
+              "p_value": 0.03696303696303696,
+              "n_finite": 1000,
+              "n_as_extreme": 36,
+              "sidedness": "two-sided",
+              "null": "delta = 0",
+              "procedure": "Recenter each bootstrap replicate by subtracting the observed delta, then (1 + count of absolute recentered replicates at least as large as the absolute observed delta) / (n_finite + 1)."
+            },
+            "direction": "protein minus ligand-only; positive favors the protein score"
+          }
+        },
+        "note": "Continuous per-pair pKd is not stored for the library, so delta Spearman was not computed. The interval is on the recovery difference only."
+      }
+    }
+  ]
+}

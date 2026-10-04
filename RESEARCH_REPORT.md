@@ -31,11 +31,11 @@ The aims are:
 
 ### Data
 
-The primary table is the DAVIS kinase panel as distributed by Therapeutics Data Commons (Huang et al., 2021), from the measurements in Davis et al. (2011). The frozen table contains 25,772 pairs, 68 ligands, and 379 targets. Kd in that table is in nanomolar. pKd uses the definition above. The binder cut was fixed before later comparisons and was not changed.
+The primary table is the DAVIS kinase panel as distributed by Therapeutics Data Commons (Huang et al., 2021), from the measurements in Davis et al. (2011). The download is Harvard Dataverse file 5219748: https://dataverse.harvard.edu/api/access/datafile/5219748. The frozen table contains 25,772 pairs, 68 ligands, and 379 targets. Kd in that table is in nanomolar. pKd uses the definition above. The binder cut was fixed before later comparisons and was not changed.
 
-The secondary table is KIBA (Tang et al., 2014). The Therapeutics Data Commons file was not retrieved (HTTP 403). Pairs were taken from the public mirror distributed with DeepDTA (Öztürk et al., 2018). The frozen KIBA table contains 118,254 pairs, 2,068 ligands, and 229 targets. The label is the KIBA score. It is not pKd. A KIBA binder is a score of at least 12.1. The primary split files were not altered for this table.
+The secondary table is KIBA (Tang et al., 2014). The Therapeutics Data Commons file was not retrieved (HTTP 403). Pairs were taken from the public mirror distributed with DeepDTA (Öztürk et al., 2018): https://github.com/hkmztrk/DeepDTA/tree/master/data/kiba. The frozen KIBA table contains 118,254 pairs, 2,068 ligands, and 229 targets. The label is the KIBA score. It is not pKd. A KIBA binder is a score of at least 12.1. The primary split files were not altered for this table.
 
-The library is not a training label set. It is a diverse Murcko subsample of 8,000 molecules from the MoleculeNet HIV table, drawn with seed 42, plus the 68 primary ligands spiked in so that recovery of known binders can be counted. The library has 8,068 molecules and 7,582 unique Murcko scaffolds. HIV activity labels were not used. The same library was reused for the held-out kinase. It was not rebuilt.
+The library is not a training label set. It is a diverse Murcko subsample of 8,000 molecules from the MoleculeNet HIV table (https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/HIV.csv), drawn with seed 42, plus the 68 primary ligands spiked in so that recovery of known binders can be counted. The library has 8,068 molecules and 7,582 unique Murcko scaffolds. HIV activity labels were not used. The same library was reused for the held-out kinase. It was not rebuilt.
 
 ### Splits and what was held out
 

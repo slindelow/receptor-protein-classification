@@ -1,0 +1,40 @@
+{
+  "models": "loaded",
+  "refit": false,
+  "ligand_model": "artifacts/models_v1.1/hgb_cold_protein_ligand_only.joblib",
+  "aac_dpc_model": "artifacts/models_v1.1/hgb_cold_protein_full_aac_dpc.joblib",
+  "split": "data/splits/cold_protein_split.csv",
+  "n_pairs": 5168,
+  "n_kinases": 76,
+  "n_ligands": 68,
+  "tolerance": 0.0001,
+  "matched": true,
+  "checks": {
+    "ligand_only_spearman": {
+      "recomputed": 0.5001575530870505,
+      "published": 0.5001575530870505,
+      "abs_diff": 0.0,
+      "match": true
+    },
+    "aac_dpc_spearman": {
+      "recomputed": 0.5501253139581715,
+      "published": 0.5501253139581715,
+      "abs_diff": 0.0,
+      "match": true
+    },
+    "ligand_only_ef_at_1pct": {
+      "recomputed": 8.452815226011102,
+      "published": 8.452815226011102,
+      "abs_diff": 0.0,
+      "match": true
+    },
+    "aac_dpc_ef_at_1pct": {
+      "recomputed": 10.245836637589216,
+      "published": 10.245836637589216,
+      "abs_diff": 0.0,
+      "match": true
+    }
+  },
+  "published_metrics_overwritten": false,
+  "score_csv": "artifacts/scores_histgbm_cold_protein.csv"
+}

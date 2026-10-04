@@ -1,0 +1,214 @@
+{
+  "chemprop_version": "2.2.1",
+  "config": {
+    "binder_pkd_threshold": 7.0,
+    "chemprop": {
+      "accelerator": "cpu",
+      "batch_size": 64,
+      "depth": 3,
+      "deterministic_seed": 42,
+      "dropout": 0.0,
+      "early_stopping_patience": 5,
+      "final_lr": 0.0001,
+      "hidden_dim": 300,
+      "init_lr": 0.0001,
+      "max_epochs": 15,
+      "max_lr": 0.001,
+      "num_workers": 0,
+      "warmup_epochs": 2
+    },
+    "protein_features": {
+      "type": "aac_dpc"
+    },
+    "seed": 42
+  },
+  "data_freeze_id": "sofia-vs-v1-2026-10",
+  "freeze_id": "sofia-vs-v1.2-chemprop",
+  "generated_at_america_toronto": "2026-10-02T17:06:25-04:00",
+  "manifest_sha256": {
+    "davis_pairs.csv": "6b6281de1815c6a4131299091e64d91284b9fb151022a00c0f4bb9e2e687098e",
+    "davis_tdc.tab": "6d4c6809dcb7c5da2b91a32d594d6935b75484940bde4d18055eb5e1059262f4"
+  },
+  "models": {
+    "cold_protein_ligand_only": "artifacts/models_v1.2/chemprop_cold_protein_ligand_only.ckpt",
+    "cold_protein_ligand_only_preds": "artifacts/models_v1.2/preds_cold_protein_ligand_only.npz",
+    "cold_protein_protein": "artifacts/models_v1.2/chemprop_cold_protein_protein.ckpt",
+    "cold_protein_protein_preds": "artifacts/models_v1.2/preds_cold_protein_protein.npz",
+    "scaffold_ligand_only": "artifacts/models_v1.2/chemprop_scaffold_ligand_only.ckpt",
+    "scaffold_ligand_only_preds": "artifacts/models_v1.2/preds_scaffold_ligand_only.npz",
+    "scaffold_protein": "artifacts/models_v1.2/chemprop_scaffold_protein.ckpt",
+    "scaffold_protein_preds": "artifacts/models_v1.2/preds_scaffold_protein.npz"
+  },
+  "nondeterminism_note": "Chemprop+Lightning on CPU is not bit-stable across machines/runs; metrics exported from one fixed-seed run; reproduce_v1.2.sh documents tolerance.",
+  "protein_mode": "aac_dpc",
+  "splits": {
+    "cold_protein": {
+      "ligand_only": {
+        "auroc": 0.8278674028382866,
+        "binder_rate": 0.07507739938080496,
+        "ef_at_1pct": 8.708961141950834,
+        "ef_at_5pct": 6.634080324801974,
+        "n": 5168.0,
+        "n_binders": 388.0,
+        "n_test": 5168.0,
+        "n_train": 18020.0,
+        "protein_dim": 0.0,
+        "protein_type": "none",
+        "spearman_rho": 0.49969189386632684
+      },
+      "protein": {
+        "auroc": 0.8541261376870983,
+        "binder_rate": 0.07507739938080496,
+        "ef_at_1pct": 8.452815226011102,
+        "ef_at_5pct": 5.965529594395574,
+        "n": 5168.0,
+        "n_binders": 388.0,
+        "n_test": 5168.0,
+        "n_train": 18020.0,
+        "protein_dim": 420.0,
+        "protein_type": "aac_dpc",
+        "spearman_rho": 0.48948417555325746
+      }
+    },
+    "scaffold": {
+      "ligand_only": {
+        "auroc": 0.6645200395974612,
+        "binder_rate": 0.056916698077647945,
+        "ef_at_1pct": 0.3253617856266863,
+        "ef_at_5pct": 0.5284071104914604,
+        "n": 5306.0,
+        "n_binders": 302.0,
+        "n_test": 5306.0,
+        "n_train": 17813.0,
+        "protein_dim": 0.0,
+        "protein_type": "none",
+        "spearman_rho": 0.2620870768190119
+      },
+      "protein": {
+        "auroc": 0.7372687942361342,
+        "binder_rate": 0.056916698077647945,
+        "ef_at_1pct": 7.483321069413784,
+        "ef_at_5pct": 4.557511327988847,
+        "n": 5306.0,
+        "n_binders": 302.0,
+        "n_test": 5306.0,
+        "n_train": 17813.0,
+        "protein_dim": 420.0,
+        "protein_type": "aac_dpc",
+        "spearman_rho": 0.3176386691834222
+      }
+    }
+  },
+  "train_info": {
+    "cold_protein_ligand_only": {
+      "best_ckpt": "artifacts/models_v1.2/ckpt_cold_protein_ligand_only/best-epoch=11-val_loss=0.8901.ckpt",
+      "best_val_loss": 0.8900735974311829,
+      "dropped_smiles_test": 0,
+      "dropped_smiles_train": 0,
+      "dropped_smiles_val": 0,
+      "epochs_run": 16,
+      "n_test": 5168,
+      "n_train": 18020,
+      "n_val": 2584,
+      "n_xd": 0
+    },
+    "cold_protein_protein": {
+      "best_ckpt": "artifacts/models_v1.2/ckpt_cold_protein_protein/best-epoch=4-val_loss=0.8076.ckpt",
+      "best_val_loss": 0.8076217174530029,
+      "dropped_smiles_test": 0,
+      "dropped_smiles_train": 0,
+      "dropped_smiles_val": 0,
+      "epochs_run": 11,
+      "n_test": 5168,
+      "n_train": 18020,
+      "n_val": 2584,
+      "n_xd": 420
+    },
+    "scaffold_ligand_only": {
+      "best_ckpt": "artifacts/models_v1.2/ckpt_scaffold_ligand_only/best-epoch=4-val_loss=1.2328.ckpt",
+      "best_val_loss": 1.2327629327774048,
+      "dropped_smiles_test": 0,
+      "dropped_smiles_train": 0,
+      "dropped_smiles_val": 0,
+      "epochs_run": 11,
+      "n_test": 5306,
+      "n_train": 17813,
+      "n_val": 2653,
+      "n_xd": 0
+    },
+    "scaffold_protein": {
+      "best_ckpt": "artifacts/models_v1.2/ckpt_scaffold_protein/best-epoch=1-val_loss=0.9739.ckpt",
+      "best_val_loss": 0.9739436507225037,
+      "dropped_smiles_test": 0,
+      "dropped_smiles_train": 0,
+      "dropped_smiles_val": 0,
+      "epochs_run": 8,
+      "n_test": 5306,
+      "n_train": 17813,
+      "n_val": 2653,
+      "n_xd": 420
+    }
+  },
+  "v1_1_baselines": {
+    "cold_protein": {
+      "aac_dpc": {
+        "auroc": 0.8689384462752879,
+        "binder_rate": 0.07507739938080496,
+        "ef_at_1pct": 10.245836637589216,
+        "ef_at_5pct": 6.994069179636189,
+        "feat_dim": 2468.0,
+        "n": 5168.0,
+        "n_binders": 388.0,
+        "n_test": 5168.0,
+        "n_train": 18020.0,
+        "protein_dim": 420.0,
+        "protein_type": "aac_dpc",
+        "spearman_rho": 0.5501253139581715
+      },
+      "ligand_only": {
+        "auroc": 0.8280313160505544,
+        "binder_rate": 0.07507739938080496,
+        "ef_at_1pct": 8.452815226011102,
+        "ef_at_5pct": 6.531226366277912,
+        "feat_dim": 2048.0,
+        "n": 5168.0,
+        "n_binders": 388.0,
+        "n_test": 5168.0,
+        "n_train": 18020.0,
+        "protein_dim": 0.0,
+        "protein_type": "none",
+        "spearman_rho": 0.5001575530870505
+      }
+    },
+    "scaffold": {
+      "aac_dpc": {
+        "auroc": 0.6436804199024887,
+        "binder_rate": 0.056916698077647945,
+        "ef_at_1pct": 5.20578857002698,
+        "ef_at_5pct": 3.6327988846287904,
+        "feat_dim": 2468.0,
+        "n": 5306.0,
+        "n_binders": 302.0,
+        "n_test": 5306.0,
+        "n_train": 17813.0,
+        "protein_dim": 420.0,
+        "protein_type": "aac_dpc",
+        "spearman_rho": 0.23971275455790156
+      },
+      "ligand_only": {
+        "auroc": 0.4413144980704179,
+        "binder_rate": 0.056916698077647945,
+        "ef_at_1pct": 0.0,
+        "ef_at_5pct": 0.19815266643429766,
+        "feat_dim": 2048.0,
+        "n": 5306.0,
+        "n_binders": 302.0,
+        "n_test": 5306.0,
+        "n_train": 17813.0,
+        "protein_dim": 0.0,
+        "protein_type": "none",
+        "spearman_rho": -0.010665435581998263
+      }
+    }
+  }
+}

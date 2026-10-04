@@ -1,0 +1,40 @@
+{
+  "dataset": "KIBA",
+  "files": {
+    "kiba_binding_affinity_v2.txt": {
+      "bytes": 2864308,
+      "path": "data/raw/kiba_deepdta/kiba_binding_affinity_v2.txt",
+      "sha256": "0b062d3f51e80b63acda95bcc6364cacafa744d1dcd2d97293ccc878540b5732"
+    },
+    "kiba_pairs.csv": {
+      "bytes": 101906920,
+      "path": "data/raw/kiba_pairs.csv",
+      "sha256": "9c4e3322d192a9a160cfa12968ceb4c3fe6acd49103611b82037302df75268af"
+    },
+    "ligands_can.txt": {
+      "bytes": 165908,
+      "path": "data/raw/kiba_deepdta/ligands_can.txt",
+      "sha256": "a95797abaf31b17bd2471dbf3e3476f588d5a79797903cc156528f66e55c963b"
+    },
+    "proteins.txt": {
+      "bytes": 170137,
+      "path": "data/raw/kiba_deepdta/proteins.txt",
+      "sha256": "2ba9dbc2959d88b0740aaf28828c4c611c2dbd1c2019547eb2ec1c3daa192604"
+    }
+  },
+  "freeze_id": "sofia-vs-kiba-v1.3",
+  "source": {
+    "citation": "Tang et al. JCIM 2014; Ozturk et al. DeepDTA Bioinformatics 2018",
+    "download_date_america_toronto": "2026-10-02",
+    "label_note": "Y is KIBA score (not Kd nM). Stored as pkd for protocol reuse only.",
+    "name": "DeepDTA public KIBA mirror (ligands_can + proteins + kiba_binding_affinity_v2)",
+    "note": "TDC Dataverse file returned HTTP 403 from this box; used DeepDTA public mirror instead.",
+    "url": "https://github.com/hkmztrk/DeepDTA/tree/master/data/kiba"
+  },
+  "transform": {
+    "label": "pkd := kiba_score (NOT 9-log10Kd); binder threshold KIBA>=12.1",
+    "n_pairs": 118254,
+    "n_unique_ligands": 2068,
+    "n_unique_targets": 229
+  }
+}

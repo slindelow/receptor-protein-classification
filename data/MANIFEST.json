@@ -1,0 +1,45 @@
+{
+  "dataset": "DAVIS",
+  "files": {
+    "davis_pairs.csv": {
+      "bytes": 22008906,
+      "note": "Sanitized pairs with pKd = 9 - log10(Kd_nM)",
+      "path": "data/raw/davis_pairs.csv",
+      "sha256": "6b6281de1815c6a4131299091e64d91284b9fb151022a00c0f4bb9e2e687098e"
+    },
+    "davis_tdc.tab": {
+      "bytes": 21376712,
+      "note": "Raw TDC DAVIS tab from Harvard Dataverse (Kd nM)",
+      "path": "data/raw/davis_tdc.tab",
+      "sha256": "6d4c6809dcb7c5da2b91a32d594d6935b75484940bde4d18055eb5e1059262f4"
+    },
+    "delaney_esol.csv": {
+      "bytes": 96699,
+      "download_date_america_toronto": "2026-10-02",
+      "note": "Public Delaney/ESOL SMILES used only to pad demo screening library (not training labels)",
+      "path": "data/raw/delaney_esol.csv",
+      "sha256": "8c06a76f0c6487d29ab0f903e6a7a7139f189ab3c1178f159c8be8964602f189",
+      "source_url": "https://raw.githubusercontent.com/deepchem/deepchem/master/datasets/delaney-processed.csv"
+    },
+    "demo_library.csv": {
+      "bytes": 23769,
+      "note": "Demo screen library n=400 (DAVIS ligands + ESOL pad)",
+      "path": "data/demo/library.csv",
+      "sha256": "55051feab55098ec5254e23816cf5af9b0a1c5a0066ca509b668a0ec4143b996"
+    }
+  },
+  "freeze_id": "sofia-vs-v1-2026-10",
+  "source": {
+    "citation": "Huang et al., Therapeutics Data Commons, NeurIPS 2021; Davis et al., Nat Biotechnol 2011",
+    "dataverse_file_id": 5219748,
+    "download_date_america_toronto": "2026-10-02",
+    "name": "Therapeutics Data Commons (TDC) multi_pred.DTI DAVIS",
+    "url": "https://dataverse.harvard.edu/api/access/datafile/5219748"
+  },
+  "transform": {
+    "n_pairs": 25772,
+    "n_unique_ligands": 68,
+    "n_unique_targets": 379,
+    "pkd": "pkd = 9 - log10(Kd_nM); Kd reported in nM in TDC file"
+  }
+}

@@ -1,0 +1,350 @@
+{
+  "comparison": {
+    "deltas_protein_minus_ligand_higher_is_better": {
+      "mean_rank_improvement": -842.0588235294117,
+      "top_1pct_fraction": 0.05882352941176472,
+      "top_500_fraction": -0.11764705882352944
+    },
+    "protein_beats_ligand_only": "mixed",
+    "rule": "yes if protein is strictly better on at least one of {top 1% fraction, top 500 fraction, mean rank} and worse on none; no if ligand-only is strictly better on at least one and protein on none; mixed if each wins at least one; tie if all equal. Lower mean rank is better."
+  },
+  "data_freeze_id": "sofia-vs-v1-2026-10",
+  "freeze_id": "sofia-vs-v1.6-cold-screen",
+  "generated_at_america_toronto": "2026-10-03T12:45:44-04:00",
+  "known_binder_detail": [
+    {
+      "drug_id": "44259",
+      "ligand_only_pred_pkd": 7.243697646272404,
+      "ligand_only_rank": 1,
+      "pred_pkd": 7.96906078056215,
+      "rank": 1,
+      "smiles": "CNC1CC2OC(C)(C1OC)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)C(=O)NC4",
+      "true_pkd": 10.619788758288394
+    },
+    {
+      "drug_id": "126565",
+      "ligand_only_pred_pkd": 6.790884086971094,
+      "ligand_only_rank": 45,
+      "pred_pkd": 7.082955590142728,
+      "rank": 4,
+      "smiles": "CC12OC(CC1(O)CO)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)CNC4=O",
+      "true_pkd": 7.455931955649724
+    },
+    {
+      "drug_id": "5329102",
+      "ligand_only_pred_pkd": 6.051947526493214,
+      "ligand_only_rank": 55,
+      "pred_pkd": 6.60758196271425,
+      "rank": 46,
+      "smiles": "CCN(CC)CCNC(=O)c1c(C)[nH]c(C=C2C(=O)Nc3ccc(F)cc32)c1C",
+      "true_pkd": 7.251811972993799
+    },
+    {
+      "drug_id": "11409972",
+      "ligand_only_pred_pkd": 5.920382012023388,
+      "ligand_only_rank": 87,
+      "pred_pkd": 6.530712102527598,
+      "rank": 49,
+      "smiles": "CCN1CCN(Cc2ccc(NC(=O)Nc3ccc(Oc4cc(NC)ncn4)cc3)cc2C(F)(F)F)CC1",
+      "true_pkd": 7.638272163982407
+    },
+    {
+      "drug_id": "5328940",
+      "ligand_only_pred_pkd": 5.767798447323451,
+      "ligand_only_rank": 221,
+      "pred_pkd": 6.3701763626538295,
+      "rank": 52,
+      "smiles": "COc1cc(Nc2c(C#N)cnc3cc(OCCCN4CCN(C)CC4)c(OC)cc23)c(Cl)cc1Cl",
+      "true_pkd": 8.327902142064282
+    },
+    {
+      "drug_id": "9809715",
+      "ligand_only_pred_pkd": 5.945149328206535,
+      "ligand_only_rank": 84,
+      "pred_pkd": 6.245749305966293,
+      "rank": 61,
+      "smiles": "COC(=O)c1ccc2c(c1)NC(=O)C2=C(Nc1ccc(N(C)C(=O)CN2CCN(C)CC2)cc1)c1ccccc1",
+      "true_pkd": 7.292429823902063
+    },
+    {
+      "drug_id": "11984591",
+      "ligand_only_pred_pkd": 6.121783770705438,
+      "ligand_only_rank": 48,
+      "pred_pkd": 6.233783862259663,
+      "rank": 62,
+      "smiles": "COc1cc(Nc2ncc(F)c(Nc3ccc4c(n3)NC(=O)C(C)(C)O4)n2)cc(OC)c1OC.O=S(=O)(O)c1ccccc1",
+      "true_pkd": 7.481486060122112
+    },
+    {
+      "drug_id": "11427553",
+      "ligand_only_pred_pkd": 6.0025332792071255,
+      "ligand_only_rank": 75,
+      "pred_pkd": 6.151967512233829,
+      "rank": 73,
+      "smiles": "O=C(c1ccc(C=Cc2n[nH]c3ccccc23)cc1)N1CCNCC1",
+      "true_pkd": 7.886056647693163
+    },
+    {
+      "drug_id": "16038120",
+      "ligand_only_pred_pkd": 6.272590545440104,
+      "ligand_only_rank": 47,
+      "pred_pkd": 5.978197691942023,
+      "rank": 135,
+      "smiles": "COc1cc(N2CCC(N3CCN(C)CC3)CC2)ccc1Nc1ncc(Cl)c(Nc2ccccc2S(=O)(=O)C(C)C)n1",
+      "true_pkd": 7.67778070526608
+    },
+    {
+      "drug_id": "9915743",
+      "ligand_only_pred_pkd": 5.344117375015617,
+      "ligand_only_rank": 1007,
+      "pred_pkd": 5.906389148792434,
+      "rank": 208,
+      "smiles": "CCOc1cc2ncc(C#N)c(Nc3ccc(OCc4ccccn4)c(Cl)c3)c2cc1NC(=O)C=CCN(C)C",
+      "true_pkd": 7.180456064458131
+    },
+    {
+      "drug_id": "25243800",
+      "ligand_only_pred_pkd": 5.6876849253599495,
+      "ligand_only_rank": 322,
+      "pred_pkd": 5.558916358729032,
+      "rank": 731,
+      "smiles": "CC(C)N1NC(=C2C=c3cc(O)ccc3=N2)c2c(N)ncnc21",
+      "true_pkd": 7.075720713938118
+    },
+    {
+      "drug_id": "42642645",
+      "ligand_only_pred_pkd": 5.996874896816338,
+      "ligand_only_rank": 76,
+      "pred_pkd": 5.534240450879832,
+      "rank": 810,
+      "smiles": "COc1cc2c(Oc3ccc(NC(=O)C4(C(=O)Nc5ccc(F)cc5)CC4)cc3F)ccnc2cc1OCCCN1CCOCC1",
+      "true_pkd": 8.522878745280337
+    },
+    {
+      "drug_id": "5494449",
+      "ligand_only_pred_pkd": 5.53188425175925,
+      "ligand_only_rank": 499,
+      "pred_pkd": 5.430973648117108,
+      "rank": 1361,
+      "smiles": "Cc1cc(Nc2cc(N3CCN(C)CC3)nc(Sc3ccc(NC(=O)C4CC4)cc3)n2)n[nH]1",
+      "true_pkd": 7.086186147616283
+    },
+    {
+      "drug_id": "3081361",
+      "ligand_only_pred_pkd": 5.344476459210672,
+      "ligand_only_rank": 1003,
+      "pred_pkd": 5.297556115322864,
+      "rank": 2898,
+      "smiles": "COc1cc2c(Nc3ccc(Br)cc3F)ncnc2cc1OCC1CCN(C)CC1",
+      "true_pkd": 7.022276394711152
+    },
+    {
+      "drug_id": "11626560",
+      "ligand_only_pred_pkd": 5.524502948105527,
+      "ligand_only_rank": 513,
+      "pred_pkd": 5.265603428342631,
+      "rank": 3654,
+      "smiles": "CC(Oc1cc(-c2cnn(C3CCNCC3)c2)cnc1N)c1c(Cl)ccc(F)c1Cl",
+      "true_pkd": 7.744727494896693
+    },
+    {
+      "drug_id": "9933475",
+      "ligand_only_pred_pkd": 5.296217652300364,
+      "ligand_only_rank": 1526,
+      "pred_pkd": 5.2401896655413145,
+      "rank": 4411,
+      "smiles": "COc1cc2c(Oc3ccc4[nH]c(C)cc4c3F)ncnc2cc1OCCCN1CCCC1",
+      "true_pkd": 7.657577319177793
+    },
+    {
+      "drug_id": "176870",
+      "ligand_only_pred_pkd": 5.236618854642278,
+      "ligand_only_rank": 2367,
+      "pred_pkd": 5.118282527851468,
+      "rank": 7735,
+      "smiles": "C#Cc1cccc(Nc2ncnc3cc(OCCOC)c(OCCOC)cc23)c1",
+      "true_pkd": 7.585026652029182
+    }
+  ],
+  "models": {
+    "full": "artifacts/models_v1.6/hgb_cold_screen_aac_dpc.joblib",
+    "ligand_only": "artifacts/models_v1.6/hgb_cold_screen_ligand_only.joblib"
+  },
+  "models_dir": "artifacts/models_v1.6",
+  "n_held_out": 68,
+  "n_train": 25704,
+  "n_train_ligand_only": 25704,
+  "ranked_csv": "artifacts/screen_ranked_cold.csv",
+  "recovery_ligand_only": {
+    "fraction_top_1pct": 0.4117647058823529,
+    "fraction_top_500": 0.7058823529411765,
+    "mean_rank": 469.1764705882353,
+    "mean_rank_vs_random": 8.599109829488466,
+    "median_rank": 87.0,
+    "n_in_top_1pct": 7,
+    "n_in_top_500": 12,
+    "n_known_binders_in_library": 17,
+    "n_library": 8068,
+    "random_expected_fraction_top_1pct": 0.010039662865642042,
+    "random_expected_fraction_top_500": 0.061973227565691624,
+    "random_expected_in_top_1pct": 0.17067426871591473,
+    "random_expected_in_top_500": 1.0535448686167577,
+    "random_expected_mean_rank": 4034.5,
+    "top1_definition": "k = max(1, ceil(0.01 * n)); same cutoff as EF@1%",
+    "top1_k": 81
+  },
+  "recovery_protein": {
+    "fraction_top_1pct": 0.47058823529411764,
+    "fraction_top_500": 0.5882352941176471,
+    "mean_rank": 1311.235294117647,
+    "mean_rank_vs_random": 3.076869588623211,
+    "median_rank": 135.0,
+    "n_in_top_1pct": 8,
+    "n_in_top_500": 10,
+    "n_known_binders_in_library": 17,
+    "n_library": 8068,
+    "random_expected_fraction_top_1pct": 0.010039662865642042,
+    "random_expected_fraction_top_500": 0.061973227565691624,
+    "random_expected_in_top_1pct": 0.17067426871591473,
+    "random_expected_in_top_500": 1.0535448686167577,
+    "random_expected_mean_rank": 4034.5,
+    "top1_definition": "k = max(1, ceil(0.01 * n)); same cutoff as EF@1%",
+    "top1_k": 81
+  },
+  "screen": {
+    "aac_dpc_cosine": 0.9701924177247657,
+    "library_csv": "data/screen_library/library_v1.5.csv",
+    "library_manifest_freeze_id": "sofia-vs-v1.5-screen",
+    "library_sha256": "5721c043c87b744e4f288d31319e7743bf72e7a064de658708b0a16c61df0604",
+    "n_davis_binders": 17,
+    "n_held_out_pairs": 68,
+    "n_known_binders_in_library": 17,
+    "n_library": 8068,
+    "nearest_target_id": "NEK1",
+    "selection": {
+      "chosen": "SLK",
+      "chosen_n_binders": 17,
+      "excluded": "LCK",
+      "lck_n_binders": 17,
+      "min_binders": 10,
+      "n_eligible": 30,
+      "rule": "Exclude LCK. Drop target_ids containing '('. Require n_binders >= 10 at pKd >= 7.0. Pick binder count closest to LCK (17). Tie break: more binders, then target_id.",
+      "runners_up": [
+        {
+          "n_binders": 16,
+          "target_id": "GAK"
+        },
+        {
+          "n_binders": 19,
+          "target_id": "LOK"
+        },
+        {
+          "n_binders": 15,
+          "target_id": "DDR2"
+        },
+        {
+          "n_binders": 15,
+          "target_id": "VEGFR2"
+        },
+        {
+          "n_binders": 20,
+          "target_id": "FLT1"
+        }
+      ]
+    },
+    "seq_len": 1235,
+    "target_id": "SLK"
+  },
+  "top10": [
+    {
+      "is_known_binder": true,
+      "ligand_only_pred_pkd": 7.243697646272404,
+      "ligand_only_rank": 1,
+      "pred_pkd": 7.96906078056215,
+      "rank": 1,
+      "smiles": "CNC1CC2OC(C)(C1OC)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)C(=O)NC4",
+      "source": "DAVIS_spike_in"
+    },
+    {
+      "is_known_binder": false,
+      "ligand_only_pred_pkd": 7.242114435122465,
+      "ligand_only_rank": 2,
+      "pred_pkd": 7.850659555410675,
+      "rank": 2,
+      "smiles": "CNC1CC2OC(C)(C1OC)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)C(=O)NC4O",
+      "source": "MoleculeNet_HIV"
+    },
+    {
+      "is_known_binder": false,
+      "ligand_only_pred_pkd": 7.1077968284807875,
+      "ligand_only_rank": 26,
+      "pred_pkd": 7.2742894693128335,
+      "rank": 3,
+      "smiles": "CC1(C)C2CCC13CS(=O)(=O)N(C(=O)C1CC=CCC1)C3C2",
+      "source": "MoleculeNet_HIV"
+    },
+    {
+      "is_known_binder": true,
+      "ligand_only_pred_pkd": 6.790884086971094,
+      "ligand_only_rank": 45,
+      "pred_pkd": 7.082955590142728,
+      "rank": 4,
+      "smiles": "CC12OC(CC1(O)CO)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)CNC4=O",
+      "source": "DAVIS_spike_in"
+    },
+    {
+      "is_known_binder": false,
+      "ligand_only_pred_pkd": 7.116713824779871,
+      "ligand_only_rank": 9,
+      "pred_pkd": 7.035259297080563,
+      "rank": 5,
+      "smiles": "CN(C)CCCNC(=O)c1cn2c(ccc3sc4ccccc4c(=O)c32)n1",
+      "source": "MoleculeNet_HIV"
+    },
+    {
+      "is_known_binder": false,
+      "ligand_only_pred_pkd": 7.112884904849203,
+      "ligand_only_rank": 20,
+      "pred_pkd": 6.939885660882391,
+      "rank": 6,
+      "smiles": "CCC(C)(O)C(=O)OC1C(=O)OC2CC3C(C)=CC(=O)C(O)C3(C)C3C4(O)OCC23C1C(C)C4O",
+      "source": "MoleculeNet_HIV"
+    },
+    {
+      "is_known_binder": false,
+      "ligand_only_pred_pkd": 7.116240748784181,
+      "ligand_only_rank": 13,
+      "pred_pkd": 6.938430400601204,
+      "rank": 7,
+      "smiles": "CCN1CCN(CC)[Pd-2]12[n+]1ccccc1-c1cccc[n+]12.[O-][Cl+3]([O-])([O-])O",
+      "source": "MoleculeNet_HIV"
+    },
+    {
+      "is_known_binder": false,
+      "ligand_only_pred_pkd": 7.113989934033772,
+      "ligand_only_rank": 18,
+      "pred_pkd": 6.900389812629444,
+      "rank": 8,
+      "smiles": "CCN=C(NC(=O)c1ccc(F)cc1)SCSC(=NC(=O)c1ccc(F)cc1)NCC",
+      "source": "MoleculeNet_HIV"
+    },
+    {
+      "is_known_binder": false,
+      "ligand_only_pred_pkd": 7.124447467893221,
+      "ligand_only_rank": 4,
+      "pred_pkd": 6.900363582379463,
+      "rank": 9,
+      "smiles": "CCN(N=C1CC2C=CCN(C2)C(=O)Cc2c1[nH]c1ccccc21)S(=O)(=O)c1ccc(C)cc1",
+      "source": "MoleculeNet_HIV"
+    },
+    {
+      "is_known_binder": false,
+      "ligand_only_pred_pkd": 7.109604339740225,
+      "ligand_only_rank": 25,
+      "pred_pkd": 6.852582641124079,
+      "rank": 10,
+      "smiles": "Cc1ccc(NCCCN2CCN(CCCNc3ccc(C)c4sc5ccccc5c(=O)c34)CC2)c2c(=O)c3ccccc3sc12",
+      "source": "MoleculeNet_HIV"
+    }
+  ]
+}

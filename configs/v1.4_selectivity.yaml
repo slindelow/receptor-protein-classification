@@ -1,0 +1,50 @@
+# Sofia VS v1.4 selectivity sketch — sofia-vs-v1.4-selectivity
+# Same raw DAVIS freeze; does not touch prior split CSVs.
+seed: 42
+freeze_id: sofia-vs-v1.4-selectivity
+data_freeze_id: sofia-vs-v1-2026-10
+
+fingerprint:
+  radius: 2
+  n_bits: 2048
+
+binder:
+  pkd_threshold: 7.0
+
+# Dual-target selectivity
+selectivity:
+  target_a: SRC
+  target_b: LCK
+  # Why this pair: Src-family kinases (SFK); related but distinguishable
+  # (~40% best-window sequence identity; aac_dpc cosine ~0.96); all 68 DAVIS
+  # ligands measured on both; n≈12 with |ΔpKd|≥1 (enough for a sketch EF).
+  rationale: "Src-family pair (SRC/LCK); related+distinguishable sequences; dual-measured ligands; non-trivial selective set"
+  delta_pkd_threshold: 1.0  # |ΔpKd| ≥ 1 defines selective binder
+  # Train excluding both targets (cold-pair): protein features must generalize.
+  protocol: cold_pair_holdout
+  protein_type: aac_dpc  # v1.1 cold-protein winner
+
+model:
+  name: HistGradientBoostingRegressor
+  max_iter: 200
+  learning_rate: 0.08
+  max_depth: 8
+  min_samples_leaf: 20
+  l2_regularization: 0.1
+  early_stopping: true
+  validation_fraction: 0.1
+  n_iter_no_change: 15
+  random_state: 42
+
+protein_features:
+  type: aac_dpc
+
+eval:
+  ef_fractions: [0.05, 0.10, 0.20]  # top-k fractions on n=68 ligands
+  metric_float_tol: 1.0e-4
+
+paths:
+  raw_dir: data/raw
+  models_dir: artifacts/models_v1.4
+  metrics_md: artifacts/metrics_selectivity.md
+  metrics_json: artifacts/metrics_selectivity.json

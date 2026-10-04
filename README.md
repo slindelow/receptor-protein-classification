@@ -6,6 +6,8 @@ A score for one protein-ligand pair was tested for whether it can order a public
 
 The full write-up, with every number taken from the exported tables, is [RESEARCH_REPORT.md](RESEARCH_REPORT.md).
 
+![Cold-protein and scaffold-split comparisons. Protein features raise rank correlation when scaffolds are held out. On held-out kinases the Spearman difference is smaller, and enrichment at 1% is not a settled gain.](figures/kinase-binding-figures.png)
+
 ## Data
 
 - DAVIS pairs, the primary labels, downloaded 2026-10-02 from Therapeutics Data Commons via Harvard Dataverse file 5219748: https://dataverse.harvard.edu/api/access/datafile/5219748. Papers already cited in the report: Davis et al. 2011 (https://doi.org/10.1038/nbt.1990) and Huang et al. 2021, Therapeutics Data Commons.

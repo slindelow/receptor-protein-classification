@@ -88,6 +88,8 @@ Saved scores were resampled with replacement (1,000 draws, seed 42): paired rows
 
 ## Results
 
+![Cold-protein and scaffold-split comparisons. Protein features raise rank correlation when scaffolds are held out. On held-out kinases the Spearman difference is smaller, and enrichment at 1% is not a settled gain.](figures/kinase-binding-figures.png)
+
 ### Protein features on scaffold and cold-protein splits
 
 Amino-acid composition, dipeptide composition, the joint composition vector, and ESM-2 were compared with a ligand-only fingerprint on the saved splits. The amino-acid rows are identical to an earlier fit on those same splits.

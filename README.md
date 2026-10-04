@@ -6,6 +6,8 @@ A score for one protein-ligand pair was tested for whether it can order a public
 
 The full write-up, with every number taken from the exported tables, is [RESEARCH_REPORT.md](RESEARCH_REPORT.md).
 
+![Cold-protein and scaffold-split comparisons. Protein features raise rank correlation when scaffolds are held out. On held-out kinases the Spearman difference is smaller, and enrichment at 1% is not a settled gain.](figures/kinase-binding-figures.png)
+
 ## What held up
 
 The working scorer is a histogram gradient booster on Morgan fingerprints, plus amino-acid composition and dipeptide composition. On the saved DAVIS splits, those protein features beat a ligand-only control when scaffolds are held out, and they add a smaller lift when whole proteins are held out (cold-protein Spearman 0.5501 vs 0.5002). A Chemprop graph model did not keep that cold-protein lift. The same features transferred to KIBA on Spearman, not on enrichment at 1%. A one-pair selectivity check (SRC vs LCK) was positive, and ligand-only could not rank it. A warm screen of LCK looked strong because that kinase was in training. A cold screen of SLK stayed above chance, and ligand-only won the broader ranks.

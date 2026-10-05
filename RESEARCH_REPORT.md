@@ -31,11 +31,11 @@ The aims are:
 
 ### Data
 
-The primary table is the DAVIS kinase panel as distributed by Therapeutics Data Commons (Huang et al., 2021), from the measurements in Davis et al. (2011). The download is Harvard Dataverse file 5219748: https://dataverse.harvard.edu/api/access/datafile/5219748. The frozen table contains 25,772 pairs, 68 ligands, and 379 targets. Kd in that table is in nanomolar. pKd uses the definition above. The binder cut was fixed before later comparisons and was not changed.
+The primary table is the DAVIS kinase panel as distributed by Therapeutics Data Commons (Huang et al., 2021), from the measurements in Davis et al. (2011). The frozen table contains 25,772 pairs, 68 ligands, and 379 targets. Kd in that table is in nanomolar. pKd uses the definition above. The binder cut was fixed before later comparisons and was not changed.
 
-The secondary table is KIBA (Tang et al., 2014). The Therapeutics Data Commons file was not retrieved (HTTP 403). Pairs were taken from the public mirror distributed with DeepDTA (Öztürk et al., 2018): https://github.com/hkmztrk/DeepDTA/tree/master/data/kiba. The frozen KIBA table contains 118,254 pairs, 2,068 ligands, and 229 targets. The label is the KIBA score. It is not pKd. A KIBA binder is a score of at least 12.1. The primary split files were not altered for this table.
+The secondary table is KIBA (Tang et al., 2014). The Therapeutics Data Commons file was not retrieved (HTTP 403). Pairs were taken from the public mirror distributed with DeepDTA (Öztürk et al., 2018). The frozen KIBA table contains 118,254 pairs, 2,068 ligands, and 229 targets. The label is the KIBA score. It is not pKd. A KIBA binder is a score of at least 12.1. The primary split files were not altered for this table.
 
-The library is not a training label set. It is a diverse Murcko subsample of 8,000 molecules from the MoleculeNet HIV table (https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/HIV.csv), drawn with seed 42, plus the 68 primary ligands spiked in so that recovery of known binders can be counted. The library has 8,068 molecules and 7,582 unique Murcko scaffolds. HIV activity labels were not used. The same library was reused for the held-out kinase. It was not rebuilt.
+The library is not a training label set. It is a diverse Murcko subsample of 8,000 molecules from the MoleculeNet HIV table, drawn with seed 42, plus the 68 primary ligands spiked in so that recovery of known binders can be counted. The library has 8,068 molecules and 7,582 unique Murcko scaffolds. HIV activity labels were not used. The same library was reused for the held-out kinase. It was not rebuilt.
 
 ### Splits and what was held out
 
@@ -58,21 +58,64 @@ SLK was chosen before any library score was read. LCK was excluded. Target ident
 
 ### Features and models
 
-Ligand features for the histogram model are Morgan fingerprints, radius 2, 2,048 bits, the extended-connectivity fingerprint (ECFP) of Rogers and Hahn (2010). Protein features are concatenated to that fingerprint.
+#### Why this stack
 
-| Protein features | Definition | Dimension, including the fingerprint |
-|---|---|---:|
-| None (ligand-only) | Fingerprint only | 2048 |
-| Amino-acid composition | Frequencies of the 20 amino acids | 2068 |
-| Dipeptide composition | Dipeptide frequencies | 2448 |
-| Amino-acid plus dipeptide composition | Both composition vectors | 2468 |
-| ESM-2 | Frozen ESM-2 model esm2_t6_8M_UR50D (Lin et al., 2023), mean pooled, 320 dimensions, sequences truncated at 1,022 residues | 2368 |
+The v1 stack was locked as laptop-tractable science: a frozen public affinity table, leakage-aware splits, a ligand-only control, and a reproducible fit that a stranger can re-run (`DESIGN.md`, decision log 2026-10-02). The product question is whether a score for one (protein, molecule) pair can order a library for a new kinase. The scientific core is therefore the predictor under honest holdout, not a neural architecture search and not a Bittensor miner.
+
+HistGradientBoostingRegressor (scikit-learn 1.5.2) was chosen as the working scorer because it fits tabular fingerprint and composition features quickly on CPU, needs no GPU, and matches the MVP “done today” constraint. It implements histogram-based gradient boosting in the sense of Ke et al. (2017). Chemprop and ESM-2 were later comparison runs, not the default fit. Boltz-2 and billion-scale libraries were cut from v1.
+
+#### Ligand and protein features
+
+Ligand features for the histogram model are Morgan fingerprints, radius 2, 2,048 bits, the extended-connectivity fingerprint (ECFP) of Rogers and Hahn (2010). RDKit 2024.3.5 builds them with `GetMorganFingerprintAsBitVect` (`src/vs/features.py`, `smiles_to_ecfp`). Radius 2 and 2,048 bits are the locked MVP defaults in `configs/default.yaml` and were not retuned per experiment. Invalid SMILES rows are dropped by a validity mask before the fit.
+
+Protein features are concatenated to that fingerprint when the experiment includes the protein.
+
+| Protein features | Definition | Dimension, including the fingerprint | Why this mode |
+|---|---|---:|---|
+| None (ligand-only) | Fingerprint only | 2048 | Control for memorization of ligand identity. If the protein adds nothing over this score on the same rows, the ranking is ligand-driven. |
+| Amino-acid composition (AAC) | Frequencies of the 20 standard amino acids | 2068 | Can be computed for an unseen sequence. A target-identifier one-hot cannot, so AAC was the MVP protein feature required for a meaningful cold-protein check. |
+| Dipeptide composition (DPC) | Frequencies of consecutive amino-acid pairs (20×20) | 2448 | Stronger sequence composition than AAC alone; compared in v1.1. |
+| Amino-acid plus dipeptide (`aac_dpc`) | AAC and DPC concatenated (420 protein dims) | 2468 | Best cheap cold-protein mode in v1.1 (best Spearman among composition modes; enrichment at 1% tied with ESM-2). Retained for Chemprop extras, selectivity, and both library rankings because it needs no embedding model at train time. |
+| ESM-2 | Frozen ESM-2 `esm2_t6_8M_UR50D` (Lin et al., 2023), mean pooled, 320 dims, sequences truncated at 1,022 residues; fair-esm 2.0.0; embeddings cached by sequence hash under `data/cache/esm2_t6/` | 2368 | External check that a small frozen protein language model does not change the story. Not used as a Chemprop extra. Not applied to the library. |
 
 Amino-acid composition can be computed for an unseen sequence. A target-identifier code cannot. Dipeptide composition and the joint composition vector were compared with amino-acid composition and with ESM-2 on the same splits and the same booster. The joint composition vector was the protein representation used for the graph-model comparison, the selectivity comparison, and both library rankings. ESM-2 was not an extra input to the graph model. ESM-2 was not applied to the library.
 
-The histogram model is scikit-learn HistGradientBoostingRegressor (scikit-learn 1.5.2), a histogram-based gradient booster in the sense described by Ke et al. (2017). Locked settings were maximum iterations 200, learning rate 0.08, maximum depth 8, minimum samples per leaf 20, L2 regularization 0.1, early stopping on, validation fraction 0.1, 15 iterations with no change, and random state 42. RDKit 2024.3.5 computed the fingerprints. The ESM-2 run used fair-esm 2.0.0.
+Feature matrix construction is `build_pair_matrix` in `src/vs/features.py`: for each training pair, concatenate the 2,048-bit fingerprint with the chosen protein vector (or use the fingerprint alone for ligand-only). The label `y` is continuous pKd on DAVIS (or KIBA score on the secondary table). Binary binder labels (pKd ≥ 7 on DAVIS; KIBA score ≥ 12.1 on KIBA) are used only for enrichment and AUROC, not as the regression target.
 
-The graph model is Chemprop 2.2.1, a directed message-passing neural network (Yang et al., 2019). Settings were 15 epochs, batch size 64, hidden size 300, depth 3, dropout 0, warmup of 2 epochs, initial, maximum, and final learning rates 0.0001, 0.001, and 0.0001, early-stopping patience 5, CPU, and seed 42. When protein features were used, the joint composition vector was passed as an extra descriptor. The histogram model was not refit for that comparison.
+#### Exact HistGBM fit procedure
+
+Training is a single scikit-learn fit, not a custom training loop. The code path is:
+
+1. Load the frozen pair table and the already-written split CSV for that experiment (`data/splits/`; never redrawn for later fits).
+2. Restrict to the training rows required by that experiment (table above under Splits).
+3. Build `X` and a validity mask with `build_pair_matrix` (ECFP radius 2, 2,048 bits; protein type as configured).
+4. Call `train_model(X, y, cfg)` in `src/vs/model.py`, which constructs `HistGradientBoostingRegressor(**cfg["model"])` and runs `model.fit(X, y)`.
+5. Save `{"model": model, "meta": meta}` with joblib under the experiment’s `artifacts/models*` path (for example `artifacts/models_v1.1/hgb_cold_protein_full_aac_dpc.joblib`).
+6. Score held-out or library rows with `predict` on the same feature construction. Screening weights are separate fits from the pair-ranking test models (see Splits table).
+
+What `fit` does inside scikit-learn for this config: features are binned into histograms; the booster starts from a constant prediction; each successive tree is fit to the current residual of squared error against `y`; the tree’s contribution is scaled by the learning rate and added to the running score; after each tree, an internal holdout of 10% of the training rows is checked; if that holdout loss does not improve for 15 consecutive trees, fitting stops before 200 trees. The returned object is the ensemble of those trees. Later scripts load the joblib and call `predict`; they do not call `fit` again unless the experiment intentionally retrains (for example the SLK cold screen).
+
+#### Locked HistGBM hyperparameters and why they were fixed
+
+Settings live in `configs/default.yaml` and were copied into later configs (`v1.1_protein.yaml`, `v1.4_selectivity.yaml`, `v1.5_screen.yaml`, `v1.6_cold_screen.yaml`). They were frozen with the MVP so every ablation shares one booster and one seed. They were not re-tuned per protein mode, per split, or per later experiment. Individual numeric choices below are therefore reproducibility locks, not claims of an optimized hyperparameter search.
+
+| Setting | Value | Role in the fit |
+|---|---|---|
+| `max_iter` | 200 | Upper bound on the number of boosting trees. |
+| `learning_rate` | 0.08 | Shrinkage on each tree’s contribution. |
+| `max_depth` | 8 | Maximum nested splits per tree. |
+| `min_samples_leaf` | 20 | Minimum training pairs in a leaf. |
+| `l2_regularization` | 0.1 | L2 penalty on leaf values. |
+| `early_stopping` | true | Stop when the internal validation slice stops improving. |
+| `validation_fraction` | 0.1 | Fraction of the *training* rows used for that early-stopping check (separate from the frozen val split used for reporting). |
+| `n_iter_no_change` | 15 | Patience before early stopping. |
+| `random_state` | 42 | Deterministic fit path. |
+
+For the SLK cold screen (v1.6), the same hyperparameters apply. HistGBM still uses its internal `validation_fraction=0.1` for early stopping even though every SLK pair is already excluded from those training rows.
+
+#### Graph-model comparison (not the working scorer)
+
+The graph model is Chemprop 2.2.1, a directed message-passing neural network (Yang et al., 2019). It was run to test whether replacing the ECFP ligand encoder changes the protein-versus-ligand-only story on cold-protein holdout. Settings were 15 epochs, batch size 64, hidden size 300, depth 3, dropout 0, warmup of 2 epochs, initial / maximum / final learning rates 0.0001 / 0.001 / 0.0001, early-stopping patience 5, CPU, and seed 42 (`configs/v1.2_chemprop.yaml`). When protein features were used, the joint composition vector (`aac_dpc`) was passed as Chemprop `x_d`, chosen over ESM-2 because it was the best cheap cold-protein mode in v1.1, needed no ESM dependency at train time, and fits the fixed-length `x_d` API. The histogram model was not refit for that comparison. Checkpoint reload used `weights_only=False`. Chemprop/Lightning on CPU is not bit-stable at `1e-4`; reproduce documents a wider tolerance for that path.
 
 ### Metrics
 
@@ -87,8 +130,6 @@ Library recovery is the fraction of known binders for that kinase (pKd of at lea
 Saved scores were resampled with replacement (1,000 draws, seed 42): paired rows for Spearman rho and for the difference in Spearman rho (protein score minus ligand-only score), and library rows for the SLK recovery differences, with a percentile 95% interval and a two-sided recentered bootstrap p-value (plus-one correction) for a difference of zero. The cold-protein histogram comparison resamples the 76 held-out kinases instead of pairs. Every test pair of a drawn kinase is kept, and each of those kinases contributes the same 68 ligands. Those scores were read from the saved models and were not refit.
 
 ## Results
-
-![Cold-protein and scaffold-split comparisons. Protein features raise rank correlation when scaffolds are held out. On held-out kinases the Spearman difference is smaller, and enrichment at 1% is not a settled gain.](figures/kinase-binding-figures.png)
 
 ### Protein features on scaffold and cold-protein splits
 

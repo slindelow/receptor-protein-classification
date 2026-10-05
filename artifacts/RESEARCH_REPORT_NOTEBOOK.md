@@ -94,27 +94,60 @@ An earlier demo library (`data/demo/library.csv`, n=400) pads DAVIS ligands with
 
 ### Features
 
-Ligand features in every HistGBM run: Morgan/ECFP, radius 2, 2048 bits.
+Ligand features in every HistGBM run: Morgan/ECFP, radius 2, 2048 bits (RDKit `GetMorganFingerprintAsBitVect` in `src/vs/features.py`). Radius and bit length are locked MVP defaults in `configs/default.yaml` and were not retuned per experiment.
 
 Protein features, concatenated to the fingerprint:
 
-| Mode | What it is | Dim exported in v1.1 (`feat_dim` includes ECFP) |
-|---|---|---|
-| `aac` | Amino-acid composition | 2068 (20 + 2048) |
-| `dpc` | Dipeptide composition | 2448 |
-| `aac_dpc` | Both | 2468 |
-| `esm2` | Frozen ESM-2 `esm2_t6_8M_UR50D`, mean pool, dim 320, sequences truncated at 1022 residues | 2368 |
-| ligand-only | ECFP only | 2048 |
+| Mode | What it is | Dim exported in v1.1 (`feat_dim` includes ECFP) | Why |
+|---|---|---|---|
+| `aac` | Amino-acid composition | 2068 (20 + 2048) | MVP protein feature: computable for an unseen sequence, unlike target-id one-hot, which is required for a meaningful cold-protein check. |
+| `dpc` | Dipeptide composition | 2448 | Stronger composition than AAC; compared in v1.1. |
+| `aac_dpc` | Both | 2468 | Best cheap cold-protein mode in v1.1; retained for later experiments. |
+| `esm2` | Frozen ESM-2 `esm2_t6_8M_UR50D`, mean pool, dim 320, sequences truncated at 1022 residues | 2368 | External check; not used on the library; not a Chemprop extra. |
+| ligand-only | ECFP only | 2048 | Memorization control: protein must beat this on the same rows. |
 
 MVP (v1) used `aac` only, because composition can be computed for an unseen sequence, unlike a target-id one-hot. v1.1 compared the four modes above. From v1.4 onward the deployed protein features are `aac_dpc`.
 
-v1.2 replaces the ECFP ligand encoder with Chemprop bond message passing (D-MPNN). Protein features, when used, are `aac_dpc` passed as Chemprop `x_d`. ESM-2 was not the Chemprop extra. `aac_dpc` was chosen because it was the best cheap cold-protein mode in v1.1.
+v1.2 replaces the ECFP ligand encoder with Chemprop bond message passing (D-MPNN). Protein features, when used, are `aac_dpc` as Chemprop `x_d`. ESM-2 was not the Chemprop extra. `aac_dpc` was chosen because it was the best cheap cold-protein mode in v1.1.
 
 ### Models
 
-HistGBM hyperparameters, locked in `configs/default.yaml` and copied into later configs: `max_iter` 200, `learning_rate` 0.08, `max_depth` 8, `min_samples_leaf` 20, `l2_regularization` 0.1, early stopping on, `validation_fraction` 0.1, `n_iter_no_change` 15, `random_state` 42.
+#### Why this stack
 
-Chemprop (`configs/v1.2_chemprop.yaml`): chemprop 2.2.1, `max_epochs` 15, batch 64, hidden 300, depth 3, dropout 0, warmup 2 epochs, init/max/final lr 0.0001 / 0.001 / 0.0001, early stopping patience 5, CPU, seed 42. Checkpoint reload used `weights_only=False`. Wall clock for the four trainings was about 18 minutes (decision log, 2026-10-02).
+The v1 stack was locked as laptop-tractable science: a frozen public affinity table, leakage-aware splits, a ligand-only control, and a reproducible fit that a stranger can re-run (`DESIGN.md`, decision log 2026-10-02). HistGradientBoostingRegressor (scikit-learn 1.5.2) was the working scorer because it fits tabular fingerprint and composition features quickly on CPU and matched the MVP same-day constraint. Chemprop and ESM-2 were comparison runs. Boltz-2 and billion-scale libraries were cut from v1.
+
+#### Exact HistGBM fit procedure
+
+1. Load the frozen pair table and the already-written split CSV (`data/splits/`; never redrawn for later fits).
+2. Restrict to the training rows for that experiment.
+3. Build `X` with `build_pair_matrix` in `src/vs/features.py` (Morgan/ECFP radius 2, 2,048 bits via RDKit `GetMorganFingerprintAsBitVect`; protein vector as configured; invalid SMILES masked out). Label `y` is continuous pKd (or KIBA score). Binder cuts are for enrichment/AUROC only.
+4. `train_model` in `src/vs/model.py` builds `HistGradientBoostingRegressor` from config and calls `model.fit(X, y)`.
+5. Save `{"model": model, "meta": meta}` with joblib under `artifacts/models*`.
+6. Score held-out or library rows with `predict` on the same feature construction. Screening weights are separate fits.
+
+Inside `fit` for this config: features are histogram-binned; boosting starts from a constant; each tree fits the current squared-error residual; the tree is scaled by the learning rate; early stopping watches an internal 10% slice of the training rows and stops after 15 rounds with no improvement, before at most 200 trees.
+
+#### Locked HistGBM hyperparameters
+
+Locked in `configs/default.yaml` and copied into later configs. Frozen with the MVP for shared booster and seed across ablations. Not re-tuned per protein mode, split, or later experiment. Numeric values are reproducibility locks, not a claimed hyperparameter search optimum.
+
+HistGBM hyperparameters: `max_iter` 200, `learning_rate` 0.08, `max_depth` 8, `min_samples_leaf` 20, `l2_regularization` 0.1, early stopping on, `validation_fraction` 0.1, `n_iter_no_change` 15, `random_state` 42.
+
+| Setting | Value | Role |
+|---|---|---|
+| `max_iter` | 200 | Cap on boosting trees |
+| `learning_rate` | 0.08 | Shrinkage per tree |
+| `max_depth` | 8 | Max nested splits per tree |
+| `min_samples_leaf` | 20 | Min pairs per leaf |
+| `l2_regularization` | 0.1 | L2 on leaf values |
+| `early_stopping` | true | Stop on internal validation stall |
+| `validation_fraction` | 0.1 | Internal early-stopping slice of training rows (not the frozen val split used for reporting) |
+| `n_iter_no_change` | 15 | Patience |
+| `random_state` | 42 | Deterministic path |
+
+Protein feature why (also in Features above): AAC was MVP because it generalizes to unseen sequences unlike target-id one-hot. `aac_dpc` was kept after v1.1 as the best cheap cold-protein mode (best Spearman; EF@1% tied with ESM-2; no embedding dependency). Ligand-only is the memorization control. ESM-2 is a frozen external check only.
+
+Chemprop (`configs/v1.2_chemprop.yaml`): chemprop 2.2.1, `max_epochs` 15, batch 64, hidden 300, depth 3, dropout 0, warmup 2 epochs, init/max/final lr 0.0001 / 0.001 / 0.0001, early stopping patience 5, CPU, seed 42. Protein extras when used: `aac_dpc` as `x_d`, chosen over ESM-2 because of the v1.1 cheap win, no ESM at train time, and fixed-length `x_d`. Checkpoint reload used `weights_only=False`. Wall clock for the four trainings was about 18 minutes (decision log, 2026-10-02).
 
 Pins recorded for the MVP stack: Python 3.12, pandas 2.2.3, numpy 1.26.4, scikit-learn 1.5.2, rdkit 2024.3.5. v1.1 added a CPU torch wheel and `fair-esm==2.0.0`. The decision log names the torch build as 2.14.1. I am not restating a version that was not written there.
 

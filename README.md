@@ -10,7 +10,7 @@ The full write-up, with every number taken from the exported tables, is [RESEARC
 
 ## Data
 
-- DAVIS pairs, the primary labels, downloaded 2026-10-02 from Therapeutics Data Commons via Harvard Dataverse file 5219748: https://dataverse.harvard.edu/api/access/datafile/5219748. Papers already cited in the report: Davis et al. 2011 (https://doi.org/10.1038/nbt.1990) and Huang et al. 2021, Therapeutics Data Commons.
+- DAVIS pairs, the primary labels, downloaded from Therapeutics Data Commons via Harvard Dataverse file 5219748: https://dataverse.harvard.edu/api/access/datafile/5219748. Papers already cited in the report: Davis et al. 2011 (https://doi.org/10.1038/nbt.1990) and Huang et al. 2021, Therapeutics Data Commons.
 - KIBA, the secondary table. The TDC Dataverse file returned HTTP 403, so the frozen table came from the DeepDTA public mirror: https://github.com/hkmztrk/DeepDTA/tree/master/data/kiba. Papers: Tang et al. 2014 (https://doi.org/10.1021/ci400709d) and Öztürk et al. 2018 (https://doi.org/10.1093/bioinformatics/bty593). The three KIBA files over 100 MB (`data/raw/kiba_pairs.csv`, `data/splits_kiba/cold_protein_split.csv`, and `data/splits_kiba/scaffold_split.csv`) are not in the repo. The smaller DeepDTA text files that are in the repo (`data/raw/kiba_deepdta/ligands_can.txt`, `data/raw/kiba_deepdta/proteins.txt`, and `data/raw/kiba_deepdta/kiba_binding_affinity_v2.txt`) came from that same mirror.
 - The screening library is a Murcko subsample of MoleculeNet HIV plus the 68 DAVIS ligands. HIV activity labels were not used. Source file: https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/HIV.csv
 

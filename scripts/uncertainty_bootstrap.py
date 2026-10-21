@@ -3,6 +3,7 @@
 
 Reads npz, csv, and json files under artifacts/. Writes
 artifacts/metrics_uncertainty.json and artifacts/metrics_uncertainty.md.
+Refreshes section 6 of docs/process/STAT_REVIEW.md.
 The HistGBM cold-protein contrast is a kinase-cluster bootstrap of
 artifacts/scores_histgbm_cold_protein.csv. Previously computed graph
 pair-bootstrap and SLK recovery blocks are kept as stored when present.
@@ -665,7 +666,7 @@ def markdown_report(payload: dict) -> str:
 
 def update_stat_review(comp: dict) -> None:
     """Append or replace section 6 from the computed comparison. No hand-typed statistics."""
-    path = ARTIFACTS / "STAT_REVIEW.md"
+    path = ROOT / "docs" / "process" / "STAT_REVIEW.md"
     heading = "## 6. HistGBM cold-protein kinase-cluster bootstrap"
     lines = [heading, ""]
     lines.append(
@@ -876,7 +877,7 @@ def main() -> None:
     update_stat_review(hist)
     print(f"wrote {json_path}")
     print(f"wrote {md_path}")
-    print(f"updated {ARTIFACTS / 'STAT_REVIEW.md'}")
+    print(f"updated {ROOT / 'docs' / 'process' / 'STAT_REVIEW.md'}")
     for comp in comparisons:
         if comp["status"] != "computed":
             print(f"SKIP {comp['name']}")

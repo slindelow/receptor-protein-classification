@@ -1,0 +1,2292 @@
+{
+  "freeze_id": "sofia-vs-v1.7-reviewer",
+  "data_freeze_id": "sofia-vs-v1-2026-10",
+  "seed": 42,
+  "n_bootstrap": 1000,
+  "omp_num_threads": 4,
+  "config": "configs/v1.7_reviewer.yaml",
+  "config_sha256": "73bcdc8e5804184db7fce073f3791ace5255702b19923fd84c1be7fde3a6f2ab",
+  "identity_bin_edges": [
+    0.0,
+    0.3,
+    0.4,
+    0.5,
+    0.7,
+    1.0
+  ],
+  "min_kinases_for_interval": 8,
+  "censoring": {
+    "kd_cap_nm": 10000.0,
+    "pkd_cap": 5.0,
+    "n_pairs": 25772,
+    "n_censored": 18343,
+    "fraction_censored": 0.7117414248021108,
+    "n_kd_above_cap": 0,
+    "n_uncensored": 7429,
+    "definition": "A pair is censored when Kd equals 10000 nM within an absolute tolerance of 1e-6. Kd is right-censored at that cap. pKd is left-censored at 5."
+  },
+  "variance_all_cells": {
+    "n_ligands": 68,
+    "n_kinases": 379,
+    "n_cells": 25772,
+    "ss_total": 17799.4634306802,
+    "ss_ligand": 4646.053937740177,
+    "ss_kinase": 2061.7184212198476,
+    "ss_residual": 11091.691071720175,
+    "share_ligand": 0.2610221345061428,
+    "share_kinase": 0.11583036922709415,
+    "share_residual": 0.623147496266763,
+    "share_sum": 1.0
+  },
+  "variance_uncensored_r2": {
+    "n_pairs": 7429,
+    "r2_ligand": 0.15616328489508657,
+    "r2_kinase": 0.1171571845063849,
+    "r2_ligand_plus_kinase": 0.3067038728817113,
+    "share_outside_additive": 0.6932961271182887,
+    "note": "Uncensored rows are not a complete matrix. R^2 values are from least squares with an intercept and drop-first dummies. The share outside the additive fit is interaction plus residual error."
+  },
+  "composition_uniqueness": {
+    "n_kinases": 379,
+    "n_unique_sequences": 379,
+    "n_unique_aac_dpc_rounded_1e8": 379
+  },
+  "published_cold_protein": {
+    "source": "artifacts/metrics_uncertainty.json",
+    "recompute_abs_diff_point": 0.0,
+    "recompute_abs_diff_low": 0.0,
+    "recompute_matches": true,
+    "spearman_protein": 0.5501253139581714,
+    "spearman_ligand_only": 0.5001575530870505,
+    "delta_spearman": {
+      "point": 0.04996776087112098,
+      "low": 0.02712625028941049,
+      "high": 0.071976586483323,
+      "includes_0": false,
+      "p_value": 0.000999000999000999
+    },
+    "ef_protein": 10.245836637589216,
+    "ef_ligand_only": 8.452815226011102,
+    "delta_ef": {
+      "point": 1.7930214115781133,
+      "low": -0.2624061982450547,
+      "high": 3.2467613621320517,
+      "includes_0": true,
+      "p_value": 0.09090909090909091
+    },
+    "n_rows": 5168,
+    "n_kinases": 76
+  },
+  "mmseqs": {
+    "release": "17-b804f",
+    "version": "b804fbe384e6f6c9fe96322ec0e92d48bccd0a42",
+    "cluster_mode": 2,
+    "seq_id_mode": 1,
+    "coverage": 0.8,
+    "cov_mode": 0,
+    "sensitivity": 7.5,
+    "e_value": "inf",
+    "mask": 0,
+    "single_step_clustering": 1,
+    "alignment_file": "artifacts/v1.7/mmseqs_pairs.tsv",
+    "alignment_sha256": "5fc79a6dae18f0917b7467480869a440d1d4cf7063f5531a86efdf3efa865f48",
+    "n_self_hits": 379,
+    "min_self_nident": 244.0,
+    "self_hit_nident_equals_length": true,
+    "identity_for_bins": "Shorter-sequence identity is nident / min(query length, target length). A hit counts toward max identity to the training set only when query coverage and target coverage are both at least 0.8. The unrestricted maximum uses nident / alignment length with no coverage filter. Both directions of the search are considered, and the maximum is kept. The cluster threshold inside MMseqs2 uses --seq-id-mode 1, which is identity over the shorter sequence, and --cov-mode 0 with -c 0.8."
+  },
+  "splits": {
+    "cold_protein": {
+      "threshold": null,
+      "n_train_pairs": 18020,
+      "n_test_pairs": 5168,
+      "n_train_kinases": 265,
+      "n_test_kinases": 76,
+      "n_train_ligands": 68,
+      "n_test_ligands": 68,
+      "n_train_clusters": null,
+      "n_test_clusters": null,
+      "n_clusters": null,
+      "largest_cluster": null,
+      "n_test_kinases_with_train_identity_at_least_threshold": null,
+      "n_test_kinases_with_train_fident_at_least_threshold": null,
+      "median_max_id_short_both80": 0.15675675675675677,
+      "max_of_max_id_short_both80": 0.9086651053864169,
+      "median_max_fident_any": 0.5916786398467433,
+      "max_of_max_fident_any": 0.9086651053864169,
+      "n_test_kinases_scored_for_identity": 76,
+      "n_train_kinases_in_identity_pool": 265,
+      "neighbor_index_kinases": 379,
+      "prediction_file": "artifacts/v1.7/preds_cold_protein.csv",
+      "prediction_sha256": "fb2759bb251839647fe87df125d522c9cccc8a0b1f055669e55a18361fcceee4",
+      "source": "artifacts/scores_histgbm_cold_protein.csv",
+      "full_vs_ligand": {
+        "n_rows": 5168,
+        "n_kinases": 76,
+        "spearman_a": 0.5501253139581714,
+        "spearman_b": 0.5001575530870505,
+        "delta_spearman": {
+          "point": 0.04996776087112098,
+          "low": 0.02739714723458288,
+          "high": 0.07187060298799285,
+          "includes_0": false,
+          "p_value": 0.000999000999000999
+        },
+        "ef_a": 10.245836637589216,
+        "ef_b": 7.940523394131642,
+        "delta_ef": {
+          "point": 2.305313243457574,
+          "low": -0.48265805511760174,
+          "high": 3.163800043180556,
+          "includes_0": true,
+          "p_value": 0.0919080919080919
+        },
+        "interval_computed": true
+      },
+      "uncensored_vs_ligand": {
+        "n_rows": 1508,
+        "n_kinases": 76,
+        "spearman_a": 0.39602896784147607,
+        "spearman_b": 0.31850348983763116,
+        "delta_spearman": {
+          "point": 0.0775254780038449,
+          "low": 0.04569947404248013,
+          "high": 0.11265150134052165,
+          "includes_0": false,
+          "p_value": 0.000999000999000999
+        },
+        "ef_a": 3.88659793814433,
+        "ef_b": 3.157860824742268,
+        "delta_ef": {
+          "point": 0.7287371134020617,
+          "low": 0.0,
+          "high": 1.9498524054270536,
+          "includes_0": true,
+          "p_value": 0.1918081918081918
+        },
+        "interval_computed": true
+      },
+      "within_full_vs_ligand": {
+        "point": 0.0271474592762804,
+        "n_finite": 76,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "ci95": {
+          "low": 0.013119305250039183,
+          "high": 0.04109093624005524,
+          "n_finite": 1000,
+          "includes_0": false
+        },
+        "p_value": 0.001998001998001998,
+        "n_as_extreme": 1,
+        "procedure": "Resample the finite kinase-level values with replacement. The interval is the 2.5 and 97.5 percentiles. The two-sided p-value recenters each replicate by the observed mean and uses (1 + count of absolute recentered replicates at least as large as the absolute observed mean) / (n_bootstrap + 1).",
+        "n_kinases": 76,
+        "interval_computed": true
+      },
+      "within_uncensored_vs_ligand": {
+        "point": 0.04800522376005489,
+        "n_finite": 75,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "ci95": {
+          "low": 0.022477924438619058,
+          "high": 0.07574808365826428,
+          "n_finite": 1000,
+          "includes_0": false
+        },
+        "p_value": 0.001998001998001998,
+        "n_as_extreme": 1,
+        "procedure": "Resample the finite kinase-level values with replacement. The interval is the 2.5 and 97.5 percentiles. The two-sided p-value recenters each replicate by the observed mean and uses (1 + count of absolute recentered replicates at least as large as the absolute observed mean) / (n_bootstrap + 1).",
+        "n_kinases": 76,
+        "interval_computed": true
+      },
+      "bins_id_short": [
+        {
+          "label": "[0.00, 0.30)",
+          "n_kinases": 38,
+          "n_pairs": 2584,
+          "contrast": {
+            "n_rows": 2584,
+            "n_kinases": 38,
+            "spearman_a": 0.520277390750599,
+            "spearman_b": 0.5009638203788039,
+            "delta_spearman": {
+              "point": 0.01931357037179504,
+              "low": -0.005586666761354327,
+              "high": 0.04190222325584949,
+              "includes_0": true,
+              "p_value": 0.13086913086913088
+            },
+            "ef_a": 11.444289044289043,
+            "ef_b": 12.046620046620045,
+            "delta_ef": {
+              "point": -0.6023310023310025,
+              "low": -1.8410309829059828,
+              "high": 3.7753089656205527,
+              "includes_0": true,
+              "p_value": 0.8771228771228772
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.30, 0.40)",
+          "n_kinases": 4,
+          "n_pairs": 272,
+          "contrast": {
+            "n_rows": 272,
+            "n_kinases": 4,
+            "spearman_a": 0.524663781261996,
+            "spearman_b": 0.569973981243227,
+            "delta_spearman": {
+              "point": -0.04531019998123098,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "ef_a": 30.22222222222222,
+            "ef_b": 20.148148148148145,
+            "delta_ef": {
+              "point": 10.074074074074076,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "interval_computed": false
+          }
+        },
+        {
+          "label": "[0.40, 0.50)",
+          "n_kinases": 7,
+          "n_pairs": 476,
+          "contrast": {
+            "n_rows": 476,
+            "n_kinases": 7,
+            "spearman_a": 0.6363492600726347,
+            "spearman_b": 0.5786293776913124,
+            "delta_spearman": {
+              "point": 0.05771988238132231,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "ef_a": 5.145945945945946,
+            "ef_b": 5.145945945945946,
+            "delta_ef": {
+              "point": 0.0,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "interval_computed": false
+          }
+        },
+        {
+          "label": "[0.50, 0.70)",
+          "n_kinases": 14,
+          "n_pairs": 952,
+          "contrast": {
+            "n_rows": 952,
+            "n_kinases": 14,
+            "spearman_a": 0.5535931673935931,
+            "spearman_b": 0.47766197269042365,
+            "delta_spearman": {
+              "point": 0.07593119470316945,
+              "low": 0.0015539060527552388,
+              "high": 0.15273009552109706,
+              "includes_0": false,
+              "p_value": 0.04895104895104895
+            },
+            "ef_a": 8.22716049382716,
+            "ef_b": 10.577777777777778,
+            "delta_ef": {
+              "point": -2.3506172839506174,
+              "low": -4.022535211267606,
+              "high": 3.757894736842104,
+              "includes_0": true,
+              "p_value": 0.5944055944055944
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.70, 1.00]",
+          "n_kinases": 13,
+          "n_pairs": 884,
+          "contrast": {
+            "n_rows": 884,
+            "n_kinases": 13,
+            "spearman_a": 0.5742811725380368,
+            "spearman_b": 0.4738603734837172,
+            "delta_spearman": {
+              "point": 0.10042079905431961,
+              "low": 0.052617549381575084,
+              "high": 0.1466381886103802,
+              "includes_0": false,
+              "p_value": 0.000999000999000999
+            },
+            "ef_a": 14.983050847457628,
+            "ef_b": 8.32391713747646,
+            "delta_ef": {
+              "point": 6.659133709981168,
+              "low": 1.2277777777777779,
+              "high": 11.555555555555555,
+              "includes_0": false,
+              "p_value": 0.027972027972027972
+            },
+            "interval_computed": true
+          }
+        }
+      ],
+      "bins_fident": [
+        {
+          "label": "[0.00, 0.30)",
+          "n_kinases": 0,
+          "n_pairs": 0,
+          "contrast": null
+        },
+        {
+          "label": "[0.30, 0.40)",
+          "n_kinases": 3,
+          "n_pairs": 204,
+          "contrast": {
+            "n_rows": 204,
+            "n_kinases": 3,
+            "spearman_a": 0.43161374011034953,
+            "spearman_b": 0.43395612386936944,
+            "delta_spearman": {
+              "point": -0.002342383759019906,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "ef_a": 9.714285714285715,
+            "ef_b": 9.714285714285715,
+            "delta_ef": {
+              "point": 0.0,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "interval_computed": false
+          }
+        },
+        {
+          "label": "[0.40, 0.50)",
+          "n_kinases": 15,
+          "n_pairs": 1020,
+          "contrast": {
+            "n_rows": 1020,
+            "n_kinases": 15,
+            "spearman_a": 0.6080653386265329,
+            "spearman_b": 0.5505654186296787,
+            "delta_spearman": {
+              "point": 0.05749991999685422,
+              "low": -0.006019571976087784,
+              "high": 0.11149989184324006,
+              "includes_0": true,
+              "p_value": 0.055944055944055944
+            },
+            "ef_a": 7.256916996047431,
+            "ef_b": 7.256916996047431,
+            "delta_ef": {
+              "point": 0.0,
+              "low": -2.7556664757384826,
+              "high": 1.6415570049419608,
+              "includes_0": true,
+              "p_value": 1.0
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.50, 0.70)",
+          "n_kinases": 38,
+          "n_pairs": 2584,
+          "contrast": {
+            "n_rows": 2584,
+            "n_kinases": 38,
+            "spearman_a": 0.5394862470566277,
+            "spearman_b": 0.5135450176891643,
+            "delta_spearman": {
+              "point": 0.02594122936746346,
+              "low": -0.0006712883105801086,
+              "high": 0.05615666984465249,
+              "includes_0": true,
+              "p_value": 0.08291708291708291
+            },
+            "ef_a": 10.49059829059829,
+            "ef_b": 11.042735042735043,
+            "delta_ef": {
+              "point": -0.552136752136752,
+              "low": -2.044817304132372,
+              "high": 3.451457997131073,
+              "includes_0": true,
+              "p_value": 0.8391608391608392
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.70, 1.00]",
+          "n_kinases": 20,
+          "n_pairs": 1360,
+          "contrast": {
+            "n_rows": 1360,
+            "n_kinases": 20,
+            "spearman_a": 0.5402596800748501,
+            "spearman_b": 0.45048350559503086,
+            "delta_spearman": {
+              "point": 0.08977617447981928,
+              "low": 0.04973060443593933,
+              "high": 0.12747203602629112,
+              "includes_0": false,
+              "p_value": 0.000999000999000999
+            },
+            "ef_a": 12.425249169435217,
+            "ef_b": 7.906976744186047,
+            "delta_ef": {
+              "point": 4.51827242524917,
+              "low": 0.0,
+              "high": 9.317214822296572,
+              "includes_0": true,
+              "p_value": 0.060939060939060936
+            },
+            "interval_computed": true
+          }
+        }
+      ],
+      "identity_association_id_short": {
+        "n_kinases": 76,
+        "spearman": 0.2733818480812645,
+        "low": 0.05566841845396609,
+        "high": 0.4840895161448282,
+        "includes_0": false,
+        "p_value": 0.012987012987012988
+      },
+      "identity_association_fident": {
+        "n_kinases": 76,
+        "spearman": 0.27133960935009843,
+        "low": 0.05674568019884731,
+        "high": 0.4522846482716337,
+        "includes_0": false,
+        "p_value": 0.007992007992007992
+      },
+      "full_vs_additive": {
+        "n_rows": 5168,
+        "n_kinases": 76,
+        "spearman_a": 0.5501253139581714,
+        "spearman_b": 0.4989203456933374,
+        "delta_spearman": {
+          "point": 0.05120496826483406,
+          "low": 0.024936129121457064,
+          "high": 0.07708154008963919,
+          "includes_0": false,
+          "p_value": 0.000999000999000999
+        },
+        "ef_a": 10.245836637589216,
+        "ef_b": 9.477398889770024,
+        "delta_ef": {
+          "point": 0.7684377478191919,
+          "low": -0.7344144106213079,
+          "high": 2.753656297935474,
+          "includes_0": true,
+          "p_value": 0.3956043956043956
+        },
+        "interval_computed": true
+      },
+      "additive_vs_ligand": {
+        "n_rows": 5168,
+        "n_kinases": 76,
+        "spearman_a": 0.4989203456933374,
+        "spearman_b": 0.5001575530870505,
+        "delta_spearman": {
+          "point": -0.00123720739371308,
+          "low": -0.02345661967214115,
+          "high": 0.019947629819015322,
+          "includes_0": true,
+          "p_value": 0.9210789210789211
+        },
+        "ef_a": 9.477398889770024,
+        "ef_b": 7.940523394131642,
+        "delta_ef": {
+          "point": 1.536875495638382,
+          "low": -1.0518289039565645,
+          "high": 1.8027834872991264,
+          "includes_0": true,
+          "p_value": 0.3956043956043956
+        },
+        "interval_computed": true
+      },
+      "within_full_vs_additive": {
+        "point": 0.026157852770977444,
+        "n_finite": 76,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "ci95": {
+          "low": 0.011947712378758085,
+          "high": 0.039803051111043,
+          "n_finite": 1000,
+          "includes_0": false
+        },
+        "p_value": 0.002997002997002997,
+        "n_as_extreme": 2,
+        "procedure": "Resample the finite kinase-level values with replacement. The interval is the 2.5 and 97.5 percentiles. The two-sided p-value recenters each replicate by the observed mean and uses (1 + count of absolute recentered replicates at least as large as the absolute observed mean) / (n_bootstrap + 1).",
+        "n_kinases": 76,
+        "interval_computed": true
+      },
+      "additive_alpha": 316.2277660168379,
+      "additive_train_kinase_r2": 0.6666798706596337,
+      "n_test_ligand_rows_missing_from_train": 0,
+      "oracle_spearman_uses_test_labels": 0.5656971769266156,
+      "ligand_only_max_within_drug_range": 0.0,
+      "tobit_vs_tobit_ligand": {
+        "n_rows": 5168,
+        "n_kinases": 76,
+        "spearman_a": 0.5601616510272575,
+        "spearman_b": 0.5055415128066657,
+        "delta_spearman": {
+          "point": 0.05462013822059175,
+          "low": 0.03554885316055883,
+          "high": 0.07364421933552297,
+          "includes_0": false,
+          "p_value": 0.000999000999000999
+        },
+        "ef_a": 9.477398889770024,
+        "ef_b": 9.221252973830294,
+        "delta_ef": {
+          "point": 0.25614591593972946,
+          "low": -1.1175711798379107,
+          "high": 2.3418304470398703,
+          "includes_0": true,
+          "p_value": 0.8211788211788211
+        },
+        "interval_computed": true
+      },
+      "tobit_uncensored_vs_tobit_ligand": {
+        "n_rows": 1508,
+        "n_kinases": 76,
+        "spearman_a": 0.38995517609591096,
+        "spearman_b": 0.31260321407661634,
+        "delta_spearman": {
+          "point": 0.07735196201929462,
+          "low": 0.04839891423188993,
+          "high": 0.10901041718694378,
+          "includes_0": false,
+          "p_value": 0.000999000999000999
+        },
+        "ef_a": 3.6436855670103094,
+        "ef_b": 2.672036082474227,
+        "delta_ef": {
+          "point": 0.9716494845360826,
+          "low": -0.2646439946861296,
+          "high": 1.7626184887347913,
+          "includes_0": true,
+          "p_value": 0.13686313686313686
+        },
+        "interval_computed": true
+      },
+      "drop_censored_uncensored": {
+        "n_rows": 1508,
+        "n_kinases": 76,
+        "spearman_a": 0.38412194363743823,
+        "spearman_b": 0.32426797102993177,
+        "delta_spearman": {
+          "point": 0.05985397260750647,
+          "low": 0.033601672079724774,
+          "high": 0.08686569554724176,
+          "includes_0": false,
+          "p_value": 0.000999000999000999
+        },
+        "ef_a": 3.6436855670103094,
+        "ef_b": 2.672036082474227,
+        "delta_ef": {
+          "point": 0.9716494845360826,
+          "low": 0.0,
+          "high": 1.8565213723521818,
+          "includes_0": true,
+          "p_value": 0.08091908091908091
+        },
+        "interval_computed": true
+      },
+      "drop_censored_full_labels": {
+        "n_rows": 5168,
+        "n_kinases": 76,
+        "spearman_a": 0.35660133387130083,
+        "spearman_b": 0.2618202266335622,
+        "delta_spearman": {
+          "point": 0.09478110723773864,
+          "low": 0.06854136708354998,
+          "high": 0.11938355655580535,
+          "includes_0": false,
+          "p_value": 0.000999000999000999
+        },
+        "ef_a": 9.989690721649485,
+        "ef_b": 8.196669310071373,
+        "delta_ef": {
+          "point": 1.7930214115781116,
+          "low": -0.6565831088102667,
+          "high": 2.740831235803303,
+          "includes_0": true,
+          "p_value": 0.18281718281718282
+        },
+        "interval_computed": true
+      }
+    },
+    "seqid_c40": {
+      "threshold": 0.4,
+      "n_train_pairs": 17884,
+      "n_test_pairs": 5236,
+      "n_train_kinases": 263,
+      "n_test_kinases": 77,
+      "n_train_ligands": 68,
+      "n_test_ligands": 68,
+      "n_train_clusters": 170,
+      "n_test_clusters": 50,
+      "n_clusters": 220,
+      "largest_cluster": 8,
+      "n_test_kinases_with_train_identity_at_least_threshold": 2,
+      "n_test_kinases_with_train_fident_at_least_threshold": 77,
+      "median_max_id_short_both80": 0.0,
+      "max_of_max_id_short_both80": 0.6383561643835617,
+      "median_max_fident_any": 0.5238095238095238,
+      "max_of_max_fident_any": 0.8,
+      "n_test_kinases_scored_for_identity": 77,
+      "n_train_kinases_in_identity_pool": 263,
+      "neighbor_index_kinases": 379,
+      "prediction_file": "artifacts/v1.7/preds_seqid_c40.csv",
+      "prediction_sha256": "f131c6ce44aba908e2a8308a13de067d763e1228e54ac8d1a63c2d7d51a9d50b",
+      "source": "refit on this split, rows sorted by pair_id",
+      "full_vs_ligand": {
+        "n_rows": 5236,
+        "n_kinases": 77,
+        "spearman_a": 0.49873113202213354,
+        "spearman_b": 0.5011193803486517,
+        "delta_spearman": {
+          "point": -0.0023882483265181276,
+          "low": -0.027662015751267078,
+          "high": 0.023642909373298545,
+          "includes_0": true,
+          "p_value": 0.8671328671328671
+        },
+        "ef_a": 9.325541270106307,
+        "ef_b": 11.074080258251238,
+        "delta_ef": {
+          "point": -1.7485389881449311,
+          "low": -2.6862503834116445,
+          "high": 1.2587042669304411,
+          "includes_0": true,
+          "p_value": 0.32867132867132864
+        },
+        "interval_computed": true
+      },
+      "uncensored_vs_ligand": {
+        "n_rows": 1398,
+        "n_kinases": 77,
+        "spearman_a": 0.3313618633783262,
+        "spearman_b": 0.3352462404052908,
+        "delta_spearman": {
+          "point": -0.0038843770269645916,
+          "low": -0.04042564655037948,
+          "high": 0.03789708733008287,
+          "includes_0": true,
+          "p_value": 0.8491508491508492
+        },
+        "ef_a": 2.356510745891277,
+        "ef_b": 2.9456384323640963,
+        "delta_ef": {
+          "point": -0.5891276864728194,
+          "low": -1.8056620951400466,
+          "high": 0.7239428353658525,
+          "includes_0": true,
+          "p_value": 0.4275724275724276
+        },
+        "interval_computed": true
+      },
+      "within_full_vs_ligand": {
+        "point": -0.005820165092568607,
+        "n_finite": 77,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "ci95": {
+          "low": -0.017025699950481504,
+          "high": 0.006325603395787987,
+          "n_finite": 1000,
+          "includes_0": true
+        },
+        "p_value": 0.35264735264735264,
+        "n_as_extreme": 352,
+        "procedure": "Resample the finite kinase-level values with replacement. The interval is the 2.5 and 97.5 percentiles. The two-sided p-value recenters each replicate by the observed mean and uses (1 + count of absolute recentered replicates at least as large as the absolute observed mean) / (n_bootstrap + 1).",
+        "n_kinases": 77,
+        "interval_computed": true
+      },
+      "within_uncensored_vs_ligand": {
+        "point": 0.03151205638149179,
+        "n_finite": 77,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "ci95": {
+          "low": -0.009001529880420888,
+          "high": 0.08298641833805134,
+          "n_finite": 1000,
+          "includes_0": true
+        },
+        "p_value": 0.1978021978021978,
+        "n_as_extreme": 197,
+        "procedure": "Resample the finite kinase-level values with replacement. The interval is the 2.5 and 97.5 percentiles. The two-sided p-value recenters each replicate by the observed mean and uses (1 + count of absolute recentered replicates at least as large as the absolute observed mean) / (n_bootstrap + 1).",
+        "n_kinases": 77,
+        "interval_computed": true
+      },
+      "bins_id_short": [
+        {
+          "label": "[0.00, 0.30)",
+          "n_kinases": 65,
+          "n_pairs": 4420,
+          "contrast": {
+            "n_rows": 4420,
+            "n_kinases": 65,
+            "spearman_a": 0.4845559574447006,
+            "spearman_b": 0.4963693114757011,
+            "delta_spearman": {
+              "point": -0.011813354031000534,
+              "low": -0.0381164374964517,
+              "high": 0.013624496605693487,
+              "includes_0": true,
+              "p_value": 0.36563436563436563
+            },
+            "ef_a": 9.788468881252387,
+            "ef_b": 10.801069110347461,
+            "delta_ef": {
+              "point": -1.0126002290950744,
+              "low": -2.3475899646727747,
+              "high": 2.072198781059541,
+              "includes_0": true,
+              "p_value": 0.5474525474525475
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.30, 0.40)",
+          "n_kinases": 10,
+          "n_pairs": 680,
+          "contrast": {
+            "n_rows": 680,
+            "n_kinases": 10,
+            "spearman_a": 0.5594695049352657,
+            "spearman_b": 0.556013665609525,
+            "delta_spearman": {
+              "point": 0.0034558393257406728,
+              "low": -0.05122178817134276,
+              "high": 0.07382699906340437,
+              "includes_0": true,
+              "p_value": 0.9230769230769231
+            },
+            "ef_a": 15.542857142857144,
+            "ef_b": 19.42857142857143,
+            "delta_ef": {
+              "point": -3.885714285714286,
+              "low": -14.391534391534389,
+              "high": 5.714285714285715,
+              "includes_0": true,
+              "p_value": 0.5734265734265734
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.40, 0.50)",
+          "n_kinases": 1,
+          "n_pairs": 68,
+          "contrast": {
+            "n_rows": 68,
+            "n_kinases": 1,
+            "spearman_a": 0.6668382077411291,
+            "spearman_b": 0.5111973795738063,
+            "delta_spearman": {
+              "point": 0.15564082816732283,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "ef_a": 0.0,
+            "ef_b": 0.0,
+            "delta_ef": {
+              "point": 0.0,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "interval_computed": false
+          }
+        },
+        {
+          "label": "[0.50, 0.70)",
+          "n_kinases": 1,
+          "n_pairs": 68,
+          "contrast": {
+            "n_rows": 68,
+            "n_kinases": 1,
+            "spearman_a": 0.48282114810046095,
+            "spearman_b": 0.38256388197795765,
+            "delta_spearman": {
+              "point": 0.1002572661225033,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "ef_a": 0.0,
+            "ef_b": 22.666666666666668,
+            "delta_ef": {
+              "point": -22.666666666666668,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "interval_computed": false
+          }
+        },
+        {
+          "label": "[0.70, 1.00]",
+          "n_kinases": 0,
+          "n_pairs": 0,
+          "contrast": null
+        }
+      ],
+      "bins_fident": [
+        {
+          "label": "[0.00, 0.30)",
+          "n_kinases": 0,
+          "n_pairs": 0,
+          "contrast": null
+        },
+        {
+          "label": "[0.30, 0.40)",
+          "n_kinases": 0,
+          "n_pairs": 0,
+          "contrast": null
+        },
+        {
+          "label": "[0.40, 0.50)",
+          "n_kinases": 23,
+          "n_pairs": 1564,
+          "contrast": {
+            "n_rows": 1564,
+            "n_kinases": 23,
+            "spearman_a": 0.477398571345943,
+            "spearman_b": 0.4854218172337483,
+            "delta_spearman": {
+              "point": -0.008023245887805286,
+              "low": -0.05154114975379566,
+              "high": 0.048924349631510676,
+              "includes_0": true,
+              "p_value": 0.7632367632367633
+            },
+            "ef_a": 9.260526315789473,
+            "ef_b": 10.289473684210526,
+            "delta_ef": {
+              "point": -1.0289473684210524,
+              "low": -4.287516266628108,
+              "high": 3.4119134136212605,
+              "includes_0": true,
+              "p_value": 0.7072927072927073
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.50, 0.70)",
+          "n_kinases": 49,
+          "n_pairs": 3332,
+          "contrast": {
+            "n_rows": 3332,
+            "n_kinases": 49,
+            "spearman_a": 0.5059775817916113,
+            "spearman_b": 0.5046588452262932,
+            "delta_spearman": {
+              "point": 0.0013187365653181127,
+              "low": -0.03522859395165057,
+              "high": 0.033970232878225606,
+              "includes_0": true,
+              "p_value": 0.9470529470529471
+            },
+            "ef_a": 9.8,
+            "ef_b": 9.373913043478263,
+            "delta_ef": {
+              "point": 0.426086956521738,
+              "low": -3.315228047740836,
+              "high": 1.7270632723870423,
+              "includes_0": true,
+              "p_value": 0.8851148851148851
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.70, 1.00]",
+          "n_kinases": 5,
+          "n_pairs": 340,
+          "contrast": {
+            "n_rows": 340,
+            "n_kinases": 5,
+            "spearman_a": 0.5777284840559657,
+            "spearman_b": 0.5504811563513882,
+            "delta_spearman": {
+              "point": 0.027247327704577495,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "ef_a": 12.142857142857142,
+            "ef_b": 12.142857142857142,
+            "delta_ef": {
+              "point": 0.0,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "interval_computed": false
+          }
+        }
+      ],
+      "identity_association_id_short": {
+        "n_kinases": 77,
+        "spearman": 0.15225039696073833,
+        "low": -0.10658230564297606,
+        "high": 0.38776118017944305,
+        "includes_0": true,
+        "p_value": 0.25674325674325676
+      },
+      "identity_association_fident": {
+        "n_kinases": 77,
+        "spearman": 0.17722441390623916,
+        "low": -0.04643117747566055,
+        "high": 0.4051321160845888,
+        "includes_0": true,
+        "p_value": 0.1258741258741259
+      },
+      "full_vs_additive": {
+        "n_rows": 5236,
+        "n_kinases": 77,
+        "spearman_a": 0.49873113202213354,
+        "spearman_b": 0.512944104376741,
+        "delta_spearman": {
+          "point": -0.014212972354607445,
+          "low": -0.03230968311684105,
+          "high": 0.002923282036303918,
+          "includes_0": true,
+          "p_value": 0.13986013986013987
+        },
+        "ef_a": 9.325541270106307,
+        "ef_b": 9.616964434797127,
+        "delta_ef": {
+          "point": -0.29142316469082097,
+          "low": -2.252165112412347,
+          "high": 1.6335495642764228,
+          "includes_0": true,
+          "p_value": 0.8411588411588412
+        },
+        "interval_computed": true
+      },
+      "additive_vs_ligand": {
+        "n_rows": 5236,
+        "n_kinases": 77,
+        "spearman_a": 0.512944104376741,
+        "spearman_b": 0.5011193803486517,
+        "delta_spearman": {
+          "point": 0.011824724028089317,
+          "low": -0.003741331551501087,
+          "high": 0.028037873651141465,
+          "includes_0": true,
+          "p_value": 0.15984015984015984
+        },
+        "ef_a": 9.616964434797127,
+        "ef_b": 11.074080258251238,
+        "delta_ef": {
+          "point": -1.4571158234541102,
+          "low": -1.9253222492060518,
+          "high": 1.2077501640360937,
+          "includes_0": true,
+          "p_value": 0.3546453546453546
+        },
+        "interval_computed": true
+      },
+      "within_full_vs_additive": {
+        "point": -0.0057054618964754505,
+        "n_finite": 77,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "ci95": {
+          "low": -0.01676470939192603,
+          "high": 0.006626994709009534,
+          "n_finite": 1000,
+          "includes_0": true
+        },
+        "p_value": 0.3546453546453546,
+        "n_as_extreme": 354,
+        "procedure": "Resample the finite kinase-level values with replacement. The interval is the 2.5 and 97.5 percentiles. The two-sided p-value recenters each replicate by the observed mean and uses (1 + count of absolute recentered replicates at least as large as the absolute observed mean) / (n_bootstrap + 1).",
+        "n_kinases": 77,
+        "interval_computed": true
+      },
+      "additive_alpha": 1000.0,
+      "additive_train_kinase_r2": 0.4394180112182073,
+      "n_test_ligand_rows_missing_from_train": 0,
+      "oracle_spearman_uses_test_labels": 0.5625305479949679,
+      "ligand_only_max_within_drug_range": 0.0,
+      "tobit_vs_tobit_ligand": {
+        "n_rows": 5236,
+        "n_kinases": 77,
+        "spearman_a": 0.5178743879104332,
+        "spearman_b": 0.5068374127944892,
+        "delta_spearman": {
+          "point": 0.011036975115943926,
+          "low": -0.00958580826748448,
+          "high": 0.03409019548999863,
+          "includes_0": true,
+          "p_value": 0.3206793206793207
+        },
+        "ef_a": 8.159848611343017,
+        "ef_b": 10.199810764178771,
+        "delta_ef": {
+          "point": -2.039962152835754,
+          "low": -4.027480264502889,
+          "high": 0.5629601677148842,
+          "includes_0": true,
+          "p_value": 0.10789210789210789
+        },
+        "interval_computed": true
+      },
+      "tobit_uncensored_vs_tobit_ligand": {
+        "n_rows": 1398,
+        "n_kinases": 77,
+        "spearman_a": 0.3286673103877853,
+        "spearman_b": 0.3276016228293459,
+        "delta_spearman": {
+          "point": 0.0010656875584393877,
+          "low": -0.03475580544193068,
+          "high": 0.040493479530953995,
+          "includes_0": true,
+          "p_value": 0.9690309690309691
+        },
+        "ef_a": 2.356510745891277,
+        "ef_b": 3.829329962073325,
+        "delta_ef": {
+          "point": -1.4728192161820481,
+          "low": -1.9361621317975286,
+          "high": 0.8274232416180756,
+          "includes_0": true,
+          "p_value": 0.2897102897102897
+        },
+        "interval_computed": true
+      },
+      "drop_censored_uncensored": {
+        "n_rows": 1398,
+        "n_kinases": 77,
+        "spearman_a": 0.3793730150708845,
+        "spearman_b": 0.33276709807812754,
+        "delta_spearman": {
+          "point": 0.04660591699275696,
+          "low": 0.007149415200153246,
+          "high": 0.08375993127363492,
+          "includes_0": false,
+          "p_value": 0.012987012987012988
+        },
+        "ef_a": 1.7673830594184576,
+        "ef_b": 3.2402022756005056,
+        "delta_ef": {
+          "point": -1.472819216182048,
+          "low": -2.7706400637869772,
+          "high": 0.30702265537701234,
+          "includes_0": true,
+          "p_value": 0.09290709290709291
+        },
+        "interval_computed": true
+      },
+      "drop_censored_full_labels": {
+        "n_rows": 5236,
+        "n_kinases": 77,
+        "spearman_a": 0.32881971274376737,
+        "spearman_b": 0.23564051265691965,
+        "delta_spearman": {
+          "point": 0.09317920008684771,
+          "low": 0.06596427474971756,
+          "high": 0.11985952807929594,
+          "includes_0": false,
+          "p_value": 0.000999000999000999
+        },
+        "ef_a": 6.119886458507263,
+        "ef_b": 10.491233928869594,
+        "delta_ef": {
+          "point": -4.3713474703623305,
+          "low": -6.2599008957499525,
+          "high": -1.7685116621460715,
+          "includes_0": false,
+          "p_value": 0.000999000999000999
+        },
+        "interval_computed": true
+      },
+      "no_early_stop": {
+        "n_rows": 5236,
+        "n_kinases": 77,
+        "spearman_a": 0.49015821796783204,
+        "spearman_b": 0.5011414241092991,
+        "delta_spearman": {
+          "point": -0.010983206141467028,
+          "low": -0.034387215174957915,
+          "high": 0.013784895966118493,
+          "includes_0": true,
+          "p_value": 0.39760239760239763
+        },
+        "ef_a": 9.616964434797127,
+        "ef_b": 10.491233928869594,
+        "delta_ef": {
+          "point": -0.8742694940724665,
+          "low": -2.7276298554612377,
+          "high": 1.4746245891770389,
+          "includes_0": true,
+          "p_value": 0.47152847152847155
+        },
+        "interval_computed": true
+      }
+    },
+    "seqid_c50": {
+      "threshold": 0.5,
+      "n_train_pairs": 18020,
+      "n_test_pairs": 5168,
+      "n_train_kinases": 265,
+      "n_test_kinases": 76,
+      "n_train_ligands": 68,
+      "n_test_ligands": 68,
+      "n_train_clusters": 184,
+      "n_test_clusters": 61,
+      "n_clusters": 245,
+      "largest_cluster": 8,
+      "n_test_kinases_with_train_identity_at_least_threshold": 3,
+      "n_test_kinases_with_train_fident_at_least_threshold": 46,
+      "median_max_id_short_both80": 0.0,
+      "max_of_max_id_short_both80": 0.8023952095808383,
+      "median_max_fident_any": 0.5168967338010108,
+      "max_of_max_fident_any": 0.9,
+      "n_test_kinases_scored_for_identity": 76,
+      "n_train_kinases_in_identity_pool": 265,
+      "neighbor_index_kinases": 379,
+      "prediction_file": "artifacts/v1.7/preds_seqid_c50.csv",
+      "prediction_sha256": "08e43d83ea3e236e197bd750a7a0131ddab4db3feb9057f20d83845b89fd6039",
+      "source": "refit on this split, rows sorted by pair_id",
+      "full_vs_ligand": {
+        "n_rows": 5168,
+        "n_kinases": 76,
+        "spearman_a": 0.4820180795448896,
+        "spearman_b": 0.4692369348834619,
+        "delta_spearman": {
+          "point": 0.012781144661427712,
+          "low": -0.01474531159037957,
+          "high": 0.042703246329841675,
+          "includes_0": true,
+          "p_value": 0.3756243756243756
+        },
+        "ef_a": 7.453846153846154,
+        "ef_b": 7.177777777777778,
+        "delta_ef": {
+          "point": 0.276068376068376,
+          "low": -1.5829392155349105,
+          "high": 2.2438274479470866,
+          "includes_0": true,
+          "p_value": 0.8471528471528471
+        },
+        "interval_computed": true
+      },
+      "uncensored_vs_ligand": {
+        "n_rows": 1494,
+        "n_kinases": 76,
+        "spearman_a": 0.37267564028984296,
+        "spearman_b": 0.32881006937529694,
+        "delta_spearman": {
+          "point": 0.043865570914546015,
+          "low": 0.006856719320727315,
+          "high": 0.08009817608213798,
+          "includes_0": false,
+          "p_value": 0.01998001998001998
+        },
+        "ef_a": 3.0433333333333334,
+        "ef_b": 2.4899999999999998,
+        "delta_ef": {
+          "point": 0.5533333333333337,
+          "low": -0.6446382991707923,
+          "high": 1.969974789915966,
+          "includes_0": true,
+          "p_value": 0.4745254745254745
+        },
+        "interval_computed": true
+      },
+      "within_full_vs_ligand": {
+        "point": 0.0076433733585818285,
+        "n_finite": 76,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "ci95": {
+          "low": -0.0050650412024468424,
+          "high": 0.019356076825503058,
+          "n_finite": 1000,
+          "includes_0": true
+        },
+        "p_value": 0.21878121878121878,
+        "n_as_extreme": 218,
+        "procedure": "Resample the finite kinase-level values with replacement. The interval is the 2.5 and 97.5 percentiles. The two-sided p-value recenters each replicate by the observed mean and uses (1 + count of absolute recentered replicates at least as large as the absolute observed mean) / (n_bootstrap + 1).",
+        "n_kinases": 76,
+        "interval_computed": true
+      },
+      "within_uncensored_vs_ligand": {
+        "point": 0.03113696589125479,
+        "n_finite": 76,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "ci95": {
+          "low": 0.00830675588849397,
+          "high": 0.05238270097756935,
+          "n_finite": 1000,
+          "includes_0": false
+        },
+        "p_value": 0.006993006993006993,
+        "n_as_extreme": 6,
+        "procedure": "Resample the finite kinase-level values with replacement. The interval is the 2.5 and 97.5 percentiles. The two-sided p-value recenters each replicate by the observed mean and uses (1 + count of absolute recentered replicates at least as large as the absolute observed mean) / (n_bootstrap + 1).",
+        "n_kinases": 76,
+        "interval_computed": true
+      },
+      "bins_id_short": [
+        {
+          "label": "[0.00, 0.30)",
+          "n_kinases": 51,
+          "n_pairs": 3468,
+          "contrast": {
+            "n_rows": 3468,
+            "n_kinases": 51,
+            "spearman_a": 0.45640874240516005,
+            "spearman_b": 0.45647157371227,
+            "delta_spearman": {
+              "point": -6.283130710993401e-05,
+              "low": -0.02691649415220477,
+              "high": 0.027758298202048053,
+              "includes_0": true,
+              "p_value": 0.999000999000999
+            },
+            "ef_a": 8.880323450134771,
+            "ef_b": 9.815094339622643,
+            "delta_ef": {
+              "point": -0.9347708894878721,
+              "low": -2.6901708074534154,
+              "high": 2.9725714285714275,
+              "includes_0": true,
+              "p_value": 0.6883116883116883
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.30, 0.40)",
+          "n_kinases": 4,
+          "n_pairs": 272,
+          "contrast": {
+            "n_rows": 272,
+            "n_kinases": 4,
+            "spearman_a": 0.5735485945794669,
+            "spearman_b": 0.5106225382415179,
+            "delta_spearman": {
+              "point": 0.06292605633794901,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "ef_a": 3.0222222222222217,
+            "ef_b": 3.0222222222222217,
+            "delta_ef": {
+              "point": 0.0,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "interval_computed": false
+          }
+        },
+        {
+          "label": "[0.40, 0.50)",
+          "n_kinases": 18,
+          "n_pairs": 1224,
+          "contrast": {
+            "n_rows": 1224,
+            "n_kinases": 18,
+            "spearman_a": 0.5109218658833333,
+            "spearman_b": 0.4843444048643251,
+            "delta_spearman": {
+              "point": 0.02657746101900821,
+              "low": -0.0031832374164884464,
+              "high": 0.05205794844286203,
+              "includes_0": true,
+              "p_value": 0.06393606393606394
+            },
+            "ef_a": 8.013093289689035,
+            "ef_b": 7.011456628477905,
+            "delta_ef": {
+              "point": 1.0016366612111298,
+              "low": -2.1650854358151865,
+              "high": 5.232238547968883,
+              "includes_0": true,
+              "p_value": 0.6603396603396603
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.50, 0.70)",
+          "n_kinases": 2,
+          "n_pairs": 136,
+          "contrast": {
+            "n_rows": 136,
+            "n_kinases": 2,
+            "spearman_a": 0.6645230800789481,
+            "spearman_b": 0.6230990791782393,
+            "delta_spearman": {
+              "point": 0.04142400090070886,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "ef_a": 6.181818181818182,
+            "ef_b": 3.090909090909091,
+            "delta_ef": {
+              "point": 3.090909090909091,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "interval_computed": false
+          }
+        },
+        {
+          "label": "[0.70, 1.00]",
+          "n_kinases": 1,
+          "n_pairs": 68,
+          "contrast": {
+            "n_rows": 68,
+            "n_kinases": 1,
+            "spearman_a": 0.5918872347698545,
+            "spearman_b": 0.5979379257423101,
+            "delta_spearman": {
+              "point": -0.006050690972455586,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "ef_a": 34.0,
+            "ef_b": 34.0,
+            "delta_ef": {
+              "point": 0.0,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "interval_computed": false
+          }
+        }
+      ],
+      "bins_fident": [
+        {
+          "label": "[0.00, 0.30)",
+          "n_kinases": 0,
+          "n_pairs": 0,
+          "contrast": null
+        },
+        {
+          "label": "[0.30, 0.40)",
+          "n_kinases": 1,
+          "n_pairs": 68,
+          "contrast": {
+            "n_rows": 68,
+            "n_kinases": 1,
+            "spearman_a": 0.5555650348024266,
+            "spearman_b": 0.6006651276079988,
+            "delta_spearman": {
+              "point": -0.045100092805572256,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "ef_a": 11.333333333333334,
+            "ef_b": 11.333333333333334,
+            "delta_ef": {
+              "point": 0.0,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "interval_computed": false
+          }
+        },
+        {
+          "label": "[0.40, 0.50)",
+          "n_kinases": 29,
+          "n_pairs": 1972,
+          "contrast": {
+            "n_rows": 1972,
+            "n_kinases": 29,
+            "spearman_a": 0.49803258617803725,
+            "spearman_b": 0.49014484143223563,
+            "delta_spearman": {
+              "point": 0.007887744745801617,
+              "low": -0.04832296498002216,
+              "high": 0.07165253993795508,
+              "includes_0": true,
+              "p_value": 0.7812187812187812
+            },
+            "ef_a": 5.8,
+            "ef_b": 5.8,
+            "delta_ef": {
+              "point": 0.0,
+              "low": -2.943503887746895,
+              "high": 2.3591351904674274,
+              "includes_0": true,
+              "p_value": 1.0
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.50, 0.70)",
+          "n_kinases": 36,
+          "n_pairs": 2448,
+          "contrast": {
+            "n_rows": 2448,
+            "n_kinases": 36,
+            "spearman_a": 0.46755608853601743,
+            "spearman_b": 0.4681922378801704,
+            "delta_spearman": {
+              "point": -0.0006361493441529587,
+              "low": -0.024331753240656145,
+              "high": 0.02685546026540659,
+              "includes_0": true,
+              "p_value": 0.962037962037962
+            },
+            "ef_a": 11.565354330708661,
+            "ef_b": 10.023307086614173,
+            "delta_ef": {
+              "point": 1.5420472440944888,
+              "low": -2.1939251435132037,
+              "high": 6.474049586776857,
+              "includes_0": true,
+              "p_value": 0.5254745254745254
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.70, 1.00]",
+          "n_kinases": 10,
+          "n_pairs": 680,
+          "contrast": {
+            "n_rows": 680,
+            "n_kinases": 10,
+            "spearman_a": 0.473015560541281,
+            "spearman_b": 0.4074197499892497,
+            "delta_spearman": {
+              "point": 0.06559581055203134,
+              "low": 0.022939193978753332,
+              "high": 0.09875066174063711,
+              "includes_0": false,
+              "p_value": 0.000999000999000999
+            },
+            "ef_a": 12.142857142857144,
+            "ef_b": 9.714285714285715,
+            "delta_ef": {
+              "point": 2.428571428571429,
+              "low": -2.4924812030075185,
+              "high": 10.41050744622173,
+              "includes_0": true,
+              "p_value": 0.5804195804195804
+            },
+            "interval_computed": true
+          }
+        }
+      ],
+      "identity_association_id_short": {
+        "n_kinases": 76,
+        "spearman": -0.051287117187209894,
+        "low": -0.24262882986744203,
+        "high": 0.14910039079062218,
+        "includes_0": true,
+        "p_value": 0.6413586413586414
+      },
+      "identity_association_fident": {
+        "n_kinases": 76,
+        "spearman": 0.2861342019907954,
+        "low": 0.04770822466994112,
+        "high": 0.4960987529615897,
+        "includes_0": false,
+        "p_value": 0.011988011988011988
+      },
+      "full_vs_additive": {
+        "n_rows": 5168,
+        "n_kinases": 76,
+        "spearman_a": 0.4820180795448896,
+        "spearman_b": 0.45289660173893986,
+        "delta_spearman": {
+          "point": 0.029121477805949758,
+          "low": 0.0051049627751575035,
+          "high": 0.05091839709572786,
+          "includes_0": false,
+          "p_value": 0.016983016983016984
+        },
+        "ef_a": 7.453846153846154,
+        "ef_b": 8.005982905982906,
+        "delta_ef": {
+          "point": -0.552136752136752,
+          "low": -2.033970253990476,
+          "high": 1.784288561179753,
+          "includes_0": true,
+          "p_value": 0.6543456543456544
+        },
+        "interval_computed": true
+      },
+      "additive_vs_ligand": {
+        "n_rows": 5168,
+        "n_kinases": 76,
+        "spearman_a": 0.45289660173893986,
+        "spearman_b": 0.4692369348834619,
+        "delta_spearman": {
+          "point": -0.016340333144522046,
+          "low": -0.03925381311559353,
+          "high": 0.007560263886283477,
+          "includes_0": true,
+          "p_value": 0.17082917082917082
+        },
+        "ef_a": 8.005982905982906,
+        "ef_b": 7.177777777777778,
+        "delta_ef": {
+          "point": 0.8282051282051279,
+          "low": -0.9870753067010145,
+          "high": 2.0411833901616028,
+          "includes_0": true,
+          "p_value": 0.3956043956043956
+        },
+        "interval_computed": true
+      },
+      "within_full_vs_additive": {
+        "point": 0.00752094159581707,
+        "n_finite": 76,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "ci95": {
+          "low": -0.004975559715442043,
+          "high": 0.0194136670620668,
+          "n_finite": 1000,
+          "includes_0": true
+        },
+        "p_value": 0.23476523476523475,
+        "n_as_extreme": 234,
+        "procedure": "Resample the finite kinase-level values with replacement. The interval is the 2.5 and 97.5 percentiles. The two-sided p-value recenters each replicate by the observed mean and uses (1 + count of absolute recentered replicates at least as large as the absolute observed mean) / (n_bootstrap + 1).",
+        "n_kinases": 76,
+        "interval_computed": true
+      },
+      "additive_alpha": 1000.0,
+      "additive_train_kinase_r2": 0.474005587973521,
+      "n_test_ligand_rows_missing_from_train": 0,
+      "oracle_spearman_uses_test_labels": 0.5508705478220413,
+      "ligand_only_max_within_drug_range": 0.0
+    },
+    "seqid_c70": {
+      "threshold": 0.7,
+      "n_train_pairs": 18020,
+      "n_test_pairs": 5168,
+      "n_train_kinases": 265,
+      "n_test_kinases": 76,
+      "n_train_ligands": 68,
+      "n_test_ligands": 68,
+      "n_train_clusters": 230,
+      "n_test_clusters": 72,
+      "n_clusters": 302,
+      "largest_cluster": 4,
+      "n_test_kinases_with_train_identity_at_least_threshold": 1,
+      "n_test_kinases_with_train_fident_at_least_threshold": 10,
+      "median_max_id_short_both80": 0.0,
+      "max_of_max_id_short_both80": 0.720226843100189,
+      "median_max_fident_any": 0.5677502138579983,
+      "max_of_max_fident_any": 0.875,
+      "n_test_kinases_scored_for_identity": 76,
+      "n_train_kinases_in_identity_pool": 265,
+      "neighbor_index_kinases": 379,
+      "prediction_file": "artifacts/v1.7/preds_seqid_c70.csv",
+      "prediction_sha256": "4f286333af1d6631bb291bed8b151c749ebad639169b3def4fd487ef0f5fcdf0",
+      "source": "refit on this split, rows sorted by pair_id",
+      "full_vs_ligand": {
+        "n_rows": 5168,
+        "n_kinases": 76,
+        "spearman_a": 0.5239059726468642,
+        "spearman_b": 0.5149140688415963,
+        "delta_spearman": {
+          "point": 0.008991903805267931,
+          "low": -0.020206577812569883,
+          "high": 0.039092634854017934,
+          "includes_0": true,
+          "p_value": 0.5584415584415584
+        },
+        "ef_a": 8.629203132197144,
+        "ef_b": 8.034085674804237,
+        "delta_ef": {
+          "point": 0.5951174573929077,
+          "low": -1.818150248721964,
+          "high": 2.534042790197701,
+          "includes_0": true,
+          "p_value": 0.6613386613386614
+        },
+        "interval_computed": true
+      },
+      "uncensored_vs_ligand": {
+        "n_rows": 1446,
+        "n_kinases": 76,
+        "spearman_a": 0.35800465045824587,
+        "spearman_b": 0.3331529548222742,
+        "delta_spearman": {
+          "point": 0.02485169563597167,
+          "low": -0.020361672418345675,
+          "high": 0.06944262853337041,
+          "includes_0": true,
+          "p_value": 0.26673326673326675
+        },
+        "ef_a": 3.463473053892216,
+        "ef_b": 2.88622754491018,
+        "delta_ef": {
+          "point": 0.5772455089820361,
+          "low": -0.6035250133626108,
+          "high": 2.202627016504503,
+          "includes_0": true,
+          "p_value": 0.4485514485514486
+        },
+        "interval_computed": true
+      },
+      "within_full_vs_ligand": {
+        "point": 0.010895073935057582,
+        "n_finite": 76,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "ci95": {
+          "low": -0.0018785786720276949,
+          "high": 0.025067121254413644,
+          "n_finite": 1000,
+          "includes_0": true
+        },
+        "p_value": 0.0979020979020979,
+        "n_as_extreme": 97,
+        "procedure": "Resample the finite kinase-level values with replacement. The interval is the 2.5 and 97.5 percentiles. The two-sided p-value recenters each replicate by the observed mean and uses (1 + count of absolute recentered replicates at least as large as the absolute observed mean) / (n_bootstrap + 1).",
+        "n_kinases": 76,
+        "interval_computed": true
+      },
+      "within_uncensored_vs_ligand": {
+        "point": 0.058670008865806346,
+        "n_finite": 76,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "ci95": {
+          "low": 0.018196840861101647,
+          "high": 0.11055820841671883,
+          "n_finite": 1000,
+          "includes_0": false
+        },
+        "p_value": 0.01998001998001998,
+        "n_as_extreme": 19,
+        "procedure": "Resample the finite kinase-level values with replacement. The interval is the 2.5 and 97.5 percentiles. The two-sided p-value recenters each replicate by the observed mean and uses (1 + count of absolute recentered replicates at least as large as the absolute observed mean) / (n_bootstrap + 1).",
+        "n_kinases": 76,
+        "interval_computed": true
+      },
+      "bins_id_short": [
+        {
+          "label": "[0.00, 0.30)",
+          "n_kinases": 43,
+          "n_pairs": 2924,
+          "contrast": {
+            "n_rows": 2924,
+            "n_kinases": 43,
+            "spearman_a": 0.48997102257857655,
+            "spearman_b": 0.5046455963444123,
+            "delta_spearman": {
+              "point": -0.014674573765835752,
+              "low": -0.04751018820828089,
+              "high": 0.024290212533542962,
+              "includes_0": true,
+              "p_value": 0.45254745254745254
+            },
+            "ef_a": 8.295035460992908,
+            "ef_b": 9.331914893617022,
+            "delta_ef": {
+              "point": -1.0368794326241133,
+              "low": -3.0465193318318327,
+              "high": 2.564912280701754,
+              "includes_0": true,
+              "p_value": 0.6173826173826173
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.30, 0.40)",
+          "n_kinases": 4,
+          "n_pairs": 272,
+          "contrast": {
+            "n_rows": 272,
+            "n_kinases": 4,
+            "spearman_a": 0.496878145983584,
+            "spearman_b": 0.501880343060873,
+            "delta_spearman": {
+              "point": -0.00500219707728905,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "ef_a": 10.074074074074073,
+            "ef_b": 0.0,
+            "delta_ef": {
+              "point": 10.074074074074073,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "interval_computed": false
+          }
+        },
+        {
+          "label": "[0.40, 0.50)",
+          "n_kinases": 9,
+          "n_pairs": 612,
+          "contrast": {
+            "n_rows": 612,
+            "n_kinases": 9,
+            "spearman_a": 0.5935835242690939,
+            "spearman_b": 0.5915268602542384,
+            "delta_spearman": {
+              "point": 0.0020566640148554916,
+              "low": -0.029933907185644804,
+              "high": 0.03971229982671862,
+              "includes_0": true,
+              "p_value": 0.8931068931068931
+            },
+            "ef_a": 6.244897959183674,
+            "ef_b": 6.244897959183674,
+            "delta_ef": {
+              "point": 0.0,
+              "low": -3.3642857142857148,
+              "high": 4.99591836734694,
+              "includes_0": true,
+              "p_value": 1.0
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.50, 0.70)",
+          "n_kinases": 19,
+          "n_pairs": 1292,
+          "contrast": {
+            "n_rows": 1292,
+            "n_kinases": 19,
+            "spearman_a": 0.5659161746083486,
+            "spearman_b": 0.50060206343659,
+            "delta_spearman": {
+              "point": 0.06531411117175867,
+              "low": -0.00020848179514358558,
+              "high": 0.13209475093208028,
+              "includes_0": true,
+              "p_value": 0.054945054945054944
+            },
+            "ef_a": 10.400715563506262,
+            "ef_b": 11.556350626118068,
+            "delta_ef": {
+              "point": -1.1556350626118057,
+              "low": -3.240802675585284,
+              "high": 5.230769230769231,
+              "includes_0": true,
+              "p_value": 0.8451548451548452
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.70, 1.00]",
+          "n_kinases": 1,
+          "n_pairs": 68,
+          "contrast": {
+            "n_rows": 68,
+            "n_kinases": 1,
+            "spearman_a": 0.80526021872647,
+            "spearman_b": 0.7027521295009141,
+            "delta_spearman": {
+              "point": 0.10250808922555588,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "ef_a": 7.555555555555555,
+            "ef_b": 7.555555555555555,
+            "delta_ef": {
+              "point": 0.0,
+              "low": null,
+              "high": null,
+              "includes_0": null,
+              "p_value": null
+            },
+            "interval_computed": false
+          }
+        }
+      ],
+      "bins_fident": [
+        {
+          "label": "[0.00, 0.30)",
+          "n_kinases": 0,
+          "n_pairs": 0,
+          "contrast": null
+        },
+        {
+          "label": "[0.30, 0.40)",
+          "n_kinases": 0,
+          "n_pairs": 0,
+          "contrast": null
+        },
+        {
+          "label": "[0.40, 0.50)",
+          "n_kinases": 17,
+          "n_pairs": 1156,
+          "contrast": {
+            "n_rows": 1156,
+            "n_kinases": 17,
+            "spearman_a": 0.4898325104804161,
+            "spearman_b": 0.5049030289084293,
+            "delta_spearman": {
+              "point": -0.015070518428013213,
+              "low": -0.05197699950792755,
+              "high": 0.022544795430090935,
+              "includes_0": true,
+              "p_value": 0.45554445554445555
+            },
+            "ef_a": 13.486666666666668,
+            "ef_b": 7.706666666666667,
+            "delta_ef": {
+              "point": 5.780000000000001,
+              "low": -2.2965178571428577,
+              "high": 9.797443214573965,
+              "includes_0": true,
+              "p_value": 0.1888111888111888
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.50, 0.70)",
+          "n_kinases": 49,
+          "n_pairs": 3332,
+          "contrast": {
+            "n_rows": 3332,
+            "n_kinases": 49,
+            "spearman_a": 0.5208733672963174,
+            "spearman_b": 0.5087831470539387,
+            "delta_spearman": {
+              "point": 0.012090220242378713,
+              "low": -0.029987751768888717,
+              "high": 0.05797192108251587,
+              "includes_0": true,
+              "p_value": 0.5854145854145855
+            },
+            "ef_a": 6.6440677966101696,
+            "ef_b": 7.889830508474576,
+            "delta_ef": {
+              "point": -1.2457627118644066,
+              "low": -2.894565691837626,
+              "high": 1.9329635387224406,
+              "includes_0": true,
+              "p_value": 0.4175824175824176
+            },
+            "interval_computed": true
+          }
+        },
+        {
+          "label": "[0.70, 1.00]",
+          "n_kinases": 10,
+          "n_pairs": 680,
+          "contrast": {
+            "n_rows": 680,
+            "n_kinases": 10,
+            "spearman_a": 0.6056485450206526,
+            "spearman_b": 0.5646977885404967,
+            "delta_spearman": {
+              "point": 0.04095075648015589,
+              "low": -0.013267830647568684,
+              "high": 0.08890219556486482,
+              "includes_0": true,
+              "p_value": 0.11788211788211789
+            },
+            "ef_a": 12.142857142857142,
+            "ef_b": 12.142857142857142,
+            "delta_ef": {
+              "point": 0.0,
+              "low": -2.556390977443609,
+              "high": 6.071428571428571,
+              "includes_0": true,
+              "p_value": 1.0
+            },
+            "interval_computed": true
+          }
+        }
+      ],
+      "identity_association_id_short": {
+        "n_kinases": 76,
+        "spearman": 0.389837442307019,
+        "low": 0.16385296502660723,
+        "high": 0.5729670635875629,
+        "includes_0": false,
+        "p_value": 0.001998001998001998
+      },
+      "identity_association_fident": {
+        "n_kinases": 76,
+        "spearman": 0.20581600520815643,
+        "low": -0.03151556749931954,
+        "high": 0.4297283138720846,
+        "includes_0": true,
+        "p_value": 0.07992007992007992
+      },
+      "full_vs_additive": {
+        "n_rows": 5168,
+        "n_kinases": 76,
+        "spearman_a": 0.5239059726468642,
+        "spearman_b": 0.5185469044239801,
+        "delta_spearman": {
+          "point": 0.0053590682228841224,
+          "low": -0.013121454072343228,
+          "high": 0.022727973534988045,
+          "includes_0": true,
+          "p_value": 0.5794205794205795
+        },
+        "ef_a": 8.629203132197144,
+        "ef_b": 8.331644403500691,
+        "delta_ef": {
+          "point": 0.29755872869645295,
+          "low": -1.4714230135895623,
+          "high": 2.9580961948499254,
+          "includes_0": true,
+          "p_value": 0.8211788211788211
+        },
+        "interval_computed": true
+      },
+      "additive_vs_ligand": {
+        "n_rows": 5168,
+        "n_kinases": 76,
+        "spearman_a": 0.5185469044239801,
+        "spearman_b": 0.5149140688415963,
+        "delta_spearman": {
+          "point": 0.0036328355823838088,
+          "low": -0.018741607928771286,
+          "high": 0.028613140559911165,
+          "includes_0": true,
+          "p_value": 0.7712287712287712
+        },
+        "ef_a": 8.331644403500691,
+        "ef_b": 8.034085674804237,
+        "delta_ef": {
+          "point": 0.2975587286964547,
+          "low": -2.0421496311907266,
+          "high": 1.457575779822393,
+          "includes_0": true,
+          "p_value": 0.8481518481518482
+        },
+        "interval_computed": true
+      },
+      "within_full_vs_additive": {
+        "point": 0.010225323022305744,
+        "n_finite": 76,
+        "n_bootstrap": 1000,
+        "seed": 42,
+        "ci95": {
+          "low": -0.0027791206515777557,
+          "high": 0.02441633939364384,
+          "n_finite": 1000,
+          "includes_0": true
+        },
+        "p_value": 0.13786213786213786,
+        "n_as_extreme": 137,
+        "procedure": "Resample the finite kinase-level values with replacement. The interval is the 2.5 and 97.5 percentiles. The two-sided p-value recenters each replicate by the observed mean and uses (1 + count of absolute recentered replicates at least as large as the absolute observed mean) / (n_bootstrap + 1).",
+        "n_kinases": 76,
+        "interval_computed": true
+      },
+      "additive_alpha": 1000.0,
+      "additive_train_kinase_r2": 0.4551425625749732,
+      "n_test_ligand_rows_missing_from_train": 0,
+      "oracle_spearman_uses_test_labels": 0.5675204672376238,
+      "ligand_only_max_within_drug_range": 0.0
+    }
+  },
+  "fits": [
+    {
+      "name": "seqid_c40_ligand_only",
+      "n_train": 17884,
+      "n_test": 5236,
+      "n_iter": 106,
+      "early_stopping": true,
+      "loaded_existing_model": false,
+      "model_file": "artifacts/models_v1.7/hgb_seqid_c40_ligand_only.joblib"
+    },
+    {
+      "name": "seqid_c40_aac_dpc",
+      "n_train": 17884,
+      "n_test": 5236,
+      "n_iter": 200,
+      "early_stopping": true,
+      "loaded_existing_model": false,
+      "model_file": "artifacts/models_v1.7/hgb_seqid_c40_aac_dpc.joblib"
+    },
+    {
+      "name": "seqid_c50_ligand_only",
+      "n_train": 18020,
+      "n_test": 5168,
+      "n_iter": 72,
+      "early_stopping": true,
+      "loaded_existing_model": false,
+      "model_file": "artifacts/models_v1.7/hgb_seqid_c50_ligand_only.joblib"
+    },
+    {
+      "name": "seqid_c50_aac_dpc",
+      "n_train": 18020,
+      "n_test": 5168,
+      "n_iter": 200,
+      "early_stopping": true,
+      "loaded_existing_model": false,
+      "model_file": "artifacts/models_v1.7/hgb_seqid_c50_aac_dpc.joblib"
+    },
+    {
+      "name": "seqid_c70_ligand_only",
+      "n_train": 18020,
+      "n_test": 5168,
+      "n_iter": 51,
+      "early_stopping": true,
+      "loaded_existing_model": false,
+      "model_file": "artifacts/models_v1.7/hgb_seqid_c70_ligand_only.joblib"
+    },
+    {
+      "name": "seqid_c70_aac_dpc",
+      "n_train": 18020,
+      "n_test": 5168,
+      "n_iter": 200,
+      "early_stopping": true,
+      "loaded_existing_model": false,
+      "model_file": "artifacts/models_v1.7/hgb_seqid_c70_aac_dpc.joblib"
+    },
+    {
+      "name": "cold_protein_tobit_ligand_only",
+      "n_train": 18020,
+      "n_censored_train": 12820,
+      "n_iter": 84,
+      "loaded_existing_model": false,
+      "tobit_history": [
+        {
+          "fit": 1,
+          "sigma": 0.9434611721734486,
+          "mean_imputed_censored": 4.332294721813715,
+          "n_iter": 178
+        },
+        {
+          "fit": 2,
+          "sigma": 1.0034506738680657,
+          "mean_imputed_censored": 4.075657417417895,
+          "n_iter": 98
+        },
+        {
+          "fit": 3,
+          "sigma": 1.0390327912796222,
+          "mean_imputed_censored": 3.9384114054089996,
+          "n_iter": 93
+        },
+        {
+          "fit": 4,
+          "sigma": 1.0597755102025188,
+          "mean_imputed_censored": 3.8554190742934513,
+          "n_iter": 84
+        }
+      ],
+      "model_file": "artifacts/models_v1.7/hgb_cold_protein_tobit_ligand_only.joblib"
+    },
+    {
+      "name": "cold_protein_tobit_aac_dpc",
+      "n_train": 18020,
+      "n_censored_train": 12820,
+      "n_iter": 200,
+      "loaded_existing_model": false,
+      "tobit_history": [
+        {
+          "fit": 1,
+          "sigma": 0.5917715615118975,
+          "mean_imputed_censored": 4.572823914395912,
+          "n_iter": 200
+        },
+        {
+          "fit": 2,
+          "sigma": 0.6192476553679106,
+          "mean_imputed_censored": 4.396574755191409,
+          "n_iter": 200
+        },
+        {
+          "fit": 3,
+          "sigma": 0.6415505647825034,
+          "mean_imputed_censored": 4.2932177887382,
+          "n_iter": 200
+        },
+        {
+          "fit": 4,
+          "sigma": 0.6592618700566737,
+          "mean_imputed_censored": 4.222128440289472,
+          "n_iter": 200
+        }
+      ],
+      "model_file": "artifacts/models_v1.7/hgb_cold_protein_tobit_aac_dpc.joblib"
+    },
+    {
+      "name": "seqid_c40_tobit_ligand_only",
+      "n_train": 17884,
+      "n_censored_train": 12700,
+      "n_iter": 94,
+      "loaded_existing_model": false,
+      "tobit_history": [
+        {
+          "fit": 1,
+          "sigma": 0.9700583903048993,
+          "mean_imputed_censored": 4.315883299137942,
+          "n_iter": 106
+        },
+        {
+          "fit": 2,
+          "sigma": 1.0336513587456513,
+          "mean_imputed_censored": 4.053939463173548,
+          "n_iter": 107
+        },
+        {
+          "fit": 3,
+          "sigma": 1.0713494371701455,
+          "mean_imputed_censored": 3.914786811035253,
+          "n_iter": 87
+        },
+        {
+          "fit": 4,
+          "sigma": 1.0939638891087216,
+          "mean_imputed_censored": 3.8303608779413496,
+          "n_iter": 94
+        }
+      ],
+      "model_file": "artifacts/models_v1.7/hgb_seqid_c40_tobit_ligand_only.joblib"
+    },
+    {
+      "name": "seqid_c40_tobit_aac_dpc",
+      "n_train": 17884,
+      "n_censored_train": 12700,
+      "n_iter": 200,
+      "loaded_existing_model": false,
+      "tobit_history": [
+        {
+          "fit": 1,
+          "sigma": 0.5952985212643612,
+          "mean_imputed_censored": 4.5712444900053635,
+          "n_iter": 200
+        },
+        {
+          "fit": 2,
+          "sigma": 0.6352191767213861,
+          "mean_imputed_censored": 4.386730307102736,
+          "n_iter": 200
+        },
+        {
+          "fit": 3,
+          "sigma": 0.6478729293001875,
+          "mean_imputed_censored": 4.286949184526446,
+          "n_iter": 200
+        },
+        {
+          "fit": 4,
+          "sigma": 0.660581970358355,
+          "mean_imputed_censored": 4.221082860256469,
+          "n_iter": 200
+        }
+      ],
+      "model_file": "artifacts/models_v1.7/hgb_seqid_c40_tobit_aac_dpc.joblib"
+    },
+    {
+      "name": "cold_protein_drop_censored_ligand_only",
+      "n_train": 5200,
+      "n_test": 5168,
+      "n_iter": 33,
+      "early_stopping": true,
+      "loaded_existing_model": false,
+      "model_file": "artifacts/models_v1.7/hgb_cold_protein_drop_censored_ligand_only.joblib"
+    },
+    {
+      "name": "cold_protein_drop_censored_aac_dpc",
+      "n_train": 5200,
+      "n_test": 5168,
+      "n_iter": 91,
+      "early_stopping": true,
+      "loaded_existing_model": false,
+      "model_file": "artifacts/models_v1.7/hgb_cold_protein_drop_censored_aac_dpc.joblib"
+    },
+    {
+      "name": "seqid_c40_drop_censored_ligand_only",
+      "n_train": 5184,
+      "n_test": 5236,
+      "n_iter": 51,
+      "early_stopping": true,
+      "loaded_existing_model": false,
+      "model_file": "artifacts/models_v1.7/hgb_seqid_c40_drop_censored_ligand_only.joblib"
+    },
+    {
+      "name": "seqid_c40_drop_censored_aac_dpc",
+      "n_train": 5184,
+      "n_test": 5236,
+      "n_iter": 162,
+      "early_stopping": true,
+      "loaded_existing_model": false,
+      "model_file": "artifacts/models_v1.7/hgb_seqid_c40_drop_censored_aac_dpc.joblib"
+    },
+    {
+      "name": "seqid_c40_no_early_stop_ligand_only",
+      "n_train": 17884,
+      "n_test": 5236,
+      "n_iter": 200,
+      "early_stopping": false,
+      "loaded_existing_model": false,
+      "model_file": "artifacts/models_v1.7/hgb_seqid_c40_no_early_stop_ligand_only.joblib"
+    },
+    {
+      "name": "seqid_c40_no_early_stop_aac_dpc",
+      "n_train": 17884,
+      "n_test": 5236,
+      "n_iter": 200,
+      "early_stopping": false,
+      "loaded_existing_model": false,
+      "model_file": "artifacts/models_v1.7/hgb_seqid_c40_no_early_stop_aac_dpc.joblib"
+    }
+  ],
+  "models_refit_for_original_cold_protein_headline": false
+}

@@ -1,0 +1,5 @@
+{
+  "alpha_chosen": 316.2277660168379,
+  "train_kinase_r2": 0.6666798706596337,
+  "n_test_ligand_rows_missing_from_train": 0
+}

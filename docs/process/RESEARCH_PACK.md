@@ -1,7 +1,7 @@
 # Research Pack: Target → Ranked Small-Molecule Virtual Screening
 
 **Owner:** Sofia Kuttner Lindelow · **Status:** research pack v1 · **Date:** 2026-10-02 (ET)  
-**Companion files:** `DESIGN.md` (locked product), `DESIGN_TWEAKS.md` (memo)
+**Companion files:** `../../DESIGN.md` (locked product), `DESIGN_TWEAKS.md` (memo)
 
 ---
 
@@ -224,4 +224,4 @@ Non-goals remain: wet lab, de novo generation, Bittensor/SN68 mining, UI polish,
 ## 9. Pointers to next artifacts
 
 - Concrete design changes → `DESIGN_TWEAKS.md`  
-- Locked product shape → `DESIGN.md` (unchanged product lock; tweaks are advisory)
+- Locked product shape → `../../DESIGN.md` (unchanged product lock; tweaks are advisory)

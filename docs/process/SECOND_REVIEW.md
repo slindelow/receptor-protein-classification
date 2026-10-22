@@ -74,7 +74,7 @@ All ECE / Brier / AUROC / n_eval rows match `artifacts/metrics_calibration.md`. 
 - Selectivity EF: same `enrichment_factor` on \|Δpred\| ranks (`scripts/run_selectivity_v1.4.py`), fractions 0.05 / 0.10 / 0.20 from `configs/v1.4_selectivity.yaml`.
 - Same rows for protein vs ligand-only on a split: shared split CSVs; identical `n_test` and `n_binders` in exports.
 
-### Notebook drift (`artifacts/RESEARCH_REPORT_NOTEBOOK.md`)
+### Notebook drift (`docs/process/RESEARCH_REPORT_NOTEBOOK.md`)
 
 Structure and voice differ (versioned first-person notebook vs formal paper). Headline cold-protein and screen numbers match. The notebook is more precise about training sizes: it says they were not printed in `metrics.md`, not that they were never exported. No numerical drift of abstract headlines between notebook and paper relative to the exports.
 
@@ -144,7 +144,7 @@ These are limitations of inference, not export typos. The paper often softens th
 | Abstract leads with warm LCK recovery before the cold SLK caveat | `## Abstract` |
 | ΔSpearman printed as 0.0500 beside “Spearman gate not met” | Results protein features paragraph on AAC+DPC |
 | Calibration table is wide (protocol + six metrics); Chemprop “ECE after” looks excellent unless the protocol column is read | `### Calibration` |
-| Notebook is a different document (first person, version headings); a reader opening both may think two papers disagree on style, not on numbers | `artifacts/RESEARCH_REPORT_NOTEBOOK.md` vs `RESEARCH_REPORT.md` |
+| Notebook is a different document (first person, version headings); a reader opening both may think two papers disagree on style, not on numbers | `docs/process/RESEARCH_REPORT_NOTEBOOK.md` vs `RESEARCH_REPORT.md` |
 | README reproduce list stops at v1.4; no one-command path for KIBA, calibration, v1.5, v1.6 | `README.md` → `## Reproduce` |
 | `.gitignore` ignores `artifacts/models_v1.1/` and some raw DAVIS files, but not `kiba_pairs.csv` (~98 MB), `moleculenet_hiv.csv`, or other `artifacts/models_*` dirs | `.gitignore` |
 
@@ -166,7 +166,7 @@ Tables are otherwise labeled (split, model, metrics, n test, n binders). Column 
 
 6. **Clarify the 0.0500 / gate-fail** in one sentence (unrounded Δ < 0.05; rounded display 0.0500) so readers do not think the export contradicts the gate.
 
-7. **Optional but useful:** add `n_train` / `n_val` columns to `metrics.md` / `metrics_v1.1.md`; export LCK ligand-only recovery if any warm-screen protein-vs-ligand comparison is desired; add a short “how to read the notebook vs the paper” note so `RESEARCH_REPORT_NOTEBOOK.md` is not mistaken for a second conflicting manuscript.
+7. **Optional but useful:** add `n_train` / `n_val` columns to `metrics.md` / `metrics_v1.1.md`; export LCK ligand-only recovery if any warm-screen protein-vs-ligand comparison is desired; add a short “how to read the notebook vs the paper” note so `docs/process/RESEARCH_REPORT_NOTEBOOK.md` is not mistaken for a second conflicting manuscript.
 
 ---
 

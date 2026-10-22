@@ -1,6 +1,6 @@
 # Design Tweaks Memo — Virtual Screening v1
 
-**From:** research pass on `DESIGN.md` (2026-10-02 ET)  
+**From:** research pass on `../../DESIGN.md` (2026-10-02 ET)  
 **To:** Sofia · first-month decisions  
 **Companion:** `RESEARCH_PACK.md`
 

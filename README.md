@@ -4,6 +4,15 @@ Sofia Lindelow. 2026-10-03.
 
 A score for one protein-ligand pair was tested for whether it can order a public compound library for one kinase, and for whether that order uses the protein or only the ligand. On the saved splits, amino-acid plus dipeptide composition beats a ligand-only control when scaffolds are held out, and it adds a smaller lift when whole proteins are held out (cold-protein Spearman rho 0.5501 versus 0.5002; enrichment at 1% 10.2458 versus 8.4528). A graph model did not keep that cold-protein lift. The composition lift transferred to KIBA on Spearman rho, not on enrichment at 1%. A warm library rank for LCK recovered known binders far above chance, and a cold rank for SLK did not beat ligand-only on the broader ranks. The scores are predictions on public labels. They are not wet-lab hits.
 
+## Known limitations
+
+1. Held-out kinases are split by kinase identity, not by sequence similarity, so close homologs can sit in both train and test.
+2. DAVIS labels are censored at Kd = 10000 nM (pKd 5), and this is not yet modeled.
+3. There is no additive ligand-plus-kinase baseline yet.
+4. The top-1% enrichment gain is not settled, since its interval includes 0.
+
+The Discussion in [RESEARCH_REPORT.md](RESEARCH_REPORT.md) has the detail. The cold-protein split groups rows by `target_id` (`src/vs/splits.py`). Labels are fit as exact `pKd = 9 - log10(Kd_nM)` values (`src/vs/data.py`).
+
 The full write-up, with every number taken from the exported tables, is [RESEARCH_REPORT.md](RESEARCH_REPORT.md).
 
 ![Cold-protein and scaffold-split comparisons. Protein features raise rank correlation when scaffolds are held out. On held-out kinases the Spearman difference is smaller, and enrichment at 1% is not a settled gain.](figures/kinase-binding-figures.png)

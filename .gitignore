@@ -35,3 +35,8 @@ LAB_NOTEBOOK.md
 # Model directories on disk are about 2 MB to 18 MB, under the file limit.
 # Do not ignore model directories under the file limit.
 # artifacts/models_v1.2/: the saved npz scores live there.
+
+# MMseqs2 binary downloaded by reproduce_v1.7.sh. Not vendored.
+tools/mmseqs/
+tools/mmseqs-linux-avx2.tar.gz
+tools/tmp/

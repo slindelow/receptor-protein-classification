@@ -1,0 +1,246 @@
+[
+  {
+    "name": "seqid_c40_ligand_only",
+    "n_train": 17884,
+    "n_test": 5236,
+    "n_iter": 106,
+    "early_stopping": true,
+    "loaded_existing_model": false,
+    "model_file": "artifacts/models_v1.7/hgb_seqid_c40_ligand_only.joblib"
+  },
+  {
+    "name": "seqid_c40_aac_dpc",
+    "n_train": 17884,
+    "n_test": 5236,
+    "n_iter": 200,
+    "early_stopping": true,
+    "loaded_existing_model": false,
+    "model_file": "artifacts/models_v1.7/hgb_seqid_c40_aac_dpc.joblib"
+  },
+  {
+    "name": "seqid_c50_ligand_only",
+    "n_train": 18020,
+    "n_test": 5168,
+    "n_iter": 72,
+    "early_stopping": true,
+    "loaded_existing_model": false,
+    "model_file": "artifacts/models_v1.7/hgb_seqid_c50_ligand_only.joblib"
+  },
+  {
+    "name": "seqid_c50_aac_dpc",
+    "n_train": 18020,
+    "n_test": 5168,
+    "n_iter": 200,
+    "early_stopping": true,
+    "loaded_existing_model": false,
+    "model_file": "artifacts/models_v1.7/hgb_seqid_c50_aac_dpc.joblib"
+  },
+  {
+    "name": "seqid_c70_ligand_only",
+    "n_train": 18020,
+    "n_test": 5168,
+    "n_iter": 51,
+    "early_stopping": true,
+    "loaded_existing_model": false,
+    "model_file": "artifacts/models_v1.7/hgb_seqid_c70_ligand_only.joblib"
+  },
+  {
+    "name": "seqid_c70_aac_dpc",
+    "n_train": 18020,
+    "n_test": 5168,
+    "n_iter": 200,
+    "early_stopping": true,
+    "loaded_existing_model": false,
+    "model_file": "artifacts/models_v1.7/hgb_seqid_c70_aac_dpc.joblib"
+  },
+  {
+    "name": "cold_protein_tobit_ligand_only",
+    "n_train": 18020,
+    "n_censored_train": 12820,
+    "n_iter": 84,
+    "loaded_existing_model": false,
+    "tobit_history": [
+      {
+        "fit": 1,
+        "sigma": 0.9434611721734486,
+        "mean_imputed_censored": 4.332294721813715,
+        "n_iter": 178
+      },
+      {
+        "fit": 2,
+        "sigma": 1.0034506738680657,
+        "mean_imputed_censored": 4.075657417417895,
+        "n_iter": 98
+      },
+      {
+        "fit": 3,
+        "sigma": 1.0390327912796222,
+        "mean_imputed_censored": 3.9384114054089996,
+        "n_iter": 93
+      },
+      {
+        "fit": 4,
+        "sigma": 1.0597755102025188,
+        "mean_imputed_censored": 3.8554190742934513,
+        "n_iter": 84
+      }
+    ],
+    "model_file": "artifacts/models_v1.7/hgb_cold_protein_tobit_ligand_only.joblib"
+  },
+  {
+    "name": "cold_protein_tobit_aac_dpc",
+    "n_train": 18020,
+    "n_censored_train": 12820,
+    "n_iter": 200,
+    "loaded_existing_model": false,
+    "tobit_history": [
+      {
+        "fit": 1,
+        "sigma": 0.5917715615118975,
+        "mean_imputed_censored": 4.572823914395912,
+        "n_iter": 200
+      },
+      {
+        "fit": 2,
+        "sigma": 0.6192476553679106,
+        "mean_imputed_censored": 4.396574755191409,
+        "n_iter": 200
+      },
+      {
+        "fit": 3,
+        "sigma": 0.6415505647825034,
+        "mean_imputed_censored": 4.2932177887382,
+        "n_iter": 200
+      },
+      {
+        "fit": 4,
+        "sigma": 0.6592618700566737,
+        "mean_imputed_censored": 4.222128440289472,
+        "n_iter": 200
+      }
+    ],
+    "model_file": "artifacts/models_v1.7/hgb_cold_protein_tobit_aac_dpc.joblib"
+  },
+  {
+    "name": "seqid_c40_tobit_ligand_only",
+    "n_train": 17884,
+    "n_censored_train": 12700,
+    "n_iter": 94,
+    "loaded_existing_model": false,
+    "tobit_history": [
+      {
+        "fit": 1,
+        "sigma": 0.9700583903048993,
+        "mean_imputed_censored": 4.315883299137942,
+        "n_iter": 106
+      },
+      {
+        "fit": 2,
+        "sigma": 1.0336513587456513,
+        "mean_imputed_censored": 4.053939463173548,
+        "n_iter": 107
+      },
+      {
+        "fit": 3,
+        "sigma": 1.0713494371701455,
+        "mean_imputed_censored": 3.914786811035253,
+        "n_iter": 87
+      },
+      {
+        "fit": 4,
+        "sigma": 1.0939638891087216,
+        "mean_imputed_censored": 3.8303608779413496,
+        "n_iter": 94
+      }
+    ],
+    "model_file": "artifacts/models_v1.7/hgb_seqid_c40_tobit_ligand_only.joblib"
+  },
+  {
+    "name": "seqid_c40_tobit_aac_dpc",
+    "n_train": 17884,
+    "n_censored_train": 12700,
+    "n_iter": 200,
+    "loaded_existing_model": false,
+    "tobit_history": [
+      {
+        "fit": 1,
+        "sigma": 0.5952985212643612,
+        "mean_imputed_censored": 4.5712444900053635,
+        "n_iter": 200
+      },
+      {
+        "fit": 2,
+        "sigma": 0.6352191767213861,
+        "mean_imputed_censored": 4.386730307102736,
+        "n_iter": 200
+      },
+      {
+        "fit": 3,
+        "sigma": 0.6478729293001875,
+        "mean_imputed_censored": 4.286949184526446,
+        "n_iter": 200
+      },
+      {
+        "fit": 4,
+        "sigma": 0.660581970358355,
+        "mean_imputed_censored": 4.221082860256469,
+        "n_iter": 200
+      }
+    ],
+    "model_file": "artifacts/models_v1.7/hgb_seqid_c40_tobit_aac_dpc.joblib"
+  },
+  {
+    "name": "cold_protein_drop_censored_ligand_only",
+    "n_train": 5200,
+    "n_test": 5168,
+    "n_iter": 33,
+    "early_stopping": true,
+    "loaded_existing_model": false,
+    "model_file": "artifacts/models_v1.7/hgb_cold_protein_drop_censored_ligand_only.joblib"
+  },
+  {
+    "name": "cold_protein_drop_censored_aac_dpc",
+    "n_train": 5200,
+    "n_test": 5168,
+    "n_iter": 91,
+    "early_stopping": true,
+    "loaded_existing_model": false,
+    "model_file": "artifacts/models_v1.7/hgb_cold_protein_drop_censored_aac_dpc.joblib"
+  },
+  {
+    "name": "seqid_c40_drop_censored_ligand_only",
+    "n_train": 5184,
+    "n_test": 5236,
+    "n_iter": 51,
+    "early_stopping": true,
+    "loaded_existing_model": false,
+    "model_file": "artifacts/models_v1.7/hgb_seqid_c40_drop_censored_ligand_only.joblib"
+  },
+  {
+    "name": "seqid_c40_drop_censored_aac_dpc",
+    "n_train": 5184,
+    "n_test": 5236,
+    "n_iter": 162,
+    "early_stopping": true,
+    "loaded_existing_model": false,
+    "model_file": "artifacts/models_v1.7/hgb_seqid_c40_drop_censored_aac_dpc.joblib"
+  },
+  {
+    "name": "seqid_c40_no_early_stop_ligand_only",
+    "n_train": 17884,
+    "n_test": 5236,
+    "n_iter": 200,
+    "early_stopping": false,
+    "loaded_existing_model": false,
+    "model_file": "artifacts/models_v1.7/hgb_seqid_c40_no_early_stop_ligand_only.joblib"
+  },
+  {
+    "name": "seqid_c40_no_early_stop_aac_dpc",
+    "n_train": 17884,
+    "n_test": 5236,
+    "n_iter": 200,
+    "early_stopping": false,
+    "loaded_existing_model": false,
+    "model_file": "artifacts/models_v1.7/hgb_seqid_c40_no_early_stop_aac_dpc.joblib"
+  }
+]

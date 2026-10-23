@@ -1,6 +1,6 @@
 # Statistical review
 
-This note reads the metric exports, the split files, `src/vs/metrics_lib.py`, and `artifacts/metrics_uncertainty.json`. Models were not refit. `scripts/uncertainty_bootstrap.py` is finished, not mid-write. It already ran a row bootstrap (1,000 draws, seed 42) and correctly skipped the histogram and KIBA comparisons because per-pair scores are not saved. Those row-bootstrap p-values are not reused here as tests. The one new calculation is a protein-cluster bootstrap, written by `scripts/stat_review_cold_protein.py` to `artifacts/metrics_stat_review.json`.
+This note reads the metric exports, the split files, `src/vs/metrics_lib.py`, and `artifacts/metrics_uncertainty.json`. Models were not refit. `scripts/uncertainty_bootstrap.py` is finished, not mid-write. It already ran a row bootstrap (1,000 draws, seed 42) and correctly skipped the histogram and KIBA comparisons because per-pair scores are not saved. Those row-bootstrap p-values are not reused here as tests. The one new calculation is a protein-cluster bootstrap, written by `scripts/stat_review_cold_protein.py` to `artifacts/metrics_stat_review.json`. Update (2026-10-22): cold-protein histogram per-pair scores are now saved. The Spearman difference 0.0500 has a 95% kinase-cluster interval of 0.0271 to 0.0720 (two-sided p = 0.001). Section 6 records it. The KIBA skip still stands.
 
 ## 1. What is dependent, and why a row bootstrap misleads
 
@@ -29,7 +29,7 @@ Valid as descriptions, not yet as significance claims:
 
 | Comparison | Estimand that is defined | Why it is not a significance claim |
 |---|---|---|
-| Histogram cold-protein, joint composition vs ligand-only | Pooled Spearman 0.5501 vs 0.5002 (difference 0.04997). EF at 1%: 10.2458 vs 8.4528. EF at 5%: 6.9941 vs 6.5312. n = 5,168 rows, 388 binders. | Per-pair scores were not saved. No interval exists. The mode is the maximum cold-protein Spearman among four feature sets on this same split. |
+| Histogram cold-protein, joint composition vs ligand-only | Pooled Spearman 0.5501 vs 0.5002 (difference 0.04997). EF at 1%: 10.2458 vs 8.4528. EF at 5%: 6.9941 vs 6.5312. n = 5,168 rows, 388 binders. | Per-pair scores were not saved. No interval exists. The mode is the maximum cold-protein Spearman among four feature sets on this same split. Update (2026-10-22): per-pair scores are saved. The Spearman difference 0.0500 has a 95% kinase-cluster interval of 0.0271 to 0.0720 (two-sided p = 0.001). See section 6. |
 | Histogram scaffold, each protein mode vs ligand-only | Pooled Spearman and EF on 5,306 rows, 302 binders. | No per-pair scores. The holdout unit is 14 scaffolds. |
 | Graph cold-protein | Pooled Spearman 0.4895 vs 0.4997 (delta -0.0102) on the same 5,168 rows. | A row-bootstrap interval was exported and includes 0 (p = 0.3586). That procedure is the wrong unit. Section 3 replaces it. |
 | Graph scaffold | Pooled Spearman delta 0.0556 on 5,306 rows. | Row-bootstrap p = 0.0020 excludes 0. The resampled unit should be the scaffold (n = 14). That test was not run. The p-value should not be cited. |
@@ -42,7 +42,7 @@ A second estimand is well defined and was not exported: the unweighted mean, acr
 
 ## 3. Can the cold-protein lift be tested?
 
-The histogram lift cannot be tested from the saved files. `artifacts/metrics_uncertainty.json` records that skip, and this review does not invent an interval around 0.04997.
+The histogram lift cannot be tested from the saved files. `artifacts/metrics_uncertainty.json` records that skip, and this review does not invent an interval around 0.04997. Update (2026-10-22): that skip is out of date for this comparison. The Spearman difference 0.0500 has a 95% kinase-cluster interval of 0.0271 to 0.0720 (two-sided p = 0.001). Section 6 records it.
 
 The graph-model cold-protein scores can be tested. They align with the cold-protein test frame in split-file order (maximum absolute gap between saved `y_true` and `pkd` is under 1e-8; both files have 5,168 rows; dropped SMILES on that run were 0).
 
@@ -58,7 +58,7 @@ Result, from `artifacts/metrics_stat_review.json`:
 - Point: Spearman 0.4895 vs 0.4997, delta -0.0102.
 - Protein-cluster 95% interval for the delta: -0.0559 to 0.0299. Includes 0.
 - Two-sided p for delta = 0: 0.6494 (649 of 1,000 recentered replicates at least as large, plus one, over 1,001).
-- The row bootstrap on the same scores was about half as wide (-0.0304 to 0.0104, p = 0.3586). Both include 0. The row interval is the anti-conservative one. Neither result is a cold-protein lift. The histogram claim remains untested.
+- The row bootstrap on the same scores was about half as wide (-0.0304 to 0.0104, p = 0.3586). Both include 0. The row interval is the anti-conservative one. Neither result is a cold-protein lift. The histogram claim remains untested. Update (2026-10-22): section 6 now reports the kinase-cluster interval for the Spearman difference 0.0500 (0.0271 to 0.0720, two-sided p = 0.001).
 
 For the scaffold graph comparison, the matching test would be a scaffold-cluster bootstrap of the pooled delta (14 blocks). It was not computed. Until it is, the exported p = 0.0020 is not a result.
 
@@ -80,7 +80,7 @@ KIBA is not pKd. The column named `pkd` equals `kiba_score` exactly (maximum abs
 
 2. Put the split unit next to every n. Cold-protein DAVIS: 76 kinases, 68 ligands seen in training, 5,168 rows. Scaffold DAVIS: 14 scaffolds, 379 kinases seen in training, 5,306 rows. KIBA cold-protein: 47 kinases with very unequal row counts. Do not let 5,168 read as a sample size.
 
-3. Stop treating the histogram cold-protein difference 0.04997 as a demonstrated lift. Print the unrounded difference next to the gate so 0.0500 cannot be misread as a pass. Either pre-specify one feature mode and one endpoint (suggest: mean within-kinase delta Spearman, kinase as the unit), or mark the four-mode table exploratory and do not lock the winning mode for later experiments. Save per-pair histogram scores before any interval is claimed. The same requirement applies to KIBA.
+3. Stop treating the histogram cold-protein difference 0.04997 as a demonstrated lift. Print the unrounded difference next to the gate so 0.0500 cannot be misread as a pass. Either pre-specify one feature mode and one endpoint (suggest: mean within-kinase delta Spearman, kinase as the unit), or mark the four-mode table exploratory and do not lock the winning mode for later experiments. Save per-pair histogram scores before any interval is claimed. The same requirement applies to KIBA. Update (2026-10-22): the cold-protein histogram scores are saved, and the Spearman difference 0.0500 has the kinase-cluster interval in section 6 (0.0271 to 0.0720, two-sided p = 0.001). KIBA still has no per-pair scores.
 
 4. For the graph cold-protein comparison, replace the row interval with the protein-cluster result already computed: delta -0.0102, 95% interval -0.0559 to 0.0299, p = 0.6494, seed 42, 1,000 protein draws. Say in the same sentence that the 68 ligands were not held out. If the scientific claim is ranking compounds for one new kinase, change the estimand to the within-kinase mean and do not call the pooled rho that claim. The within-kinase numbers above are descriptive only.
 

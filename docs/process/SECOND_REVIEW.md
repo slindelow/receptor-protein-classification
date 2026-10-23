@@ -111,7 +111,7 @@ No definition mismatch found for Spearman, EF, AUROC, or ECE. Library top 1% = r
 
 These are limitations of inference, not export typos. The paper often softens them; they still cannot support strong language.
 
-1. **No confidence intervals or tests** on Spearman, EF, AUROC, recovery fractions, or selectivity EF. Discussion notes missing CI on enrichment; Results still use “beat,” “pass,” “positive,” and “far above chance” without a test. “Significant” as a stats word does not appear; the risk is everyday English that reads like inference.
+1. **No confidence intervals or tests** on Spearman, EF, AUROC, recovery fractions, or selectivity EF. Discussion notes missing CI on enrichment; Results still use “beat,” “pass,” “positive,” and “far above chance” without a test. “Significant” as a stats word does not appear; the risk is everyday English that reads like inference. Update (2026-10-22): the cold-protein histogram Spearman difference 0.0500 has a 95% kinase-cluster interval of 0.0271 to 0.0720 (two-sided p = 0.001). See the Discussion in `RESEARCH_REPORT.md` and section 6 of `docs/process/STAT_REVIEW.md`.
 
 2. **Pre-stated gates are not hypothesis tests.** Cold-protein pass is OR of ΔSpearman ≥ 0.05 and “clear EF lift.” Selectivity “sketch” gate is ρ > 0.1 and EF@10/20% > 1.2. Those are checklist thresholds, not p-values.
 
@@ -146,7 +146,7 @@ These are limitations of inference, not export typos. The paper often softens th
 | Calibration table is wide (protocol + six metrics); Chemprop “ECE after” looks excellent unless the protocol column is read | `### Calibration` |
 | Notebook is a different document (first person, version headings); a reader opening both may think two papers disagree on style, not on numbers | `docs/process/RESEARCH_REPORT_NOTEBOOK.md` vs `RESEARCH_REPORT.md` |
 | README reproduce list stops at v1.4; no one-command path for KIBA, calibration, v1.5, v1.6 | `README.md` → `## Reproduce` |
-| `.gitignore` ignores `artifacts/models_v1.1/` and some raw DAVIS files, but not `kiba_pairs.csv` (~98 MB), `moleculenet_hiv.csv`, or other `artifacts/models_*` dirs | `.gitignore` |
+| `.gitignore` ignores `artifacts/models_v1.1/` and some raw DAVIS files, but not `kiba_pairs.csv` (~98 MB), `moleculenet_hiv.csv`, or other `artifacts/models_*` dirs. Update (2026-10-22): these model files are now committed under `artifacts/models_v1.1/`. `.gitignore` does not exclude that directory. | `.gitignore` |
 
 Tables are otherwise labeled (split, model, metrics, n test, n binders). Column headers are legible. Limits and non-claims in Discussion are clearer than the Abstract’s density.
 

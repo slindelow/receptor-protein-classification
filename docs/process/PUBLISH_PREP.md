@@ -26,12 +26,12 @@ Listed in `.gitignore` so a later commit can leave them out. Files were not dele
 | `CODEX_MINI_HANDOFF.md` | Names a private host user. Must stay unpublished. Already ignored. |
 | `data/splits_kiba/*.csv` | Over GitHub's 100 MB file limit. Already ignored. |
 | `data/raw/kiba_pairs.csv` | 101,906,920 bytes. Added to `.gitignore` in this prep. |
-| `artifacts/models_v1.1/` | Already ignored. About 11 MB, under the file limit. The cold-protein score script needs these joblibs, so a clone will not be able to run that script unless the weights are supplied another way. |
+| `artifacts/models_v1.1/` | At this prep these files were already ignored. About 11 MB, under the file limit. The cold-protein score script needs these joblibs, so a clone at that time would not have been able to run that script unless the weights were supplied another way. Update (2026-10-22): these model files are now committed under `artifacts/models_v1.1/`. `git ls-files` lists the ten joblib files. `.gitignore` does not exclude that directory. |
 | `artifacts/*.log`, `artifacts/models_v1.2/*.log` | Absolute machine paths. Added in this prep. |
 | `artifacts/WRITING_BRIEF.md` | Personal email addresses, Drive links, and an unrelated writing sample. Added in this prep. |
 | `LAB_NOTEBOOK.md` | Absolute machine path, and the notebook says it is not published. Added in this prep. |
 
-Model directories other than `artifacts/models_v1.1/` are about 2 MB to 18 MB. They are not ignored. `artifacts/models_v1.2/` holds the saved graph-model npz scores the README tells a reviewer to check. No model directory is over 100 MB.
+Model directories other than `artifacts/models_v1.1/` are about 2 MB to 18 MB. They are not ignored. `artifacts/models_v1.2/` holds the saved graph-model npz scores the README tells a reviewer to check. No model directory is over 100 MB. Update (2026-10-22): `artifacts/models_v1.1/` is committed as well. The sentence above records this 2026-10-03 prep, when that directory was the one treated as ignored.
 
 `data/raw/moleculenet_hiv.csv` is about 2.1 MB. It is not ignored and is not over 100 MB.
 
@@ -47,7 +47,7 @@ Cold-protein: n_train 18,020, n_val 2,584, n_test 5,168.
 - Three files are over 100,000,000 bytes and must stay out of git: `data/splits_kiba/scaffold_split.csv` (107,037,499), `data/splits_kiba/cold_protein_split.csv` (102,568,146), `data/raw/kiba_pairs.csv` (101,906,920). All three are gitignored. They are still on disk.
 - Personal Drive folder `virtual-screening` holds `01-code-report-artifacts.tar.gz`, modified 2026-10-03 16:11 ET. `RESEARCH_REPORT.md` in this working copy was last modified 2026-10-03 19:08 ET. That Drive archive is older than this draft. This prep did not upload a new archive.
 - Not gitignored, and would become public if the tree is committed as it stands: absolute machine paths inside `artifacts/metrics_v1.2.json` (`best_ckpt`), `artifacts/metrics_v1.1.json` (`esm2_status`), `artifacts/metrics_v1.1.md`, and one editable-install line in `requirements.lock.txt`. These are machine paths, not an employer name. Research tables were not rewritten.
-- `scripts/score_histgbm_cold_protein.py` depends on gitignored DAVIS pairs and `artifacts/models_v1.1/`.
+- `scripts/score_histgbm_cold_protein.py` depends on gitignored DAVIS pairs and `artifacts/models_v1.1/`. Update (2026-10-22): the DAVIS pairs are still gitignored. These model files are now committed under `artifacts/models_v1.1/`.
 
 ## Not done
 

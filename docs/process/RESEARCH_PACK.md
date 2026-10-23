@@ -118,7 +118,7 @@ Manifest discipline: `data/manifest.json` with URLs, download dates (ET), SHA256
 ### 3.3 Practical split policy for v1
 
 - **Primary report:** ligand **scaffold split** within DAVIS (Spearman / EF on held-out scaffolds).  
-- **Stress test:** **cold-protein** (hold out entire kinases / groups).  
+- **Stress test:** **cold-protein** (hold out entire kinases / groups). Note (2026-10-23): the original analysis used that kinase-identity holdout. The v1.7 revision tests sequence-cluster holdouts, the Kd cap, and an additive baseline. See the reviewer revision in README.md.  
 - **Ablation honesty:** train a **ligand-only** model; if cold-protein barely drops, you’re memorizing ligands—say so.  
 - **Do not** lead with random-split AUROC.
 

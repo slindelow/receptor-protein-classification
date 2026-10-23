@@ -117,18 +117,19 @@ The answer sentence is the 40% pooled Spearman difference and whether its interv
 DAVIS is one complete matrix of 68 ligands by 379 kinases. The additive scaler is fit on all training kinases before the ridge penalty is chosen. Test kinases are outside that fit. The penalty on the 40% training kinases is 1000.0000, with training-kinase R^2 0.4394. The Tobit fit assumes Gaussian residuals and is labeled secondary. Tree counts are in artifacts/metrics_v1.7.json. 7 of 16 recorded fits reached 200 trees. The original analysis, including its published interval, is unchanged.
 <!-- V17_README_END -->
 
-## Known limitations
+## Limitations of the original analysis
 
-1. Held-out kinases are split by kinase identity, not by sequence similarity, so close homologs can sit in both train and test.
-2. DAVIS labels are censored at Kd = 10000 nM (pKd 5), and this is not yet modeled.
-3. There is no additive ligand-plus-kinase baseline yet.
-4. The top-1% enrichment gain is not settled, since its interval includes 0.
+These points describe the original analysis of 2026-10-03.
 
-The Discussion in [RESEARCH_REPORT.md](RESEARCH_REPORT.md) has the detail. The cold-protein split groups rows by `target_id` (`src/vs/splits.py`). Labels are fit as exact `pKd = 9 - log10(Kd_nM)` values (`src/vs/data.py`).
+The original cold-protein split grouped rows by kinase identity (`target_id` in `src/vs/splits.py`). The v1.7 revision above tests what happens under sequence-cluster holdouts, the Kd cap, and an additive baseline. Original labels are exact `pKd = 9 - log10(Kd_nM)` values (`src/vs/data.py`).
+
+The top-1% enrichment gain is not settled, since its interval includes 0.
+
+The Discussion in [RESEARCH_REPORT.md](RESEARCH_REPORT.md) has the detail.
 
 The full write-up, with every number taken from the exported tables, is [RESEARCH_REPORT.md](RESEARCH_REPORT.md).
 
-![Cold-protein and scaffold-split comparisons. Protein features raise rank correlation when scaffolds are held out. On held-out kinases the Spearman difference is smaller, and enrichment at 1% is not a settled gain.](figures/kinase-binding-figures.png)
+![Cold-protein and scaffold-split comparisons. Protein features raise rank correlation when scaffolds are held out. On held-out kinases the Spearman difference is smaller, and enrichment at 1% is not a settled gain. The reviewer revision above checks that cold-protein comparison.](figures/kinase-binding-figures.png)
 
 ## Repo map
 

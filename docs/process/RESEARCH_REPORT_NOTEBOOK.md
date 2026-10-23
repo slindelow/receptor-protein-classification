@@ -22,7 +22,7 @@ The control is a ligand-only model with protein features removed, on the same ro
 Two holdouts define the claim, both aiming at about 20% test and about 10% validation, seed 42:
 
 - Scaffold: Murcko scaffolds held out.
-- Cold-protein: entire `target_id`s held out.
+- Cold-protein: entire `target_id`s held out. Note (2026-10-23): this is the original split, grouped by kinase identity. The v1.7 revision tests sequence-cluster holdouts, the Kd cap, and an additive baseline. See the reviewer revision in README.md.
 
 Success is not a high AUROC on a random split. I do not claim a new binder unless an experiment measured it. NOVA or other external submission lists were optional concordance checks in the design. They were not run.
 
